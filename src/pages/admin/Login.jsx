@@ -24,7 +24,17 @@ export default function Login() {
       navigate('/admin');
     } catch (err) {
       console.error(err);
-      setError('Invalid email or password.');
+      if (err.code === 'auth/user-not-found') {
+        setError('No admin account found with that email.');
+      } else if (err.code === 'auth/wrong-password') {
+        setError('Incorrect password.');
+      } else if (err.code === 'auth/invalid-credential') {
+        setError('Invalid email or password.');
+      } else if (err.code === 'auth/operation-not-allowed') {
+        setError('Email/Password sign-in is not enabled in Firebase console.');
+      } else {
+        setError('Error: ' + err.message);
+      }
     }
   };
 

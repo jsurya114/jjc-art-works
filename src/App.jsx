@@ -19,6 +19,7 @@ import ProtectedRoute from './components/ProtectedRoute';
 // Admin Pages
 import Dashboard from './pages/admin/Dashboard';
 import Login from './pages/admin/Login';
+import ManageGallery from './pages/admin/ManageGallery';
 
 function App() {
   return (
@@ -47,7 +48,7 @@ function App() {
         }>
           <Route index element={<Dashboard />} />
           <Route path="portfolio" element={<div className="p-8">Manage Portfolio Mock</div>} />
-          <Route path="gallery" element={<div className="p-8">Manage Gallery Mock</div>} />
+          <Route path="gallery" element={<ManageGallery />} />
           <Route path="settings" element={<div className="p-8">Admin Settings Mock</div>} />
         </Route>
       </Routes>

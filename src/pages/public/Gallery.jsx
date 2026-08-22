@@ -1,10 +1,52 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
+import { db } from '../../lib/firebase';
+import { collection, query, orderBy, limit, getDocs } from 'firebase/firestore';
+import { Loader2 } from 'lucide-react';
 
 export default function Gallery() {
   const [activeFilter, setActiveFilter] = useState('All Work');
-
   const filters = ['All Work', 'Chapel Pews', 'Altar Furniture', 'Custom Woodwork', 'Church Seating', 'Pulpits'];
+
+  // State
+  const [restorations, setRestorations] = useState([]);
+  const [mainGallery, setMainGallery] = useState([]);
+  const [morePortfolio, setMorePortfolio] = useState([]);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    const fetchGalleryData = async () => {
+      try {
+        // Fetch Restorations (limit 3)
+        const restQ = query(collection(db, 'gallery_restorations'), orderBy('createdAt', 'desc'), limit(3));
+        const restSnap = await getDocs(restQ);
+        setRestorations(restSnap.docs.map(d => ({ id: d.id, ...d.data() })));
+
+        // Fetch Main Gallery (fetch all, will filter client side)
+        const mainQ = query(collection(db, 'gallery_main'), orderBy('createdAt', 'desc'));
+        const mainSnap = await getDocs(mainQ);
+        setMainGallery(mainSnap.docs.map(d => ({ id: d.id, ...d.data() })));
+
+        // Fetch More Portfolio (limit 6)
+        const moreQ = query(collection(db, 'gallery_more'), orderBy('createdAt', 'desc'), limit(6));
+        const moreSnap = await getDocs(moreQ);
+        setMorePortfolio(moreSnap.docs.map(d => ({ id: d.id, ...d.data() })));
+      } catch (err) {
+        console.error("Error fetching gallery data:", err);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchGalleryData();
+  }, []);
+
+  const filteredMain = activeFilter === 'All Work' 
+    ? mainGallery 
+    : mainGallery.filter(item => item.category === activeFilter);
+  
+  // Take exactly up to 6 items for the Bento Grid
+  const bentoItems = filteredMain.slice(0, 6);
 
   return (
     <div className="font-sans text-[#1a110a] bg-[#fffcfaf0] overflow-x-hidden">
@@ -31,17 +73,19 @@ export default function Gallery() {
         </h2>
         <div className="w-12 h-px bg-[#705a4c] mx-auto mb-16"></div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          <div className="rounded-xl overflow-hidden h-[500px]">
-            <img src="/portfolio_interior.jpg" alt="Chapel Interior" className="w-full h-full object-cover" />
+        {loading ? (
+          <div className="flex justify-center p-12 text-[#cba85a]"><Loader2 className="w-12 h-12 animate-spin" /></div>
+        ) : restorations.length === 0 ? (
+          <p className="text-[#a48e83]" style={{ fontFamily: "'Be Vietnam Pro', sans-serif" }}>No recent restorations uploaded yet.</p>
+        ) : (
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            {restorations.map((item, i) => (
+              <div key={item.id} className="rounded-xl overflow-hidden h-[500px] bg-[#e8ddd8]">
+                <img src={item.imageUrl} alt="Restoration" className={`w-full h-full object-cover ${i === 2 ? 'grayscale-[0.3]' : ''}`} />
+              </div>
+            ))}
           </div>
-          <div className="rounded-xl overflow-hidden h-[500px]">
-            <img src="/services_wood_carving.jpg" alt="Wood Carving Detail" className="w-full h-full object-cover" />
-          </div>
-          <div className="rounded-xl overflow-hidden h-[500px]">
-            <img src="/chapel_hero.jpg" alt="Modern Chapel" className="w-full h-full object-cover grayscale-[0.3]" />
-          </div>
-        </div>
+        )}
       </section>
 
       {/* ── FILTER & MAIN GALLERY ── */}
@@ -64,79 +108,56 @@ export default function Gallery() {
           ))}
         </div>
 
-        {/* Bento Grid */}
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 relative">
-          
-          {/* Large Left Column */}
-          <div className="lg:col-span-1 rounded-2xl overflow-hidden relative group h-[600px] lg:h-[830px]">
-            <img src="/portfolio_altar.jpg" alt="St. Jude's Altar" className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
-            <div className="absolute inset-0 bg-gradient-to-t from-[#1a110a]/80 via-transparent to-transparent"></div>
-            <div className="absolute bottom-8 left-8">
-              <h3 className="text-white text-[32px] font-medium mb-1" style={{ fontFamily: "'Playfair Display', Georgia, serif" }}>St. Jude's Altar</h3>
-              <p className="text-white/80 text-[11px] font-bold tracking-[2px] uppercase" style={{ fontFamily: "'Be Vietnam Pro', sans-serif" }}>VIEW PROJECT</p>
+        {loading ? (
+          <div className="flex justify-center p-12 text-[#cba85a]"><Loader2 className="w-12 h-12 animate-spin" /></div>
+        ) : bentoItems.length === 0 ? (
+          <div className="text-center p-12 text-[#a48e83]" style={{ fontFamily: "'Be Vietnam Pro', sans-serif" }}>
+            No gallery items found for this category.
+          </div>
+        ) : (
+          /* Bento Grid */
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 relative">
+            
+            {/* Large Left Column (Index 0) */}
+            {bentoItems[0] && (
+              <div className="lg:col-span-1 rounded-2xl overflow-hidden relative group h-[600px] lg:h-[830px] bg-[#e8ddd8]">
+                <img src={bentoItems[0].imageUrl} alt={bentoItems[0].title} className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#1a110a]/80 via-transparent to-transparent"></div>
+                <div className="absolute bottom-8 left-8">
+                  <h3 className="text-white text-[32px] font-medium mb-1" style={{ fontFamily: "'Playfair Display', Georgia, serif" }}>{bentoItems[0].title}</h3>
+                  <p className="text-white/80 text-[11px] font-bold tracking-[2px] uppercase" style={{ fontFamily: "'Be Vietnam Pro', sans-serif" }}>VIEW PROJECT</p>
+                </div>
+              </div>
+            )}
+
+            {/* Right Two Columns */}
+            <div className="lg:col-span-2 grid grid-cols-1 md:grid-cols-2 gap-6 h-full">
+              {/* Top Wide (Index 1) */}
+              {bentoItems[1] && (
+                <div className="md:col-span-2 rounded-2xl overflow-hidden relative group h-[260px] bg-[#e8ddd8]">
+                  <img src={bentoItems[1].imageUrl} alt={bentoItems[1].title} className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#1a110a]/80 via-transparent to-transparent"></div>
+                  <div className="absolute bottom-8 left-8">
+                    <h3 className="text-white text-[28px] font-medium mb-1" style={{ fontFamily: "'Playfair Display', Georgia, serif" }}>{bentoItems[1].title}</h3>
+                    <p className="text-white/80 text-[11px] font-bold tracking-[2px] uppercase" style={{ fontFamily: "'Be Vietnam Pro', sans-serif" }}>VIEW PROJECT</p>
+                  </div>
+                </div>
+              )}
+
+              {/* Smaller squares (Indexes 2 to 5) */}
+              {[2, 3, 4, 5].map((index) => bentoItems[index] && (
+                <div key={bentoItems[index].id} className="rounded-2xl overflow-hidden relative group h-[260px] bg-[#e8ddd8]">
+                  <img src={bentoItems[index].imageUrl} alt={bentoItems[index].title} className={`absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 ${index === 3 ? 'filter brightness-[0.7]' : ''}`} />
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#1a110a]/80 via-transparent to-transparent"></div>
+                  <div className="absolute bottom-8 left-8">
+                    <h3 className="text-white text-[24px] font-medium mb-1" style={{ fontFamily: "'Playfair Display', Georgia, serif" }}>{bentoItems[index].title}</h3>
+                    <p className="text-white/80 text-[11px] font-bold tracking-[2px] uppercase" style={{ fontFamily: "'Be Vietnam Pro', sans-serif" }}>VIEW PROJECT</p>
+                  </div>
+                </div>
+              ))}
             </div>
           </div>
-
-          {/* Right Two Columns */}
-          <div className="lg:col-span-2 grid grid-cols-1 md:grid-cols-2 gap-6 h-full">
-            {/* Top Wide */}
-            <div className="md:col-span-2 rounded-2xl overflow-hidden relative group h-[260px]">
-              <img src="/portfolio_pews.jpg" alt="Cathedral Pew Collection" className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
-              <div className="absolute inset-0 bg-gradient-to-t from-[#1a110a]/80 via-transparent to-transparent"></div>
-              <div className="absolute bottom-8 left-8">
-                <h3 className="text-white text-[28px] font-medium mb-1" style={{ fontFamily: "'Playfair Display', Georgia, serif" }}>Cathedral Pew Collection</h3>
-                <p className="text-white/80 text-[11px] font-bold tracking-[2px] uppercase" style={{ fontFamily: "'Be Vietnam Pro', sans-serif" }}>VIEW PROJECT</p>
-              </div>
-            </div>
-
-            {/* Middle Left */}
-            <div className="rounded-2xl overflow-hidden relative group h-[260px]">
-              <img src="/services_designer.jpg" alt="Modern Oratory" className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
-              <div className="absolute inset-0 bg-gradient-to-t from-[#1a110a]/80 via-transparent to-transparent"></div>
-              <div className="absolute bottom-8 left-8">
-                <h3 className="text-white text-[24px] font-medium mb-1" style={{ fontFamily: "'Playfair Display', Georgia, serif" }}>Modern Oratory</h3>
-                <p className="text-white/80 text-[11px] font-bold tracking-[2px] uppercase" style={{ fontFamily: "'Be Vietnam Pro', sans-serif" }}>VIEW PROJECT</p>
-              </div>
-            </div>
-
-            {/* Middle Right */}
-            <div className="rounded-2xl overflow-hidden relative group h-[260px]">
-              <img src="/craftsman_wood.jpg" alt="Sacristy Cabinetry" className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 filter brightness-[0.7]" />
-              <div className="absolute inset-0 bg-gradient-to-t from-[#1a110a]/80 via-transparent to-transparent"></div>
-              <div className="absolute bottom-8 left-8">
-                <h3 className="text-white text-[24px] font-medium mb-1" style={{ fontFamily: "'Playfair Display', Georgia, serif" }}>Sacristy Cabinetry</h3>
-                <p className="text-white/80 text-[11px] font-bold tracking-[2px] uppercase" style={{ fontFamily: "'Be Vietnam Pro', sans-serif" }}>VIEW PROJECT</p>
-              </div>
-            </div>
-
-            {/* Bottom Left */}
-            <div className="rounded-2xl overflow-hidden relative group h-[260px]">
-              <img src="/services_chairs.jpg" alt="Liturgical Seating" className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
-              <div className="absolute inset-0 bg-gradient-to-t from-[#1a110a]/80 via-transparent to-transparent"></div>
-              <div className="absolute bottom-8 left-8">
-                <h3 className="text-white text-[24px] font-medium mb-1" style={{ fontFamily: "'Playfair Display', Georgia, serif" }}>Liturgical Seating</h3>
-                <p className="text-white/80 text-[11px] font-bold tracking-[2px] uppercase" style={{ fontFamily: "'Be Vietnam Pro', sans-serif" }}>VIEW PROJECT</p>
-              </div>
-            </div>
-
-            {/* Bottom Right */}
-            <div className="rounded-2xl overflow-hidden relative group h-[260px]">
-              <img src="/services_pulpit.jpg" alt="Hand Carved Pulpit" className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
-              <div className="absolute inset-0 bg-gradient-to-t from-[#1a110a]/80 via-transparent to-transparent"></div>
-              <div className="absolute bottom-8 left-8">
-                <h3 className="text-white text-[24px] font-medium mb-1" style={{ fontFamily: "'Playfair Display', Georgia, serif" }}>Hand Carved Pulpit</h3>
-                <p className="text-white/80 text-[11px] font-bold tracking-[2px] uppercase" style={{ fontFamily: "'Be Vietnam Pro', sans-serif" }}>VIEW PROJECT</p>
-              </div>
-            </div>
-          </div>
-
-          {/* Pagination Pill */}
-          <div className="absolute -bottom-6 left-1/2 -translate-x-1/2 flex items-center gap-4 bg-[#1a110a]/80 backdrop-blur-md text-white px-6 py-3 rounded-full text-[12px] tracking-[2px]" style={{ fontFamily: "'Be Vietnam Pro', sans-serif" }}>
-            <button className="hover:text-[#cba85a] transition-colors">{'<'}</button>
-            <span>6 / 10</span>
-            <button className="hover:text-[#cba85a] transition-colors">{'>'}</button>
-          </div>
-        </div>
+        )}
       </section>
 
       {/* ── VIDEO SECTION ── */}
@@ -148,15 +169,11 @@ export default function Gallery() {
           
           <div className="relative rounded-2xl overflow-hidden bg-black shadow-2xl aspect-video mb-8 group cursor-pointer border border-white/10">
             <img src="/craftsman_wood.jpg" alt="Video Thumbnail" className="absolute inset-0 w-full h-full object-cover opacity-60 group-hover:scale-105 transition-transform duration-700" />
-            
-            {/* Play Button */}
             <div className="absolute inset-0 flex items-center justify-center">
               <div className="w-20 h-20 bg-[#d2c4bc] text-[#2d1f15] rounded-full flex items-center justify-center group-hover:bg-[#cba85a] group-hover:text-white transition-all duration-300 transform group-hover:scale-110 shadow-lg pl-1">
                 <svg width="32" height="32" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z" /></svg>
               </div>
             </div>
-
-            {/* Video Controls Mockup */}
             <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-6 flex items-center gap-4 text-white">
               <div className="text-[12px] font-medium" style={{ fontFamily: "'Be Vietnam Pro', sans-serif" }}>0:15 / 4:32</div>
               <div className="flex-1 h-1 bg-white/30 rounded-full relative">
@@ -164,10 +181,7 @@ export default function Gallery() {
               </div>
             </div>
           </div>
-          
-          <p className="text-[#a48e83] text-[13px] italic" style={{ fontFamily: "'Be Vietnam Pro', sans-serif" }}>
-            The Making of St. Joseph's Altar
-          </p>
+          <p className="text-[#a48e83] text-[13px] italic" style={{ fontFamily: "'Be Vietnam Pro', sans-serif" }}>The Making of St. Joseph's Altar</p>
         </div>
       </section>
 
@@ -176,15 +190,19 @@ export default function Gallery() {
         <div className="max-w-[1280px] mx-auto">
           <p className="text-[#cba85a] text-[11px] font-bold tracking-[3px] uppercase mb-12" style={{ fontFamily: "'Be Vietnam Pro', sans-serif" }}>MORE FROM OUR PORTFOLIO</p>
           
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            <div className="rounded-xl overflow-hidden h-[300px]"><img src="/portfolio_interior.jpg" alt="Chapel Interior" className="w-full h-full object-cover" /></div>
-            <div className="rounded-xl overflow-hidden h-[300px]"><img src="/services_designer.jpg" alt="Cabinetry" className="w-full h-full object-cover filter brightness-[0.7]" /></div>
-            <div className="rounded-xl overflow-hidden h-[300px]"><img src="/wood_rose.jpg" alt="Cushion detail" className="w-full h-full object-cover" /></div>
-            
-            <div className="rounded-xl overflow-hidden h-[300px]"><img src="/chapel_hero.jpg" alt="Brick Chapel" className="w-full h-full object-cover" /></div>
-            <div className="rounded-xl overflow-hidden h-[300px] bg-[#e8ddd8] p-4"><img src="/wood_teak.jpg" alt="Wood Samples" className="w-full h-full object-cover rounded-lg shadow-sm" /></div>
-            <div className="rounded-xl overflow-hidden h-[300px]"><img src="/portfolio_pews.jpg" alt="Installing pews" className="w-full h-full object-cover" /></div>
-          </div>
+          {loading ? (
+            <div className="flex justify-center p-12 text-[#cba85a]"><Loader2 className="w-12 h-12 animate-spin" /></div>
+          ) : morePortfolio.length === 0 ? (
+            <p className="text-[#a48e83]" style={{ fontFamily: "'Be Vietnam Pro', sans-serif" }}>No additional portfolio items uploaded yet.</p>
+          ) : (
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+              {morePortfolio.map((item, i) => (
+                <div key={item.id} className={`rounded-xl overflow-hidden h-[300px] bg-[#e8ddd8] ${i === 4 ? 'p-4' : ''}`}>
+                  <img src={item.imageUrl} alt="Portfolio item" className={`w-full h-full object-cover ${i === 4 ? 'rounded-lg shadow-sm' : ''} ${i === 1 ? 'filter brightness-[0.7]' : ''}`} />
+                </div>
+              ))}
+            </div>
+          )}
         </div>
       </section>
 
