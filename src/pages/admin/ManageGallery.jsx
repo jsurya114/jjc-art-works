@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import { db, storage } from '../../lib/firebase';
+import { db } from '../../lib/firebase';
 import { collection, addDoc, getDocs, deleteDoc, doc, serverTimestamp, query, orderBy } from 'firebase/firestore';
-import { ref, uploadBytesResumable, getDownloadURL, deleteObject } from 'firebase/storage';
 import { ImagePlus, Trash2, Loader2, Plus } from 'lucide-react';
 
 export default function ManageGallery() {
@@ -110,28 +109,28 @@ export default function ManageGallery() {
     }
 
     setUploading(true);
+    setProgress(25);
     
-    // 1. Upload to Storage
-    const storageRef = ref(storage, `gallery/${activeTab}/${Date.now()}_${file.name}`);
-    const uploadTask = uploadBytesResumable(storageRef, file);
+    // 1. Upload to Cloudinary
+    const formData = new FormData();
+    formData.append('file', file);
+    formData.append('upload_preset', 'jjc_unsigned');
+    formData.append('folder', `jjc_gallery/${activeTab}`);
 
-    uploadTask.on('state_changed', 
-      (snapshot) => {
-        const prog = Math.round((snapshot.bytesTransferred / snapshot.totalBytes) * 100);
-        setProgress(prog);
-      },
-      (error) => {
-        console.error("Upload failed", error);
-        setUploading(false);
-        alert("Upload failed.");
-      },
-      async () => {
-        // 2. Get URL & Save to Firestore
-        const downloadURL = await getDownloadURL(uploadTask.snapshot.ref);
+    try {
+      const res = await fetch(`https://api.cloudinary.com/v1_1/nq54fjxg/image/upload`, {
+        method: 'POST',
+        body: formData
+      });
+      const data = await res.json();
+
+      if (data.secure_url) {
+        setProgress(100);
         
+        // 2. Save URL to Firestore
         const metadata = {
-          imageUrl: downloadURL,
-          storagePath: uploadTask.snapshot.ref.fullPath,
+          imageUrl: data.secure_url,
+          cloudinaryId: data.public_id,
           createdAt: serverTimestamp()
         };
 
@@ -150,8 +149,15 @@ export default function ManageGallery() {
         
         // Refresh list
         fetchItems();
+      } else {
+        throw new Error(data.error?.message || "Cloudinary upload failed");
       }
-    );
+    } catch (err) {
+      console.error("Upload failed", err);
+      setUploading(false);
+      setProgress(0);
+      alert("Upload failed: " + err.message);
+    }
   };
 
   // Handle Image Delete
@@ -162,12 +168,9 @@ export default function ManageGallery() {
       // Delete from Firestore
       await deleteDoc(doc(db, collectionName, item.id));
       
-      // Delete from Storage if it has a path
-      if (item.storagePath) {
-        const storageRef = ref(storage, item.storagePath);
-        await deleteObject(storageRef).catch(e => console.log("Storage object not found, skipping storage delete."));
-      }
-
+      // Note: We leave the image orphaned in Cloudinary because client-side deletion 
+      // requires a secure backend signature. Since it's a generous free tier, this is fine.
+      
       fetchItems();
     } catch (err) {
       console.error("Error deleting item:", err);
