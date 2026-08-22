@@ -39,10 +39,10 @@ const Sidebar = () => {
           <ArrowLeft size={20} />
           <span>Back to Site</span>
         </Link>
-        <button className="w-full flex items-center space-x-3 px-4 py-3 text-rose-400 hover:bg-rose-500/10 rounded-lg transition-colors">
+        <Link to="/admin/login" className="w-full flex items-center space-x-3 px-4 py-3 text-rose-400 hover:bg-rose-500/10 rounded-lg transition-colors">
           <LogOut size={20} />
           <span>Logout</span>
-        </button>
+        </Link>
       </div>
     </aside>
   );

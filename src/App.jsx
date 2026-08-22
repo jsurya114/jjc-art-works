@@ -15,6 +15,7 @@ import Contact from './pages/public/Contact';
 
 // Admin Pages
 import Dashboard from './pages/admin/Dashboard';
+import Login from './pages/admin/Login';
 
 function App() {
   return (
@@ -30,6 +31,9 @@ function App() {
           <Route path="testimonials" element={<Testimonials />} />
           <Route path="contact" element={<Contact />} />
         </Route>
+
+        {/* Admin Login - No layout wrapper */}
+        <Route path="/admin/login" element={<Login />} />
 
         {/* Admin Routes */}
         <Route path="/admin" element={<AdminLayout />}>
