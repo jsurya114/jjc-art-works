@@ -1,6 +1,25 @@
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
+import { db } from '../../lib/firebase';
+import { collection, getDocs, query, orderBy } from 'firebase/firestore';
 
 export default function Services() {
+  const [materials, setMaterials] = useState([]);
+
+  useEffect(() => {
+    const fetchMaterials = async () => {
+      try {
+        const q = query(collection(db, 'services_materials'), orderBy('createdAt', 'desc'));
+        const querySnapshot = await getDocs(q);
+        const data = querySnapshot.docs.map(doc => ({ id: doc.id, ...doc.data() }));
+        setMaterials(data);
+      } catch (err) {
+        console.error("Error fetching materials:", err);
+      }
+    };
+    fetchMaterials();
+  }, []);
+
   return (
     <div className="bg-[#fffcfaf0] text-[#1a110a] font-sans overflow-x-hidden">
       {/* ── HERO SECTION ── */}
@@ -331,38 +350,24 @@ export default function Services() {
           </p>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 pb-16">
-            <div className="text-left bg-white rounded-2xl overflow-hidden shadow-sm border border-[#d2c4bc]/30 group cursor-pointer hover:shadow-md transition-shadow">
-              <div className="h-[240px] w-full">
-                <img src="/wood_teak.jpg" alt="Teak Wood" className="w-full h-full object-cover" />
+            {materials.length > 0 ? (
+              materials.map((mat) => (
+                <div key={mat.id} className="text-left bg-white rounded-2xl overflow-hidden shadow-sm border border-[#d2c4bc]/30 group cursor-pointer hover:shadow-md transition-shadow flex flex-col">
+                  <div className="h-[240px] w-full shrink-0">
+                    <img src={mat.imageUrl} alt={mat.title} className="w-full h-full object-cover" />
+                  </div>
+                  <div className="p-8 flex flex-col flex-1">
+                    <h3 className="text-[#1a110a] font-bold text-[18px] mb-3" style={{ fontFamily: "'Playfair Display', Georgia, serif" }}>{mat.title}</h3>
+                    <p className="text-[#4f453f] text-[13px] leading-relaxed mb-6 flex-1" style={{ fontFamily: "'Be Vietnam Pro', sans-serif" }}>{mat.description}</p>
+                    <div className="w-8 h-px bg-[#cba85a] mt-auto"></div>
+                  </div>
+                </div>
+              ))
+            ) : (
+              <div className="md:col-span-3 text-center text-slate-500 py-10" style={{ fontFamily: "'Be Vietnam Pro', sans-serif" }}>
+                More materials coming soon.
               </div>
-              <div className="p-8">
-                <h3 className="text-[#1a110a] font-bold text-[18px] mb-3" style={{ fontFamily: "'Playfair Display', Georgia, serif" }}>Golden Teak</h3>
-                <p className="text-[#4f453f] text-[13px] leading-relaxed mb-6" style={{ fontFamily: "'Be Vietnam Pro', sans-serif" }}>Rich golden tone and exceptional durability.</p>
-                <div className="w-8 h-px bg-[#cba85a]"></div>
-              </div>
-            </div>
-            
-            <div className="text-left bg-white rounded-2xl overflow-hidden shadow-sm border border-[#d2c4bc]/30 group cursor-pointer hover:shadow-md transition-shadow">
-              <div className="h-[240px] w-full">
-                <img src="/wood_rose.jpg" alt="Mahogany" className="w-full h-full object-cover" />
-              </div>
-              <div className="p-8">
-                <h3 className="text-[#1a110a] font-bold text-[18px] mb-3" style={{ fontFamily: "'Playfair Display', Georgia, serif" }}>Deep Mahogany</h3>
-                <p className="text-[#4f453f] text-[13px] leading-relaxed mb-6" style={{ fontFamily: "'Be Vietnam Pro', sans-serif" }}>Classic reddish-brown wood with a timeless elegant appearance.</p>
-                <div className="w-8 h-px bg-[#cba85a]"></div>
-              </div>
-            </div>
-            
-            <div className="text-left bg-white rounded-2xl overflow-hidden shadow-sm border border-[#d2c4bc]/30 group cursor-pointer hover:shadow-md transition-shadow">
-              <div className="h-[240px] w-full">
-                <img src="/portfolio_interior.jpg" alt="Walnut" className="w-full h-full object-cover filter brightness-[0.4] contrast-125 sepia-[0.3]" />
-              </div>
-              <div className="p-8">
-                <h3 className="text-[#1a110a] font-bold text-[18px] mb-3" style={{ fontFamily: "'Playfair Display', Georgia, serif" }}>Dark Walnut</h3>
-                <p className="text-[#4f453f] text-[13px] leading-relaxed mb-6" style={{ fontFamily: "'Be Vietnam Pro', sans-serif" }}>Rich chocolate tones with striking natural grain patterns.</p>
-                <div className="w-8 h-px bg-[#cba85a]"></div>
-              </div>
-            </div>
+            )}
           </div>
         </div>
       </section>
