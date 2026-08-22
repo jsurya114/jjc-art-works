@@ -1,58 +1,37 @@
 import React, { createContext, useContext, useState, useEffect } from 'react';
+import { auth } from '../lib/firebase';
+import { onAuthStateChanged, signOut } from 'firebase/auth';
 
 const AuthContext = createContext();
 
 export const useAuth = () => useContext(AuthContext);
 
 export const AuthProvider = ({ children }) => {
-  const [token, setToken] = useState(localStorage.getItem('token') || null);
-  const [isAuthenticated, setIsAuthenticated] = useState(false);
+  const [user, setUser] = useState(null);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    const verifyToken = async () => {
-      if (token) {
-        try {
-          const res = await fetch('/api/auth/verify', {
-            headers: {
-              'x-auth-token': token
-            }
-          });
-          if (res.ok) {
-            setIsAuthenticated(true);
-          } else {
-            setToken(null);
-            localStorage.removeItem('token');
-            setIsAuthenticated(false);
-          }
-        } catch (err) {
-          setToken(null);
-          localStorage.removeItem('token');
-          setIsAuthenticated(false);
-        }
-      } else {
-        setIsAuthenticated(false);
-      }
+    // Firebase listener for session locking
+    const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
+      setUser(currentUser);
       setLoading(false);
-    };
+    });
 
-    verifyToken();
-  }, [token]);
+    return () => unsubscribe();
+  }, []);
 
-  const login = (newToken) => {
-    localStorage.setItem('token', newToken);
-    setToken(newToken);
-    setIsAuthenticated(true);
+  const logout = async () => {
+    try {
+      await signOut(auth);
+    } catch (error) {
+      console.error("Error logging out:", error);
+    }
   };
 
-  const logout = () => {
-    localStorage.removeItem('token');
-    setToken(null);
-    setIsAuthenticated(false);
-  };
+  const isAuthenticated = !!user;
 
   return (
-    <AuthContext.Provider value={{ token, isAuthenticated, login, logout, loading }}>
+    <AuthContext.Provider value={{ user, isAuthenticated, logout, loading }}>
       {children}
     </AuthContext.Provider>
   );

@@ -1,10 +1,12 @@
 import React, { useState } from 'react';
 import { useNavigate, Navigate, Link } from 'react-router-dom';
 import { useAuth } from '../../context/AuthContext';
+import { auth } from '../../lib/firebase';
+import { signInWithEmailAndPassword } from 'firebase/auth';
 
 export default function Login() {
   const navigate = useNavigate();
-  const { login, isAuthenticated } = useAuth();
+  const { isAuthenticated } = useAuth();
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
@@ -18,22 +20,11 @@ export default function Login() {
     setError('');
     
     try {
-      const res = await fetch('/api/auth/login', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ email, password })
-      });
-      
-      const data = await res.json();
-      
-      if (res.ok) {
-        login(data.token);
-        navigate('/admin');
-      } else {
-        setError(data.msg || 'Login failed');
-      }
+      await signInWithEmailAndPassword(auth, email, password);
+      navigate('/admin');
     } catch (err) {
-      setError('Server error. Please try again later.');
+      console.error(err);
+      setError('Invalid email or password.');
     }
   };
 
