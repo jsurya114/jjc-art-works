@@ -1,0 +1,2645 @@
+.home-page-jjc,
+.home-page-jjc * {
+  box-sizing: border-box;
+}
+.home-page-jjc {
+  background: linear-gradient(to left, #fff8f5, #fff8f5),
+    linear-gradient(to left, #ffffff, #ffffff);
+  display: flex;
+  flex-direction: column;
+  gap: 0px;
+  align-items: flex-start;
+  justify-content: flex-start;
+  height: 5006px;
+  position: relative;
+}
+.container {
+  background: #3d2b1f;
+  padding: 120px 80px 120px 80px;
+  flex-shrink: 0;
+  display: grid;
+  gap: 0px;
+  max-width: 1440px;
+  position: absolute;
+  left: 50%;
+  translate: -50%;
+  top: 4514px;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  grid-template-rows: 252px;
+}
+.column-1-brand {
+  padding: 0px 0px 98px 0px;
+  display: flex;
+  flex-direction: column;
+  gap: 0px;
+  align-items: flex-start;
+  justify-content: flex-start;
+  position: relative;
+  grid-column: 1 / span 3;
+  grid-row: 1 / span 1;
+}
+.container2 {
+  display: flex;
+  flex-direction: row;
+  gap: 8px;
+  align-items: center;
+  justify-content: flex-start;
+  align-self: stretch;
+  flex-shrink: 0;
+  position: relative;
+}
+.container3 {
+  display: flex;
+  flex-direction: column;
+  gap: 0px;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-shrink: 0;
+  height: auto;
+  position: relative;
+  overflow: visible;
+}
+.container4 {
+  display: flex;
+  flex-direction: column;
+  gap: 0px;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-shrink: 0;
+  position: relative;
+}
+.text {
+  color: #ffffff;
+  text-align: left;
+  font-family: "NimbusSans-Bold", sans-serif;
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 700;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+.margin {
+  padding: 0px 0px 16px 0px;
+  display: flex;
+  flex-direction: column;
+  gap: 0px;
+  align-items: flex-start;
+  justify-content: flex-start;
+  align-self: stretch;
+  flex-shrink: 0;
+  position: relative;
+}
+.container5 {
+  display: flex;
+  flex-direction: column;
+  gap: 0px;
+  align-items: flex-start;
+  justify-content: flex-start;
+  align-self: stretch;
+  flex-shrink: 0;
+  position: relative;
+}
+.chapel-interiors {
+  color: #ffffff;
+  text-align: left;
+  font-family: "NimbusSans-Regular", sans-serif;
+  font-size: 16px;
+  line-height: 24px;
+  letter-spacing: 1.6px;
+  font-weight: 400;
+  text-transform: uppercase;
+  position: relative;
+  align-self: stretch;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+.margin2 {
+  padding: 0px 0px 24px 0px;
+  display: flex;
+  flex-direction: column;
+  gap: 0px;
+  align-items: flex-start;
+  justify-content: flex-start;
+  width: 100%;
+  flex-shrink: 0;
+  max-width: 320px;
+  position: relative;
+}
+.container6 {
+  display: flex;
+  flex-direction: column;
+  gap: 0px;
+  align-items: flex-start;
+  justify-content: flex-start;
+  width: 100%;
+  flex-shrink: 0;
+  max-width: 320px;
+  position: relative;
+}
+.crafting-sacred-spaces-since-2014 {
+  color: #ffffff;
+  text-align: left;
+  font-family: "NimbusSans-Regular", sans-serif;
+  font-size: 16px;
+  line-height: 26px;
+  font-weight: 400;
+  position: relative;
+  align-self: stretch;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+.container7 {
+  display: flex;
+  flex-direction: row;
+  gap: 16px;
+  align-items: flex-start;
+  justify-content: flex-start;
+  align-self: stretch;
+  flex-shrink: 0;
+  position: relative;
+}
+.link {
+  border-radius: 9999px;
+  border-style: solid;
+  border-color: #e5e7eb;
+  border-width: 1px;
+  display: flex;
+  flex-direction: row;
+  gap: 0px;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 40px;
+  height: 40px;
+  position: relative;
+}
+.container8 {
+  display: flex;
+  flex-direction: column;
+  gap: 0px;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-shrink: 0;
+  height: auto;
+  position: relative;
+  overflow: visible;
+}
+.container9 {
+  display: flex;
+  flex-direction: column;
+  gap: 0px;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-shrink: 0;
+  height: auto;
+  position: relative;
+  overflow: visible;
+}
+.container10 {
+  display: flex;
+  flex-direction: column;
+  gap: 0px;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-shrink: 0;
+  height: auto;
+  position: relative;
+  overflow: visible;
+}
+.column-2-quick-links {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  align-items: flex-start;
+  justify-content: flex-start;
+  position: relative;
+  grid-column: 4 / span 3;
+  grid-row: 1 / span 1;
+}
+.heading-4-margin {
+  padding: 0px 0px 8px 0px;
+  display: flex;
+  flex-direction: column;
+  gap: 0px;
+  align-items: flex-start;
+  justify-content: flex-start;
+  align-self: stretch;
+  flex-shrink: 0;
+  position: relative;
+}
+.heading-4 {
+  display: flex;
+  flex-direction: column;
+  gap: 0px;
+  align-items: flex-start;
+  justify-content: flex-start;
+  align-self: stretch;
+  flex-shrink: 0;
+  position: relative;
+}
+.quick-links {
+  color: #ffffff;
+  text-align: left;
+  font-family: "NimbusSans-Regular", sans-serif;
+  font-size: 16px;
+  line-height: 24px;
+  letter-spacing: 1.6px;
+  font-weight: 400;
+  text-transform: uppercase;
+  position: relative;
+  align-self: stretch;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  align-items: flex-start;
+  justify-content: flex-start;
+  align-self: stretch;
+  flex-shrink: 0;
+  position: relative;
+}
+.item {
+  display: flex;
+  flex-direction: column;
+  gap: 0px;
+  align-items: flex-start;
+  justify-content: flex-start;
+  align-self: stretch;
+  flex-shrink: 0;
+  position: relative;
+}
+.home {
+  color: #ffffff;
+  text-align: left;
+  font-family: "NimbusSans-Regular", sans-serif;
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 400;
+  position: relative;
+  align-self: stretch;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+.services {
+  color: #ffffff;
+  text-align: left;
+  font-family: "NimbusSans-Regular", sans-serif;
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 400;
+  position: relative;
+  align-self: stretch;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+.portfolio {
+  color: #ffffff;
+  text-align: left;
+  font-family: "NimbusSans-Regular", sans-serif;
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 400;
+  position: relative;
+  align-self: stretch;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+.about-us {
+  color: #ffffff;
+  text-align: left;
+  font-family: "NimbusSans-Regular", sans-serif;
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 400;
+  position: relative;
+  align-self: stretch;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+.contact {
+  color: #ffffff;
+  text-align: left;
+  font-family: "NimbusSans-Regular", sans-serif;
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 400;
+  position: relative;
+  align-self: stretch;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+.column-3-our-services {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  align-items: flex-start;
+  justify-content: flex-start;
+  position: relative;
+  grid-column: 7 / span 3;
+  grid-row: 1 / span 1;
+}
+.our-services {
+  color: #ffffff;
+  text-align: left;
+  font-family: "NimbusSans-Regular", sans-serif;
+  font-size: 16px;
+  line-height: 24px;
+  letter-spacing: 1.6px;
+  font-weight: 400;
+  text-transform: uppercase;
+  position: relative;
+  align-self: stretch;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+.chapel-pews {
+  color: #ffffff;
+  text-align: left;
+  font-family: "NimbusSans-Regular", sans-serif;
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 400;
+  position: relative;
+  align-self: stretch;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+.altar-furniture {
+  color: #ffffff;
+  text-align: left;
+  font-family: "NimbusSans-Regular", sans-serif;
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 400;
+  position: relative;
+  align-self: stretch;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+.custom-woodwork {
+  color: #ffffff;
+  text-align: left;
+  font-family: "NimbusSans-Regular", sans-serif;
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 400;
+  position: relative;
+  align-self: stretch;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+.interior-consultation {
+  color: #ffffff;
+  text-align: left;
+  font-family: "NimbusSans-Regular", sans-serif;
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 400;
+  position: relative;
+  align-self: stretch;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+.church-seating {
+  color: #ffffff;
+  text-align: left;
+  font-family: "NimbusSans-Regular", sans-serif;
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 400;
+  position: relative;
+  align-self: stretch;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+.pulpit-design {
+  color: #ffffff;
+  text-align: left;
+  font-family: "NimbusSans-Regular", sans-serif;
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 400;
+  position: relative;
+  align-self: stretch;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+.column-4-contact {
+  padding: 0px 0px 60px 0px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  align-items: flex-start;
+  justify-content: flex-start;
+  position: relative;
+  grid-column: 10 / span 3;
+  grid-row: 1 / span 1;
+}
+.get-in-touch {
+  color: #ffffff;
+  text-align: left;
+  font-family: "NimbusSans-Regular", sans-serif;
+  font-size: 16px;
+  line-height: 24px;
+  letter-spacing: 1.6px;
+  font-weight: 400;
+  text-transform: uppercase;
+  position: relative;
+  align-self: stretch;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+.list2 {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  align-items: flex-start;
+  justify-content: flex-start;
+  align-self: stretch;
+  flex-shrink: 0;
+  position: relative;
+}
+.item2 {
+  display: flex;
+  flex-direction: row;
+  gap: 12px;
+  align-items: center;
+  justify-content: flex-start;
+  align-self: stretch;
+  flex-shrink: 0;
+  position: relative;
+}
+.container11 {
+  display: flex;
+  flex-direction: column;
+  gap: 0px;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-shrink: 0;
+  height: auto;
+  position: relative;
+  overflow: visible;
+}
+.text2 {
+  color: #ffffff;
+  text-align: left;
+  font-family: "NimbusSans-Regular", sans-serif;
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 400;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+.container12 {
+  display: flex;
+  flex-direction: column;
+  gap: 0px;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-shrink: 0;
+  height: auto;
+  position: relative;
+  overflow: visible;
+}
+.container13 {
+  display: flex;
+  flex-direction: column;
+  gap: 0px;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-shrink: 0;
+  height: auto;
+  position: relative;
+  overflow: visible;
+}
+.container14 {
+  display: flex;
+  flex-direction: column;
+  gap: 0px;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-shrink: 0;
+  height: auto;
+  position: relative;
+  overflow: visible;
+}
+.html-body-section-cta-banner {
+  background: linear-gradient(to left, #c9a84c, #c9a84c),
+    linear-gradient(to left, #fff8f5, #fff8f5),
+    linear-gradient(to left, #ffffff, #ffffff);
+  padding: 80px 0px 80px 0px;
+  display: flex;
+  flex-direction: column;
+  gap: 0px;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 1280px;
+  height: 370px;
+  position: absolute;
+  left: 50%;
+  translate: -50%;
+  top: 4110px;
+  overflow: hidden;
+}
+.container15 {
+  padding: 0px 32px 0px 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 0px;
+  align-items: center;
+  justify-content: flex-start;
+  flex-shrink: 0;
+  position: relative;
+}
+.label-margin {
+  padding: 0px 0px 14px 0px;
+  display: flex;
+  flex-direction: column;
+  gap: 0px;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-shrink: 0;
+  position: relative;
+}
+.label {
+  display: flex;
+  flex-direction: column;
+  gap: 0px;
+  align-items: center;
+  justify-content: flex-start;
+  flex-shrink: 0;
+  position: relative;
+}
+.text3 {
+  color: #1d1b1a;
+  text-align: center;
+  font-family: "BeVietnamPro-SemiBold", sans-serif;
+  font-size: 12px;
+  line-height: 16px;
+  letter-spacing: 1.68px;
+  font-weight: 600;
+  text-transform: uppercase;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.heading-2-headline-margin {
+  padding: 0px 0px 16px 0px;
+  display: flex;
+  flex-direction: column;
+  gap: 0px;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-shrink: 0;
+  max-width: 672px;
+  position: relative;
+}
+.heading-2-headline {
+  padding: 0px 55.62px 0px 55.61px;
+  display: flex;
+  flex-direction: column;
+  gap: 0px;
+  align-items: center;
+  justify-content: flex-start;
+  flex-shrink: 0;
+  max-width: 672px;
+  position: relative;
+}
+.let-s-create-something-meaningful {
+  color: #1c1610;
+  text-align: center;
+  font-family: "BodoniModa-Regular", sans-serif;
+  font-size: 48px;
+  line-height: 55.2px;
+  font-weight: 400;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.subtext-margin {
+  flex-shrink: 0;
+  width: 535.59px;
+  height: 61.59px;
+  max-width: 576px;
+  position: relative;
+}
+.subtext {
+  padding: 0px 0px 0.59px 0px;
+  display: flex;
+  flex-direction: column;
+  gap: 0px;
+  align-items: center;
+  justify-content: flex-start;
+  max-width: 576px;
+  position: absolute;
+  left: 0px;
+  top: -1px;
+}
+.text4 {
+  color: #4a3728;
+  text-align: center;
+  font-family: "BeVietnamPro-Regular", sans-serif;
+  font-size: 16px;
+  line-height: 25.6px;
+  font-weight: 400;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.buttons {
+  display: flex;
+  flex-direction: row;
+  gap: 16.01px;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-shrink: 0;
+  position: relative;
+}
+.secondary-button {
+  border-radius: 16px;
+  border-style: solid;
+  border-color: #1c1610;
+  border-width: 2px;
+  padding: 16px 36px 16px 36px;
+  display: flex;
+  flex-direction: row;
+  gap: 8px;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  position: relative;
+}
+.tabler-icon-brand-whatsapp {
+  flex-shrink: 0;
+  width: 24px;
+  height: 24px;
+  position: relative;
+  overflow: visible;
+}
+.text5 {
+  color: #1c1610;
+  text-align: center;
+  font-family: "BeVietnamPro-Bold", sans-serif;
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 700;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.main-content-canvas-testimonials-section {
+  background: #3d2b1f;
+  padding: 90px 80px 90px 80px;
+  display: flex;
+  flex-direction: column;
+  gap: 0px;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-shrink: 0;
+  width: 1280px;
+  position: absolute;
+  left: 50%;
+  translate: -50%;
+  top: 3491px;
+}
+.container16 {
+  display: flex;
+  flex-direction: column;
+  gap: 64px;
+  align-items: flex-start;
+  justify-content: flex-start;
+  width: 100%;
+  flex-shrink: 0;
+  max-width: 1280px;
+  position: relative;
+}
+.header {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  align-items: flex-start;
+  justify-content: flex-start;
+  align-self: stretch;
+  flex-shrink: 0;
+  position: relative;
+}
+.container17 {
+  display: flex;
+  flex-direction: column;
+  gap: 0px;
+  align-items: center;
+  justify-content: flex-start;
+  align-self: stretch;
+  flex-shrink: 0;
+  position: relative;
+}
+.text6 {
+  color: #dec1af;
+  text-align: center;
+  font-family: "LiberationSerif-Bold", sans-serif;
+  font-size: 12px;
+  line-height: 16px;
+  letter-spacing: 1.44px;
+  font-weight: 700;
+  text-transform: uppercase;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.heading-2 {
+  display: flex;
+  flex-direction: column;
+  gap: 0px;
+  align-items: center;
+  justify-content: flex-start;
+  align-self: stretch;
+  flex-shrink: 0;
+  position: relative;
+}
+.what-our-clients-say {
+  color: #fff8f5;
+  text-align: center;
+  font-family: "BeVietnamPro-Regular", sans-serif;
+  font-size: 48px;
+  line-height: 56px;
+  font-weight: 400;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.review-cards-grid {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  align-items: flex-start;
+  justify-content: center;
+  align-self: stretch;
+  flex-shrink: 0;
+  position: relative;
+}
+.card-1 {
+  background: #fff8f5;
+  border-radius: 10px;
+  padding: 32px 28px 32px 28px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-between;
+  align-self: stretch;
+  flex: 1;
+  position: relative;
+  overflow: hidden;
+}
+.div {
+  color: #dec1af;
+  text-align: left;
+  font-family: "BeVietnamPro-Regular", sans-serif;
+  font-size: 72px;
+  line-height: 72px;
+  letter-spacing: -1.44px;
+  font-weight: 400;
+  opacity: 0.6;
+  position: absolute;
+  left: 16px;
+  top: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+.margin3 {
+  padding: 0px 0px 24px 0px;
+  display: flex;
+  flex-direction: column;
+  gap: 0px;
+  align-items: flex-start;
+  justify-content: flex-start;
+  align-self: stretch;
+  flex-shrink: 0;
+  position: relative;
+}
+.container18 {
+  padding: 16px 0px 0px 0px;
+  display: flex;
+  flex-direction: column;
+  gap: 0px;
+  align-items: flex-start;
+  justify-content: flex-start;
+  align-self: stretch;
+  flex-shrink: 0;
+  position: relative;
+}
+.jjc-completely-transformed-our-chapel-the-pews-are-beautifully-crafted-and-built-to-last-for-generations-to-come {
+  color: #1d1b1a;
+  text-align: left;
+  font-family: "LiberationSerif-Italic", sans-serif;
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 400;
+  font-style: italic;
+  position: relative;
+  align-self: stretch;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+.container19 {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  align-items: flex-start;
+  justify-content: flex-start;
+  align-self: stretch;
+  flex-shrink: 0;
+  position: relative;
+}
+.container20 {
+  display: flex;
+  flex-direction: row;
+  gap: 0px;
+  align-items: flex-start;
+  justify-content: flex-start;
+  align-self: stretch;
+  flex-shrink: 0;
+  position: relative;
+}
+.text7 {
+  color: #dec1af;
+  text-align: left;
+  font-family: "WenQuanYiZenHei-Medium", sans-serif;
+  font-size: 14px;
+  line-height: 21px;
+  font-weight: 500;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+.heading-42 {
+  padding: 8px 0px 0px 0px;
+  display: flex;
+  flex-direction: column;
+  gap: 0px;
+  align-items: flex-start;
+  justify-content: flex-start;
+  align-self: stretch;
+  flex-shrink: 0;
+  position: relative;
+}
+.fr-thomas-joseph {
+  color: #1d1b1a;
+  text-align: left;
+  font-family: "LiberationSerif-Bold", sans-serif;
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 700;
+  position: relative;
+  align-self: stretch;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+.st-mary-s-chapel-thrissur {
+  color: #705a4c;
+  text-align: left;
+  font-family: "WenQuanYiZenHei-Medium", sans-serif;
+  font-size: 12px;
+  line-height: 16px;
+  letter-spacing: 1.8px;
+  font-weight: 500;
+  position: relative;
+  align-self: stretch;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+.card-2 {
+  background: #fff8f5;
+  border-radius: 10px;
+  padding: 32px 28px 32px 28px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-between;
+  align-self: stretch;
+  flex: 1;
+  position: relative;
+  overflow: hidden;
+}
+.the-altar-they-built-for-us-is-absolutely-stunning-every-detail-was-crafted-with-such-care-and-precision {
+  color: #1d1b1a;
+  text-align: left;
+  font-family: "LiberationSerif-Italic", sans-serif;
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 400;
+  font-style: italic;
+  position: relative;
+  align-self: stretch;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+.pastor-david-emmanuel {
+  color: #1d1b1a;
+  text-align: left;
+  font-family: "LiberationSerif-Bold", sans-serif;
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 700;
+  position: relative;
+  align-self: stretch;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+.grace-fellowship-church-kochi {
+  color: #705a4c;
+  text-align: left;
+  font-family: "WenQuanYiZenHei-Medium", sans-serif;
+  font-size: 12px;
+  line-height: 16px;
+  letter-spacing: 1.8px;
+  font-weight: 500;
+  position: relative;
+  align-self: stretch;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+.card-3 {
+  background: #fff8f5;
+  border-radius: 10px;
+  padding: 32px 28px 32px 28px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-between;
+  align-self: stretch;
+  flex: 1;
+  position: relative;
+  overflow: hidden;
+}
+.professional-skilled-and-truly-understand-the-sacred-nature-of-the-work-they-do-highly-recommended {
+  color: #1d1b1a;
+  text-align: left;
+  font-family: "LiberationSerif-Italic", sans-serif;
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 400;
+  font-style: italic;
+  position: relative;
+  align-self: stretch;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+.fr-sebastian-mathew {
+  color: #1d1b1a;
+  text-align: left;
+  font-family: "LiberationSerif-Bold", sans-serif;
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 700;
+  position: relative;
+  align-self: stretch;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+.sacred-heart-chapel-palakkad {
+  color: #705a4c;
+  text-align: left;
+  font-family: "WenQuanYiZenHei-Medium", sans-serif;
+  font-size: 12px;
+  line-height: 16px;
+  letter-spacing: 1.8px;
+  font-weight: 500;
+  position: relative;
+  align-self: stretch;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+.main-content-area {
+  padding: 0px 80px 0px 0px;
+  display: flex;
+  flex-direction: row;
+  gap: 0px;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 1280px;
+  max-width: 1440px;
+  position: absolute;
+  left: 50%;
+  translate: -50%;
+  top: 2852px;
+}
+.section {
+  display: flex;
+  flex-direction: row;
+  gap: 0px;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex: 1;
+  position: relative;
+}
+.left-column-image {
+  display: flex;
+  flex-direction: column;
+  gap: 0px;
+  align-items: flex-start;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 576px;
+  height: 520px;
+  position: relative;
+}
+.craftsman-working-on-wood {
+  border-radius: 0px 12px 12px 0px;
+  align-self: stretch;
+  flex: 1;
+  position: relative;
+  overflow: hidden;
+  object-fit: cover;
+}
+.gradient-fade {
+  background: linear-gradient(
+    90deg,
+    rgba(255, 248, 245, 0) 0%,
+    rgba(255, 248, 245, 1) 100%
+  );
+  flex-shrink: 0;
+  width: 60px;
+  position: absolute;
+  right: 0px;
+  bottom: 0px;
+  top: 0px;
+}
+.right-column-content {
+  padding: 0px 80px 0px 60px;
+  display: flex;
+  flex-direction: column;
+  gap: 0px;
+  align-items: flex-start;
+  justify-content: center;
+  align-self: stretch;
+  flex-shrink: 0;
+  width: 704px;
+  position: relative;
+}
+.who-we-are {
+  color: #c9a84c;
+  text-align: left;
+  font-family: "BeVietnamPro-SemiBold", sans-serif;
+  font-size: 12px;
+  line-height: 16px;
+  letter-spacing: 1.2px;
+  font-weight: 600;
+  text-transform: uppercase;
+  position: relative;
+  align-self: stretch;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+.heading-1-margin {
+  padding: 0px 0px 32px 0px;
+  display: flex;
+  flex-direction: column;
+  gap: 0px;
+  align-items: flex-start;
+  justify-content: flex-start;
+  width: 100%;
+  flex-shrink: 0;
+  max-width: 672px;
+  position: relative;
+}
+.heading-1 {
+  display: flex;
+  flex-direction: column;
+  gap: 0px;
+  align-items: flex-start;
+  justify-content: flex-start;
+  width: 100%;
+  flex-shrink: 0;
+  max-width: 672px;
+  position: relative;
+}
+.built-with-faith-crafted-with-hands {
+  color: #26170c;
+  text-align: left;
+  font-family: "BodoniModa-Regular", sans-serif;
+  font-size: 48px;
+  line-height: 56px;
+  font-weight: 400;
+  position: relative;
+  align-self: stretch;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+.margin4 {
+  padding: 0px 0px 48px 0px;
+  display: flex;
+  flex-direction: column;
+  gap: 0px;
+  align-items: flex-start;
+  justify-content: flex-start;
+  width: 100%;
+  flex-shrink: 0;
+  max-width: 576px;
+  position: relative;
+}
+.container21 {
+  display: flex;
+  flex-direction: column;
+  gap: 0px;
+  align-items: flex-start;
+  justify-content: flex-start;
+  width: 100%;
+  flex-shrink: 0;
+  max-width: 576px;
+  position: relative;
+}
+.jjc-has-been-serving-chapels-and-churches-for-over-a-decade-every-piece-we-create-is-built-to-honour-the-sacred-space-it-will-inhabit-from-the-first-sketch-to-the-final-polish {
+  color: #4f453f;
+  text-align: left;
+  font-family: "BeVietnamPro-Regular", sans-serif;
+  font-size: 18px;
+  line-height: 28px;
+  font-weight: 400;
+  position: relative;
+  align-self: stretch;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+.stats-row-margin {
+  padding: 0px 0px 48px 0px;
+  display: flex;
+  flex-direction: column;
+  gap: 0px;
+  align-items: flex-start;
+  justify-content: flex-start;
+  align-self: stretch;
+  flex-shrink: 0;
+  position: relative;
+}
+.stats-row {
+  display: flex;
+  flex-direction: row;
+  gap: 0px;
+  align-items: center;
+  justify-content: flex-start;
+  align-self: stretch;
+  flex-shrink: 0;
+  position: relative;
+}
+.vertical-border {
+  border-style: solid;
+  border-color: #d2c4bc;
+  border-width: 0px 1px 0px 0px;
+  padding: 0px 32px 0px 0px;
+  display: flex;
+  flex-direction: column;
+  gap: 0px;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-shrink: 0;
+  position: relative;
+}
+._25 {
+  color: #c9a84c;
+  text-align: left;
+  font-family: "BodoniModa-Regular", sans-serif;
+  font-size: 32px;
+  line-height: 40px;
+  font-weight: 400;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+.margin5 {
+  padding: 4px 0px 0px 0px;
+  display: flex;
+  flex-direction: column;
+  gap: 0px;
+  align-items: flex-start;
+  justify-content: flex-start;
+  align-self: stretch;
+  flex-shrink: 0;
+  position: relative;
+}
+.years-of-craft {
+  color: #4f453f;
+  text-align: left;
+  font-family: "BeVietnamPro-Regular", sans-serif;
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 400;
+  position: relative;
+  align-self: stretch;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+.margin6 {
+  padding: 0px 0px 0px 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 0px;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-shrink: 0;
+  position: relative;
+}
+.vertical-border2 {
+  border-style: solid;
+  border-color: #d2c4bc;
+  border-width: 0px 1px 0px 0px;
+  padding: 0px 32px 0px 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 0px;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-shrink: 0;
+  position: relative;
+}
+._60 {
+  color: #c9a84c;
+  text-align: left;
+  font-family: "BodoniModa-Regular", sans-serif;
+  font-size: 32px;
+  line-height: 40px;
+  font-weight: 400;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+.projects-completed {
+  color: #4f453f;
+  text-align: left;
+  font-family: "BeVietnamPro-Regular", sans-serif;
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 400;
+  position: relative;
+  width: 88px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+.container22 {
+  padding: 0px 0px 0px 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 0px;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-shrink: 0;
+  position: relative;
+}
+.text8 {
+  color: #c9a84c;
+  text-align: left;
+  font-family: "BodoniModa-Regular", sans-serif;
+  font-size: 32px;
+  line-height: 40px;
+  font-weight: 400;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+.custom-made {
+  color: #4f453f;
+  text-align: left;
+  font-family: "BeVietnamPro-Regular", sans-serif;
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 400;
+  position: relative;
+  align-self: stretch;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+.link-cta {
+  display: flex;
+  flex-direction: row;
+  gap: 8px;
+  align-items: center;
+  justify-content: flex-start;
+  align-self: stretch;
+  flex-shrink: 0;
+  position: relative;
+}
+.text9 {
+  color: #c9a84c;
+  text-align: left;
+  font-family: "BeVietnamPro-SemiBold", sans-serif;
+  font-size: 12px;
+  line-height: 16px;
+  letter-spacing: 1.8px;
+  font-weight: 600;
+  text-transform: uppercase;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+.container23 {
+  display: flex;
+  flex-direction: column;
+  gap: 0px;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-shrink: 0;
+  height: auto;
+  position: relative;
+  overflow: visible;
+}
+.main-content {
+  padding: 80px 80px 120px 80px;
+  display: flex;
+  flex-direction: column;
+  gap: 48px;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-shrink: 0;
+  width: 1280px;
+  max-width: 1440px;
+  position: absolute;
+  left: 50%;
+  translate: -50%;
+  top: 1977px;
+}
+.header-section {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+  justify-content: space-between;
+  align-self: stretch;
+  flex-shrink: 0;
+  position: relative;
+}
+.container24 {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-shrink: 0;
+  position: relative;
+}
+.heading-1-our-work {
+  color: #26170c;
+  text-align: left;
+  font-family: "BodoniModa-Regular", sans-serif;
+  font-size: 72px;
+  line-height: 84px;
+  letter-spacing: -1.44px;
+  font-weight: 400;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+.horizontal-divider {
+  background: #d2c4bc;
+  flex-shrink: 0;
+  width: 96px;
+  height: 1px;
+  position: relative;
+}
+.portfolio-grid {
+  display: flex;
+  flex-direction: row;
+  gap: 32px;
+  align-items: flex-start;
+  justify-content: center;
+  align-self: stretch;
+  flex-shrink: 0;
+  position: relative;
+}
+.article-project-card-1 {
+  background: #eee7e4;
+  border-radius: 8px;
+  border-style: solid;
+  border-color: rgba(210, 196, 188, 0.3);
+  border-width: 1px;
+  padding: 333px 24px 16px 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 0px;
+  align-items: flex-start;
+  justify-content: flex-end;
+  flex: 1;
+  height: 420px;
+  position: relative;
+  overflow: hidden;
+}
+.image {
+  flex-shrink: 0;
+  position: absolute;
+  right: 1px;
+  left: 1px;
+  bottom: 1px;
+  top: 1px;
+  object-fit: cover;
+}
+.gradient {
+  background: linear-gradient(
+    0deg,
+    rgba(38, 23, 12, 0.9) 0%,
+    rgba(38, 23, 12, 0.4) 50%,
+    rgba(38, 23, 12, 0) 100%
+  );
+  flex-shrink: 0;
+  position: absolute;
+  right: 1px;
+  left: 1px;
+  bottom: 1px;
+  top: 1px;
+}
+.badge {
+  padding: 1px 0px 0px 0px;
+  display: flex;
+  flex-direction: column;
+  gap: 0px;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-shrink: 0;
+  position: absolute;
+  right: 25px;
+  top: 25px;
+}
+.overlay-border-overlay-blur {
+  background: rgba(38, 23, 12, 0.2);
+  border-radius: 9999px;
+  border-style: solid;
+  border-color: #dec1af;
+  border-width: 1px;
+  padding: 3.5px 12px 3.5px 12px;
+  display: flex;
+  flex-direction: row;
+  gap: 0px;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-shrink: 0;
+  position: relative;
+  backdrop-filter: blur(6px);
+}
+.text10 {
+  color: #dec1af;
+  text-align: left;
+  font-family: "BeVietnamPro-SemiBold", sans-serif;
+  font-size: 12px;
+  line-height: 16px;
+  letter-spacing: 1.8px;
+  font-weight: 600;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+.horizontal-divider2 {
+  background: #dec1af;
+  flex-shrink: 0;
+  width: 32px;
+  height: 1px;
+  position: relative;
+}
+.heading-22 {
+  padding: 12px 0px 0px 0px;
+  display: flex;
+  flex-direction: column;
+  gap: 0px;
+  align-items: flex-start;
+  justify-content: flex-start;
+  align-self: stretch;
+  flex-shrink: 0;
+  position: relative;
+}
+.st-jude-s-basilica {
+  color: #ffffff;
+  text-align: left;
+  font-family: "BodoniModa-Regular", sans-serif;
+  font-size: 24px;
+  line-height: 32px;
+  font-weight: 400;
+  position: relative;
+  align-self: stretch;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+.oxford-uk {
+  color: #dec1af;
+  text-align: left;
+  font-family: "BeVietnamPro-SemiBold", sans-serif;
+  font-size: 12px;
+  line-height: 16px;
+  letter-spacing: 1.8px;
+  font-weight: 600;
+  position: relative;
+  align-self: stretch;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+.article-project-card-2 {
+  background: #eee7e4;
+  border-radius: 8px;
+  border-style: solid;
+  border-color: rgba(210, 196, 188, 0.3);
+  border-width: 1px;
+  padding: 333px 24px 16px 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 0px;
+  align-items: flex-start;
+  justify-content: flex-end;
+  flex: 1;
+  height: 420px;
+  position: relative;
+  overflow: hidden;
+}
+.badge2 {
+  padding: 1px 0px 0px 0px;
+  display: flex;
+  flex-direction: column;
+  gap: 0px;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-shrink: 0;
+  position: absolute;
+  right: 24.99px;
+  top: 25px;
+}
+.cathedral-of-light {
+  color: #ffffff;
+  text-align: left;
+  font-family: "BodoniModa-Regular", sans-serif;
+  font-size: 24px;
+  line-height: 32px;
+  font-weight: 400;
+  position: relative;
+  align-self: stretch;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+.vienna-austria {
+  color: #dec1af;
+  text-align: left;
+  font-family: "BeVietnamPro-SemiBold", sans-serif;
+  font-size: 12px;
+  line-height: 16px;
+  letter-spacing: 1.8px;
+  font-weight: 600;
+  position: relative;
+  align-self: stretch;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+.article-project-card-3 {
+  background: #eee7e4;
+  border-radius: 8px;
+  border-style: solid;
+  border-color: rgba(210, 196, 188, 0.3);
+  border-width: 1px;
+  padding: 333px 24px 16px 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 0px;
+  align-items: flex-start;
+  justify-content: flex-end;
+  flex: 1;
+  height: 420px;
+  position: relative;
+  overflow: hidden;
+}
+.abbey-of-st-michel {
+  color: #ffffff;
+  text-align: left;
+  font-family: "BodoniModa-Regular", sans-serif;
+  font-size: 24px;
+  line-height: 32px;
+  font-weight: 400;
+  position: relative;
+  align-self: stretch;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+.normandy-france {
+  color: #dec1af;
+  text-align: left;
+  font-family: "BeVietnamPro-SemiBold", sans-serif;
+  font-size: 12px;
+  line-height: 16px;
+  letter-spacing: 1.8px;
+  font-weight: 600;
+  position: relative;
+  align-self: stretch;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+.footer-cta {
+  padding: 16px 0px 0px 0px;
+  display: flex;
+  flex-direction: row;
+  gap: 0px;
+  align-items: flex-start;
+  justify-content: center;
+  align-self: stretch;
+  flex-shrink: 0;
+  position: relative;
+}
+.button {
+  border-radius: 4px;
+  border-style: solid;
+  border-color: #81756e;
+  border-width: 1px;
+  padding: 16px 32px 16px 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 0px;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  position: relative;
+  overflow: hidden;
+}
+.container25 {
+  display: flex;
+  flex-direction: row;
+  gap: 0px;
+  align-items: flex-start;
+  justify-content: center;
+  flex-shrink: 0;
+  position: relative;
+}
+.view-all-our-projects {
+  color: #26170c;
+  text-align: center;
+  font-family: "BeVietnamPro-SemiBold", sans-serif;
+  font-size: 12px;
+  line-height: 16px;
+  letter-spacing: 1.8px;
+  font-weight: 600;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.main-content-canvas {
+  padding: 120px 80px 80px 80px;
+  display: flex;
+  flex-direction: column;
+  gap: 80px;
+  align-items: center;
+  justify-content: flex-start;
+  flex-shrink: 0;
+  width: 1280px;
+  max-width: 1440px;
+  position: absolute;
+  left: 50%;
+  translate: -50%;
+  top: 881px;
+}
+.section-header {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  align-items: center;
+  justify-content: flex-start;
+  flex-shrink: 0;
+  max-width: 672px;
+  position: relative;
+}
+.text11 {
+  color: #705a4c;
+  text-align: center;
+  font-family: "BeVietnamPro-SemiBold", sans-serif;
+  font-size: 12px;
+  line-height: 16px;
+  letter-spacing: 1.8px;
+  font-weight: 600;
+  text-transform: uppercase;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.text12 {
+  color: #26170c;
+  text-align: center;
+  font-family: "BodoniModa-Regular", sans-serif;
+  font-size: 72px;
+  line-height: 84px;
+  letter-spacing: -1.44px;
+  font-weight: 400;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.container26 {
+  padding: 8px 0px 32px 0px;
+  display: flex;
+  flex-direction: column;
+  gap: 0px;
+  align-items: center;
+  justify-content: flex-start;
+  align-self: stretch;
+  flex-shrink: 0;
+  position: relative;
+}
+.every-piece-handcrafted-for-sacred-spaces-we-blend-ancient-techniques-with-modern-precision-to-create-enduring-testaments-of-faith {
+  color: #4f453f;
+  text-align: center;
+  font-family: "BeVietnamPro-Regular", sans-serif;
+  font-size: 18px;
+  line-height: 28px;
+  font-weight: 400;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.service-grid {
+  padding: 16px 0px 0px 0px;
+  display: flex;
+  flex-direction: row;
+  gap: 32px;
+  align-items: flex-start;
+  justify-content: center;
+  align-self: stretch;
+  flex-shrink: 0;
+  position: relative;
+}
+.article-card-1 {
+  background: #ffffff;
+  border-radius: 12px;
+  border-style: solid;
+  border-color: #d2c4bc;
+  border-width: 1px;
+  padding: 32px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  align-self: stretch;
+  flex: 1;
+  position: relative;
+}
+.margin7 {
+  padding: 0px 0px 32px 0px;
+  display: flex;
+  flex-direction: column;
+  gap: 0px;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-shrink: 0;
+  width: 56px;
+  height: 88px;
+  position: relative;
+}
+.background {
+  background: #f3ecea;
+  border-radius: 9999px;
+  display: flex;
+  flex-direction: row;
+  gap: 0px;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 56px;
+  height: 56px;
+  position: relative;
+}
+.container27 {
+  display: flex;
+  flex-direction: column;
+  gap: 0px;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-shrink: 0;
+  height: auto;
+  position: relative;
+  overflow: visible;
+}
+.heading-3-margin {
+  margin: -0.5px 0 0 0;
+  padding: 0px 0px 16px 0px;
+  display: flex;
+  flex-direction: column;
+  gap: 0px;
+  align-items: flex-start;
+  justify-content: flex-start;
+  align-self: stretch;
+  flex-shrink: 0;
+  position: relative;
+}
+.heading-3 {
+  display: flex;
+  flex-direction: column;
+  gap: 0px;
+  align-items: flex-start;
+  justify-content: flex-start;
+  align-self: stretch;
+  flex-shrink: 0;
+  position: relative;
+}
+.chapel-pews2 {
+  color: #26170c;
+  text-align: left;
+  font-family: "BodoniModa-Medium", sans-serif;
+  font-size: 24px;
+  line-height: 32px;
+  font-weight: 500;
+  position: relative;
+  align-self: stretch;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+.margin8 {
+  margin: -0.5px 0 0 0;
+  padding: 0px 0px 32px 0px;
+  display: flex;
+  flex-direction: column;
+  gap: 0px;
+  align-items: flex-start;
+  justify-content: flex-start;
+  align-self: stretch;
+  flex-shrink: 0;
+  position: relative;
+}
+.container28 {
+  padding: 0px 0px 32px 0px;
+  display: flex;
+  flex-direction: column;
+  gap: 0px;
+  align-items: flex-start;
+  justify-content: flex-start;
+  align-self: stretch;
+  flex-shrink: 0;
+  position: relative;
+}
+.custom-wooden-pew-seating-designed-for-comfort-and-reverence-crafted-from-solid-walnut-with-traditional-joinery {
+  color: #4f453f;
+  text-align: left;
+  font-family: "BeVietnamPro-Regular", sans-serif;
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 400;
+  position: relative;
+  align-self: stretch;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+.link2 {
+  margin: -0.5px 0 0 0;
+  display: flex;
+  flex-direction: row;
+  gap: 8px;
+  align-items: center;
+  justify-content: flex-start;
+  align-self: stretch;
+  flex-shrink: 0;
+  position: relative;
+}
+.text13 {
+  color: #705a4c;
+  text-align: left;
+  font-family: "BeVietnamPro-SemiBold", sans-serif;
+  font-size: 12px;
+  line-height: 16px;
+  letter-spacing: 1.8px;
+  font-weight: 600;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+.container29 {
+  display: flex;
+  flex-direction: column;
+  gap: 0px;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-shrink: 0;
+  height: auto;
+  position: relative;
+  overflow: visible;
+}
+.article-card-2 {
+  background: #ffffff;
+  border-radius: 12px;
+  border-style: solid;
+  border-color: #d2c4bc;
+  border-width: 1px;
+  padding: 32px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  align-self: stretch;
+  flex: 1;
+  position: relative;
+}
+.container30 {
+  display: flex;
+  flex-direction: column;
+  gap: 0px;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-shrink: 0;
+  height: auto;
+  position: relative;
+  overflow: visible;
+}
+.altar-furniture2 {
+  color: #26170c;
+  text-align: left;
+  font-family: "BodoniModa-Medium", sans-serif;
+  font-size: 24px;
+  line-height: 32px;
+  font-weight: 500;
+  position: relative;
+  align-self: stretch;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+.container31 {
+  padding: 0px 0px 56px 0px;
+  display: flex;
+  flex-direction: column;
+  gap: 0px;
+  align-items: flex-start;
+  justify-content: flex-start;
+  align-self: stretch;
+  flex-shrink: 0;
+  position: relative;
+}
+.handcrafted-altars-and-pulpits-that-honour-the-sacred-space-featuring-intricate-brass-detailing-and-stone-inlays {
+  color: #4f453f;
+  text-align: left;
+  font-family: "BeVietnamPro-Regular", sans-serif;
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 400;
+  position: relative;
+  align-self: stretch;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+.container32 {
+  display: flex;
+  flex-direction: column;
+  gap: 0px;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-shrink: 0;
+  height: auto;
+  position: relative;
+  overflow: visible;
+}
+.article-card-3 {
+  background: #ffffff;
+  border-radius: 12px;
+  border-style: solid;
+  border-color: #d2c4bc;
+  border-width: 1px;
+  padding: 32px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  align-self: stretch;
+  flex: 1;
+  position: relative;
+}
+.container33 {
+  display: flex;
+  flex-direction: column;
+  gap: 0px;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-shrink: 0;
+  height: auto;
+  position: relative;
+  overflow: visible;
+}
+.custom-woodwork2 {
+  color: #26170c;
+  text-align: left;
+  font-family: "BodoniModa-Medium", sans-serif;
+  font-size: 24px;
+  line-height: 32px;
+  font-weight: 500;
+  position: relative;
+  align-self: stretch;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+.bespoke-furniture-pieces-built-to-your-exact-specifications-from-confessionals-to-intricately-carved-baptismal-fonts {
+  color: #4f453f;
+  text-align: left;
+  font-family: "BeVietnamPro-Regular", sans-serif;
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 400;
+  position: relative;
+  align-self: stretch;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+.container34 {
+  display: flex;
+  flex-direction: column;
+  gap: 0px;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-shrink: 0;
+  height: auto;
+  position: relative;
+  overflow: visible;
+}
+.article-card-4 {
+  background: #ffffff;
+  border-radius: 12px;
+  border-style: solid;
+  border-color: #d2c4bc;
+  border-width: 1px;
+  padding: 32px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  align-self: stretch;
+  flex: 1;
+  position: relative;
+}
+.container35 {
+  display: flex;
+  flex-direction: column;
+  gap: 0px;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-shrink: 0;
+  height: auto;
+  position: relative;
+  overflow: visible;
+}
+.chapel-interiors2 {
+  color: #26170c;
+  text-align: left;
+  font-family: "BodoniModa-Medium", sans-serif;
+  font-size: 24px;
+  line-height: 32px;
+  font-weight: 500;
+  position: relative;
+  align-self: stretch;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+.full-chapel-interior-design-guidance-from-concept-to-completion-ensuring-architectural-harmony-and-spiritual-resonance {
+  color: #4f453f;
+  text-align: left;
+  font-family: "BeVietnamPro-Regular", sans-serif;
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 400;
+  position: relative;
+  align-self: stretch;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+.link3 {
+  margin: -0.5px 0 0 0;
+  display: flex;
+  flex-direction: row;
+  gap: 8px;
+  align-items: center;
+  justify-content: flex-start;
+  flex-shrink: 0;
+  position: absolute;
+  right: 33px;
+  left: 33px;
+  top: 375px;
+}
+.container36 {
+  display: flex;
+  flex-direction: column;
+  gap: 0px;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-shrink: 0;
+  height: auto;
+  position: relative;
+  overflow: visible;
+}
+.section-footer-action {
+  display: flex;
+  flex-direction: column;
+  gap: 0px;
+  align-items: center;
+  justify-content: flex-start;
+  align-self: stretch;
+  flex-shrink: 0;
+  position: relative;
+}
+.button2 {
+  border-style: solid;
+  border-color: #705a4c;
+  border-width: 1px;
+  padding: 16px 32px 16px 32px;
+  display: flex;
+  flex-direction: row;
+  gap: 0px;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  position: relative;
+}
+.text14 {
+  color: #705a4c;
+  text-align: center;
+  font-family: "BeVietnamPro-SemiBold", sans-serif;
+  font-size: 12px;
+  line-height: 16px;
+  letter-spacing: 1.8px;
+  font-weight: 600;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.main-hero-section {
+  display: flex;
+  flex-direction: row;
+  gap: 0px;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-shrink: 0;
+  width: 1280px;
+  height: 800px;
+  max-width: 1440px;
+  min-height: 800px;
+  position: absolute;
+  left: 50%;
+  translate: -50%;
+  top: 81px;
+}
+.left-panel-55 {
+  background: #fff8f5;
+  padding: 60px 80px 100px 80px;
+  display: flex;
+  flex-direction: column;
+  gap: 0px;
+  align-items: flex-start;
+  justify-content: center;
+  align-self: stretch;
+  flex-shrink: 0;
+  width: 704px;
+  position: relative;
+}
+.container37 {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-shrink: 0;
+  width: 544px;
+  max-width: 576px;
+  position: relative;
+}
+.heading-1-headline {
+  display: flex;
+  flex-direction: column;
+  gap: 0px;
+  align-items: flex-start;
+  justify-content: flex-start;
+  align-self: stretch;
+  flex-shrink: 0;
+  position: relative;
+}
+.crafting-sacred-spaces-one-piece-at-a-time {
+  color: #26170c;
+  text-align: left;
+  font-family: "-", sans-serif;
+  font-size: 72px;
+  line-height: 90px;
+  letter-spacing: -1.44px;
+  font-weight: 400;
+  position: relative;
+  width: 611px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+.crafting-sacred-spaces-one-piece-at-a-time-span {
+  font-family: "BodoniModa-Regular", sans-serif;
+}
+.crafting-sacred-spaces-one-piece-at-a-time-span2 {
+  font-family: "BodoniModa-Italic", sans-serif;
+  font-style: italic;
+}
+.subtext2 {
+  display: flex;
+  flex-direction: column;
+  gap: 0px;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-shrink: 0;
+  max-width: 512px;
+  position: relative;
+}
+.bespoke-chapel-interiors-and-furniture-crafted-with-precision-purpose-and-timeless-craftsmanship {
+  color: #4f453f;
+  text-align: left;
+  font-family: "BeVietnamPro-Regular", sans-serif;
+  font-size: 18px;
+  line-height: 29.25px;
+  font-weight: 400;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+.ct-as {
+  padding: 16px 0px 32px 0px;
+  display: flex;
+  flex-direction: row;
+  gap: 24px;
+  align-items: center;
+  justify-content: flex-start;
+  align-self: stretch;
+  flex-shrink: 0;
+  position: relative;
+}
+.link4 {
+  background: #26170c;
+  border-radius: 16px;
+  padding: 16px 32px 16px 32px;
+  display: flex;
+  flex-direction: row;
+  gap: 0px;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  position: relative;
+}
+.text15 {
+  color: #fff8f5;
+  text-align: center;
+  font-family: "BeVietnamPro-SemiBold", sans-serif;
+  font-size: 12px;
+  line-height: 16px;
+  letter-spacing: 1.2px;
+  font-weight: 600;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.link5 {
+  border-radius: 16px;
+  border-style: solid;
+  border-color: #26170c;
+  border-width: 1px;
+  padding: 16px 32px 16px 32px;
+  display: flex;
+  flex-direction: row;
+  gap: 0px;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  position: relative;
+}
+.start-enquiry {
+  color: #26170c;
+  text-align: center;
+  font-family: "BeVietnamPro-SemiBold", sans-serif;
+  font-size: 12px;
+  line-height: 16px;
+  letter-spacing: 1.2px;
+  font-weight: 600;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.trust-badges {
+  border-style: solid;
+  border-color: #d2c4bc;
+  border-width: 1px 0px 0px 0px;
+  padding: 32px 0px 0px 0px;
+  display: flex;
+  flex-direction: row;
+  gap: 16px;
+  align-items: center;
+  justify-content: flex-start;
+  align-self: stretch;
+  flex-shrink: 0;
+  position: relative;
+}
+._25-years-experience {
+  color: #4f453f;
+  text-align: left;
+  font-family: "BeVietnamPro-Regular", sans-serif;
+  font-size: 10px;
+  line-height: 15px;
+  letter-spacing: 0.5px;
+  font-weight: 400;
+  text-transform: uppercase;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+.text16 {
+  color: #705a4c;
+  text-align: left;
+  font-family: "FreeSans-Regular", sans-serif;
+  font-size: 8px;
+  line-height: 12px;
+  font-weight: 400;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+._60-chapels-served {
+  color: #4f453f;
+  text-align: left;
+  font-family: "BeVietnamPro-Regular", sans-serif;
+  font-size: 10px;
+  line-height: 15px;
+  letter-spacing: 0.5px;
+  font-weight: 400;
+  text-transform: uppercase;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+.text17 {
+  color: #4f453f;
+  text-align: left;
+  font-family: "BeVietnamPro-Regular", sans-serif;
+  font-size: 10px;
+  line-height: 15px;
+  letter-spacing: 0.5px;
+  font-weight: 400;
+  text-transform: uppercase;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+.jjc-chapel-576-x-800-1 {
+  flex-shrink: 0;
+  width: 605px;
+  height: 800px;
+  position: absolute;
+  left: 675px;
+  top: 0px;
+  object-fit: cover;
+}
+.top-navigation-shared-component {
+  background: rgba(255, 248, 245, 0.9);
+  border-style: solid;
+  border-color: #d2c4bc;
+  border-width: 0px 0px 1px 0px;
+  display: flex;
+  flex-direction: column;
+  gap: 0px;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-shrink: 0;
+  width: 1280px;
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  backdrop-filter: blur(12px);
+}
+.container38 {
+  padding: 0px 80px 0px 80px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  flex-shrink: 0;
+  height: 80px;
+  max-width: 1536px;
+  position: relative;
+}
+.link6 {
+  display: flex;
+  flex-direction: column;
+  gap: 0px;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-shrink: 0;
+  position: relative;
+}
+.text18 {
+  color: #26170c;
+  text-align: left;
+  font-family: "BodoniModa-Medium", sans-serif;
+  font-size: 24px;
+  line-height: 32px;
+  letter-spacing: -1.2px;
+  font-weight: 500;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+.desktop-navigation {
+  display: flex;
+  flex-direction: row;
+  gap: 0px;
+  align-items: center;
+  justify-content: flex-start;
+  flex-shrink: 0;
+  position: relative;
+}
+.link7 {
+  border-style: solid;
+  border-color: #26170c;
+  border-width: 0px 0px 1px 0px;
+  opacity: 0.8;
+  padding: 0px 0px 4px 0px;
+  display: flex;
+  flex-direction: column;
+  gap: 0px;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-shrink: 0;
+  position: relative;
+}
+.text19 {
+  color: #26170c;
+  text-align: left;
+  font-family: "BeVietnamPro-SemiBold", sans-serif;
+  font-size: 12px;
+  line-height: 16px;
+  letter-spacing: 1.8px;
+  font-weight: 600;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+.link-margin {
+  padding: 0px 0px 0px 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 0px;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-shrink: 0;
+  position: relative;
+}
+.link-services {
+  color: #4f453f;
+  text-align: left;
+  font-family: "BeVietnamPro-SemiBold", sans-serif;
+  font-size: 12px;
+  line-height: 16px;
+  letter-spacing: 1.8px;
+  font-weight: 600;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+.link-portfolio {
+  color: #4f453f;
+  text-align: left;
+  font-family: "BeVietnamPro-SemiBold", sans-serif;
+  font-size: 12px;
+  line-height: 16px;
+  letter-spacing: 1.8px;
+  font-weight: 600;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+.link-about {
+  color: #4f453f;
+  text-align: left;
+  font-family: "BeVietnamPro-SemiBold", sans-serif;
+  font-size: 12px;
+  line-height: 16px;
+  letter-spacing: 1.8px;
+  font-weight: 600;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+.gallery {
+  color: #4f453f;
+  text-align: left;
+  font-family: "BeVietnamPro-SemiBold", sans-serif;
+  font-size: 12px;
+  line-height: 16px;
+  letter-spacing: 1.8px;
+  font-weight: 600;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+.link-faq {
+  color: #4f453f;
+  text-align: left;
+  font-family: "BeVietnamPro-SemiBold", sans-serif;
+  font-size: 12px;
+  line-height: 16px;
+  letter-spacing: 1.8px;
+  font-weight: 600;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+.link-action {
+  background: #c9a84c;
+  border-radius: 16px;
+  padding: 12px 24px 12px 24px;
+  display: flex;
+  flex-direction: row;
+  gap: 0px;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  position: relative;
+}
+.enquire {
+  color: #ffffff;
+  text-align: center;
+  font-family: "BeVietnamPro-SemiBold", sans-serif;
+  font-size: 12px;
+  line-height: 16px;
+  letter-spacing: 1.2px;
+  font-weight: 600;
+  text-transform: uppercase;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

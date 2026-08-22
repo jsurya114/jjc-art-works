@@ -1,0 +1,46 @@
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+
+// Layouts
+import PublicLayout from './layouts/PublicLayout';
+import AdminLayout from './layouts/AdminLayout';
+
+// Public Pages
+import Home from './pages/public/Home';
+import About from './pages/public/About';
+import Portfolio from './pages/public/Portfolio';
+import Services from './pages/public/Services';
+import Gallery from './pages/public/Gallery';
+import Testimonials from './pages/public/Testimonials';
+import Contact from './pages/public/Contact';
+
+// Admin Pages
+import Dashboard from './pages/admin/Dashboard';
+
+function App() {
+  return (
+    <BrowserRouter>
+      <Routes>
+        {/* Public Routes with Nav and Footer */}
+        <Route element={<PublicLayout />}>
+          <Route path="/" element={<Home />} />
+          <Route path="about" element={<About />} />
+          <Route path="portfolio" element={<Portfolio />} />
+          <Route path="services" element={<Services />} />
+          <Route path="gallery" element={<Gallery />} />
+          <Route path="testimonials" element={<Testimonials />} />
+          <Route path="contact" element={<Contact />} />
+        </Route>
+
+        {/* Admin Routes */}
+        <Route path="/admin" element={<AdminLayout />}>
+          <Route index element={<Dashboard />} />
+          <Route path="portfolio" element={<div className="p-8">Manage Portfolio Mock</div>} />
+          <Route path="gallery" element={<div className="p-8">Manage Gallery Mock</div>} />
+          <Route path="settings" element={<div className="p-8">Admin Settings Mock</div>} />
+        </Route>
+      </Routes>
+    </BrowserRouter>
+  );
+}
+
+export default App;

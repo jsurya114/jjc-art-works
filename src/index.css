@@ -1,0 +1,6 @@
+@import "tailwindcss";
+
+/* 
+  Removed Vite default styling that was constraining #root width 
+  and adding dark mode backgrounds 
+*/
