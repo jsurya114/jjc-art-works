@@ -68,7 +68,7 @@ export default function Home() {
   const [menuOpen, setMenuOpen] = useState(false);
 
   return (
-    <div className="font-sans bg-[#fff8f5] text-[#26170c]">
+    <div className="font-sans bg-[#fff8f5] text-[#26170c] overflow-x-hidden">
 
 
       {/* ── HERO ── */}
@@ -83,12 +83,12 @@ export default function Home() {
             Bespoke chapel interiors and furniture, crafted with precision, purpose, and timeless craftsmanship.
           </p>
           <div className="flex flex-wrap items-center gap-4 mb-12">
-            <button className="bg-[#26170c] text-[#fff8f5] text-[13px] font-semibold px-8 py-4 rounded-full tracking-wide hover:bg-[#3d2b1f] transition-colors" style={{ fontFamily: "'Be Vietnam Pro', sans-serif" }}>
+            <Link to="/portfolio" className="inline-block bg-[#26170c] text-[#fff8f5] text-[13px] font-semibold px-8 py-4 rounded-full tracking-wide hover:bg-[#3d2b1f] transition-colors" style={{ fontFamily: "'Be Vietnam Pro', sans-serif" }}>
               View Our Work
-            </button>
-            <button className="border border-[#26170c] text-[#26170c] text-[13px] font-semibold px-8 py-4 rounded-full tracking-wide hover:bg-[#26170c]/5 transition-colors" style={{ fontFamily: "'Be Vietnam Pro', sans-serif" }}>
+            </Link>
+            <Link to="/contact" className="inline-block border border-[#26170c] text-[#26170c] text-[13px] font-semibold px-8 py-4 rounded-full tracking-wide hover:bg-[#26170c]/5 transition-colors" style={{ fontFamily: "'Be Vietnam Pro', sans-serif" }}>
               Start Enquiry
-            </button>
+            </Link>
           </div>
           <div className="border-t border-[#d2c4bc] pt-8 flex flex-wrap items-center gap-5 text-[11px] font-medium text-[#4f453f] uppercase tracking-widest" style={{ fontFamily: "'Be Vietnam Pro', sans-serif" }}>
             <span>25+ Years Experience</span>
@@ -146,7 +146,7 @@ export default function Home() {
           </div>
 
           <div className="text-center">
-            <button className="border border-[#705a4c] text-[#26170c] text-[12px] font-semibold px-10 py-4 tracking-[2px] uppercase hover:bg-[#705a4c] hover:text-white transition-colors" style={{ fontFamily: "'Be Vietnam Pro', sans-serif" }}>
+            <button className="border border-[#705a4c] text-[#26170c] text-[12px] font-semibold px-10 py-4 rounded-full tracking-[2px] uppercase hover:bg-[#705a4c] hover:text-white transition-colors" style={{ fontFamily: "'Be Vietnam Pro', sans-serif" }}>
               View All Services
             </button>
           </div>
@@ -195,9 +195,9 @@ export default function Home() {
           </div>
 
           <div className="text-center">
-            <button className="border border-[#705a4c] text-[#26170c] text-[12px] font-semibold px-10 py-4 tracking-[2px] uppercase hover:bg-[#705a4c] hover:text-white transition-colors" style={{ fontFamily: "'Be Vietnam Pro', sans-serif" }}>
+            <Link to="/portfolio" className="inline-block border border-[#705a4c] text-[#26170c] text-[12px] font-semibold px-10 py-4 rounded-full tracking-[2px] uppercase hover:bg-[#705a4c] hover:text-white transition-colors" style={{ fontFamily: "'Be Vietnam Pro', sans-serif" }}>
               View All Our Projects
-            </button>
+            </Link>
           </div>
         </div>
       </section>
@@ -294,10 +294,10 @@ export default function Home() {
           <p className="text-[#4a3728] text-[17px] mb-10" style={{ fontFamily: "'Be Vietnam Pro', sans-serif" }}>
             Tell us about your space and we will create something truly beautiful.
           </p>
-          <button className="border-2 border-[#1c1610] text-[#1c1610] text-[15px] font-bold px-10 py-4 rounded-2xl flex items-center gap-3 mx-auto hover:bg-[#1c1610] hover:text-[#c9a84c] transition-all duration-200" style={{ fontFamily: "'Be Vietnam Pro', sans-serif" }}>
+          <a href="https://wa.me/919188723168" target="_blank" rel="noopener noreferrer" className="border-2 border-[#1c1610] text-[#1c1610] text-[15px] font-bold px-10 py-4 rounded-full flex items-center gap-3 mx-auto w-fit hover:bg-[#1c1610] hover:text-[#c9a84c] transition-all duration-200" style={{ fontFamily: "'Be Vietnam Pro', sans-serif" }}>
             <svg viewBox="0 0 24 24" className="w-5 h-5" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.122.554 4.118 1.524 5.855L.057 23.5l5.757-1.449A11.943 11.943 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.907 0-3.693-.528-5.218-1.444l-.374-.222-3.418.861.878-3.307-.243-.386A10 10 0 0 1 2 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/></svg>
             WhatsApp Us Now
-          </button>
+          </a>
         </div>
       </section>
 

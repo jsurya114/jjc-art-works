@@ -271,11 +271,11 @@ export default function Testimonials() {
             </p>
             
             <div className="flex flex-col sm:flex-row gap-4">
-              <button className="bg-[#cba85a] text-white text-[12px] font-bold px-8 py-4 rounded-md tracking-widest uppercase hover:bg-[#b59540] transition-colors flex items-center justify-center gap-2 w-full sm:w-auto" style={{ fontFamily: "'Be Vietnam Pro', sans-serif" }}>
+              <button className="bg-[#cba85a] text-white text-[12px] font-bold px-8 py-4 rounded-full tracking-widest uppercase hover:bg-[#b59540] transition-colors flex items-center justify-center gap-2 w-full sm:w-auto" style={{ fontFamily: "'Be Vietnam Pro', sans-serif" }}>
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M21.35,11.1H12.18V13.83H18.69C18.36,17.64 15.19,19.27 12.19,19.27C8.36,19.27 5,16.25 5,12C5,7.9 8.2,4.73 12.2,4.73C15.29,4.73 17.1,6.7 17.1,6.7L19,4.72C19,4.72 16.56,2 12.1,2C6.42,2 2.03,6.8 2.03,12C2.03,17.05 6.16,22 12.25,22C17.6,22 21.5,18.33 21.5,12.91C21.5,11.76 21.35,11.1 21.35,11.1V11.1Z" /></svg>
                 LEAVE A GOOGLE REVIEW
               </button>
-              <button className="border border-[#705a4c] text-[#d2c4bc] text-[12px] font-bold px-8 py-4 rounded-md tracking-widest uppercase hover:bg-white/5 transition-colors flex items-center justify-center gap-2 w-full sm:w-auto" style={{ fontFamily: "'Be Vietnam Pro', sans-serif" }}>
+              <button className="border border-[#705a4c] text-[#d2c4bc] text-[12px] font-bold px-8 py-4 rounded-full tracking-widest uppercase hover:bg-white/5 transition-colors flex items-center justify-center gap-2 w-full sm:w-auto" style={{ fontFamily: "'Be Vietnam Pro', sans-serif" }}>
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.04c-5.5 0-10 4.49-10 10.02 0 5 3.66 9.15 8.44 9.9v-7H7.9v-2.9h2.54V9.85c0-2.51 1.49-3.89 3.78-3.89 1.09 0 2.23.19 2.23.19v2.47h-1.26c-1.24 0-1.63.77-1.63 1.56v1.88h2.78l-.45 2.9h-2.33v7a10 10 0 0 0 8.44-9.9c0-5.53-4.5-10.02-10-10.02Z"/></svg>
                 SHARE ON FACEBOOK
               </button>
@@ -313,7 +313,7 @@ export default function Testimonials() {
                   <textarea placeholder="Tell us about your experience..." rows="4" className="w-full bg-[#46382a] border border-[#594435] rounded-md py-4 px-4 text-[15px] text-white placeholder:text-[#8a7668] focus:outline-none focus:border-[#cba85a] transition-colors resize-none"></textarea>
                 </div>
 
-                <button type="button" className="w-full bg-[#cba85a] text-[#1a110a] text-[13px] font-bold tracking-widest py-4 mt-2 rounded-md hover:bg-[#b59540] transition-colors uppercase">
+                <button type="button" className="w-full bg-[#cba85a] text-[#1a110a] text-[13px] font-bold tracking-widest py-4 mt-2 rounded-full hover:bg-[#b59540] transition-colors uppercase">
                   SUBMIT REVIEW →
                 </button>
               </form>

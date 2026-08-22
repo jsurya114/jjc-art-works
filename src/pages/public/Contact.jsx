@@ -103,7 +103,7 @@ export default function Contact() {
                 <textarea placeholder="Please provide details about your vision..." rows="3" className="w-full border-b border-[#d2c4bc] py-2 bg-transparent focus:outline-none focus:border-[#cba85a] text-[15px] transition-colors placeholder:text-[#a48e83] resize-none"></textarea>
               </div>
 
-              <button type="button" className="w-full bg-[#cba85a] text-white text-[12px] font-bold tracking-widest py-5 rounded-md hover:bg-[#b59540] transition-colors flex items-center justify-center gap-2 uppercase mt-4">
+              <button type="button" className="w-full bg-[#cba85a] text-white text-[12px] font-bold tracking-widest py-5 rounded-full hover:bg-[#b59540] transition-colors flex items-center justify-center gap-2 uppercase mt-4">
                 SUBMIT COMMISSION ENQUIRY →
               </button>
             </form>
