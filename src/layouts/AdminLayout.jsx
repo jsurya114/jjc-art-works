@@ -1,8 +1,16 @@
-import { Link, Outlet, useLocation } from 'react-router-dom';
+import { Link, Outlet, useLocation, useNavigate } from 'react-router-dom';
 import { LayoutDashboard, Briefcase, Image, Settings, LogOut, ArrowLeft } from 'lucide-react';
+import { useAuth } from '../context/AuthContext';
 
 const Sidebar = () => {
   const location = useLocation();
+  const navigate = useNavigate();
+  const { logout } = useAuth();
+  
+  const handleLogout = () => {
+    logout();
+    navigate('/admin/login');
+  };
   
   const navItems = [
     { name: 'Dashboard', path: '/admin', icon: LayoutDashboard },
@@ -39,10 +47,10 @@ const Sidebar = () => {
           <ArrowLeft size={20} />
           <span>Back to Site</span>
         </Link>
-        <Link to="/admin/login" className="w-full flex items-center space-x-3 px-4 py-3 text-rose-400 hover:bg-rose-500/10 rounded-lg transition-colors">
+        <button onClick={handleLogout} className="w-full flex items-center space-x-3 px-4 py-3 text-rose-400 hover:bg-rose-500/10 rounded-lg transition-colors">
           <LogOut size={20} />
           <span>Logout</span>
-        </Link>
+        </button>
       </div>
     </aside>
   );

@@ -1,15 +1,40 @@
 import React, { useState } from 'react';
-import { useNavigate, Link } from 'react-router-dom';
+import { useNavigate, Navigate, Link } from 'react-router-dom';
+import { useAuth } from '../../context/AuthContext';
 
 export default function Login() {
   const navigate = useNavigate();
+  const { login, isAuthenticated } = useAuth();
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const [error, setError] = useState('');
 
-  const handleLogin = (e) => {
+  if (isAuthenticated) {
+    return <Navigate to="/admin" replace />;
+  }
+
+  const handleLogin = async (e) => {
     e.preventDefault();
-    // Simple mock login: redirect to the admin dashboard
-    navigate('/admin');
+    setError('');
+    
+    try {
+      const res = await fetch('/api/auth/login', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ email, password })
+      });
+      
+      const data = await res.json();
+      
+      if (res.ok) {
+        login(data.token);
+        navigate('/admin');
+      } else {
+        setError(data.msg || 'Login failed');
+      }
+    } catch (err) {
+      setError('Server error. Please try again later.');
+    }
   };
 
   return (
@@ -26,6 +51,11 @@ export default function Login() {
         </div>
 
         <form onSubmit={handleLogin} className="space-y-6">
+          {error && (
+            <div className="bg-rose-50 text-rose-600 p-3 rounded-md text-xs font-semibold text-center border border-rose-100">
+              {error}
+            </div>
+          )}
           <div>
             <label className="block text-[#1a110a] text-[10px] font-bold tracking-widest uppercase mb-2">EMAIL ADDRESS</label>
             <input 

@@ -1,3 +1,5 @@
+import { Link } from 'react-router-dom';
+
 export default function Services() {
   return (
     <div className="bg-[#fffcfaf0] text-[#1a110a] font-sans overflow-x-hidden">
@@ -134,9 +136,9 @@ export default function Services() {
               <li className="flex items-start gap-3"><span className="text-[#c9a84c] text-[18px] leading-none">✦</span> Optional cushioning and kneeler attachments</li>
               <li className="flex items-start gap-3"><span className="text-[#c9a84c] text-[18px] leading-none">✦</span> Traditional carved detailing available</li>
             </ul>
-            <button className="bg-[#cba85a] text-white text-[13px] font-medium px-8 py-3.5 rounded-sm hover:bg-[#b59540] transition-colors flex items-center gap-2" style={{ fontFamily: "'Be Vietnam Pro', sans-serif" }}>
+            <Link to="/contact" className="inline-flex bg-[#cba85a] text-white text-[13px] font-medium px-8 py-3.5 rounded-full hover:bg-[#b59540] transition-colors items-center gap-2" style={{ fontFamily: "'Be Vietnam Pro', sans-serif" }}>
               Request Pew Quote <span>→</span>
-            </button>
+            </Link>
           </div>
           <div className="w-full md:w-1/2 rounded-2xl overflow-hidden shadow-lg h-[450px]">
             <img src="/portfolio_pews.jpg" alt="Church pews" className="w-full h-full object-cover" />
@@ -157,9 +159,9 @@ export default function Services() {
               <li className="flex items-start gap-3"><span className="text-[#c9a84c] text-[18px] leading-none">✦</span> Intricate brass and stone inlay options</li>
               <li className="flex items-start gap-3"><span className="text-[#c9a84c] text-[18px] leading-none">✦</span> Traditional and contemporary styles</li>
             </ul>
-            <button className="bg-[#cba85a] text-white text-[13px] font-medium px-8 py-3.5 rounded-sm hover:bg-[#b59540] transition-colors flex items-center gap-2" style={{ fontFamily: "'Be Vietnam Pro', sans-serif" }}>
+            <Link to="/contact" className="inline-flex bg-[#cba85a] text-white text-[13px] font-medium px-8 py-3.5 rounded-full hover:bg-[#b59540] transition-colors items-center gap-2" style={{ fontFamily: "'Be Vietnam Pro', sans-serif" }}>
               Request Altar Quote <span>→</span>
-            </button>
+            </Link>
           </div>
           <div className="w-full md:w-1/2 rounded-2xl overflow-hidden shadow-lg h-[450px]">
             <img src="/portfolio_altar.jpg" alt="Altar furniture" className="w-full h-full object-cover" />
@@ -180,9 +182,9 @@ export default function Services() {
               <li className="flex items-start gap-3"><span className="text-[#c9a84c] text-[18px] leading-none">✦</span> Decorative carved wood panels</li>
               <li className="flex items-start gap-3"><span className="text-[#c9a84c] text-[18px] leading-none">✦</span> Sacristy and vestry furniture</li>
             </ul>
-            <button className="bg-[#cba85a] text-white text-[13px] font-medium px-8 py-3.5 rounded-sm hover:bg-[#b59540] transition-colors flex items-center gap-2" style={{ fontFamily: "'Be Vietnam Pro', sans-serif" }}>
+            <Link to="/contact" className="inline-flex bg-[#cba85a] text-white text-[13px] font-medium px-8 py-3.5 rounded-full hover:bg-[#b59540] transition-colors items-center gap-2" style={{ fontFamily: "'Be Vietnam Pro', sans-serif" }}>
               Discuss Your Project <span>→</span>
-            </button>
+            </Link>
           </div>
           <div className="w-full md:w-1/2 rounded-2xl overflow-hidden shadow-lg h-[450px]">
             <img src="/craftsman_wood.jpg" alt="Bespoke furniture craftsmanship" className="w-full h-full object-cover" />
@@ -203,9 +205,9 @@ export default function Services() {
               <li className="flex items-start gap-3"><span className="text-[#c9a84c] text-[18px] leading-none">✦</span> 3D visualisation of completed space</li>
               <li className="flex items-start gap-3"><span className="text-[#c9a84c] text-[18px] leading-none">✦</span> Project management from start to finish</li>
             </ul>
-            <button className="bg-[#cba85a] text-white text-[13px] font-medium px-8 py-3.5 rounded-sm hover:bg-[#b59540] transition-colors flex items-center gap-2" style={{ fontFamily: "'Be Vietnam Pro', sans-serif" }}>
+            <Link to="/contact" className="inline-flex bg-[#cba85a] text-white text-[13px] font-medium px-8 py-3.5 rounded-full hover:bg-[#b59540] transition-colors items-center gap-2" style={{ fontFamily: "'Be Vietnam Pro', sans-serif" }}>
               Book a Consultation <span>→</span>
-            </button>
+            </Link>
           </div>
           <div className="w-full md:w-1/2 rounded-2xl overflow-hidden shadow-lg h-[450px]">
             <img src="/services_designer.jpg" alt="Interior design consultation" className="w-full h-full object-cover" />
@@ -226,9 +228,9 @@ export default function Services() {
               <li className="flex items-start gap-3"><span className="text-[#c9a84c] text-[18px] leading-none">✦</span> Premium upholstered choir seating</li>
               <li className="flex items-start gap-3"><span className="text-[#c9a84c] text-[18px] leading-none">✦</span> Custom cushion and fabric options</li>
             </ul>
-            <button className="bg-[#cba85a] text-white text-[13px] font-medium px-8 py-3.5 rounded-sm hover:bg-[#b59540] transition-colors flex items-center gap-2" style={{ fontFamily: "'Be Vietnam Pro', sans-serif" }}>
+            <Link to="/contact" className="inline-flex bg-[#cba85a] text-white text-[13px] font-medium px-8 py-3.5 rounded-full hover:bg-[#b59540] transition-colors items-center gap-2" style={{ fontFamily: "'Be Vietnam Pro', sans-serif" }}>
               Request Seating Quote <span>→</span>
-            </button>
+            </Link>
           </div>
           <div className="w-full md:w-1/2 rounded-2xl overflow-hidden shadow-lg h-[450px]">
             <img src="/services_chairs.jpg" alt="Chapel chairs" className="w-full h-full object-cover" />
@@ -261,9 +263,9 @@ export default function Services() {
                 Microphone and AV cable management
               </li>
             </ul>
-            <button className="bg-[#cba85a] text-white text-[13px] font-medium px-8 py-3.5 rounded-sm hover:bg-[#b59540] transition-colors flex items-center gap-2" style={{ fontFamily: "'Be Vietnam Pro', sans-serif" }}>
+            <Link to="/contact" className="inline-flex bg-[#cba85a] text-white text-[13px] font-medium px-8 py-3.5 rounded-full hover:bg-[#b59540] transition-colors items-center gap-2" style={{ fontFamily: "'Be Vietnam Pro', sans-serif" }}>
               Design Your Pulpit <span>→</span>
-            </button>
+            </Link>
           </div>
           <div className="w-full md:w-1/2 rounded-2xl overflow-hidden shadow-lg h-[450px]">
             <img src="/services_pulpit.jpg" alt="Ornate pulpit" className="w-full h-full object-cover" />
@@ -308,9 +310,9 @@ export default function Services() {
           </div>
 
           <div className="mt-16">
-            <button className="bg-[#cba85a] text-white text-[13px] font-medium px-10 py-4 rounded-sm hover:bg-[#b59540] transition-colors shadow-md" style={{ fontFamily: "'Be Vietnam Pro', sans-serif" }}>
+            <Link to="/contact" className="inline-block bg-[#cba85a] text-white text-[13px] font-medium px-10 py-4 rounded-full hover:bg-[#b59540] transition-colors shadow-md" style={{ fontFamily: "'Be Vietnam Pro', sans-serif" }}>
               Start Your Project Today
-            </button>
+            </Link>
           </div>
         </div>
       </section>
@@ -378,13 +380,13 @@ export default function Services() {
             Every great chapel space starts with a single conversation.
           </p>
           <div className="flex flex-wrap items-center justify-center gap-4">
-            <button className="bg-[#1a110a] text-white text-[14px] font-medium px-10 py-4 rounded-md hover:bg-black transition-colors" style={{ fontFamily: "'Be Vietnam Pro', sans-serif" }}>
+            <Link to="/contact" className="bg-[#1a110a] text-white text-[14px] font-medium px-10 py-4 rounded-full hover:bg-black transition-colors" style={{ fontFamily: "'Be Vietnam Pro', sans-serif" }}>
               Enquire
-            </button>
-            <button className="border border-[#1a110a] text-[#1a110a] text-[14px] font-medium px-10 py-4 rounded-md hover:bg-[#1a110a]/10 transition-colors flex items-center gap-2" style={{ fontFamily: "'Be Vietnam Pro', sans-serif" }}>
+            </Link>
+            <a href="https://wa.me/919188723168" target="_blank" rel="noopener noreferrer" className="border border-[#1a110a] text-[#1a110a] text-[14px] font-medium px-10 py-4 rounded-full hover:bg-[#1a110a]/10 transition-colors flex items-center gap-2" style={{ fontFamily: "'Be Vietnam Pro', sans-serif" }}>
               <svg viewBox="0 0 24 24" className="w-5 h-5" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.122.554 4.118 1.524 5.855L.057 23.5l5.757-1.449A11.943 11.943 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.907 0-3.693-.528-5.218-1.444l-.374-.222-3.418.861.878-3.307-.243-.386A10 10 0 0 1 2 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/></svg>
               WhatsApp
-            </button>
+            </a>
           </div>
         </div>
       </section>

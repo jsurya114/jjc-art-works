@@ -13,14 +13,18 @@ import Gallery from './pages/public/Gallery';
 import Testimonials from './pages/public/Testimonials';
 import Contact from './pages/public/Contact';
 
+import { AuthProvider } from './context/AuthContext';
+import ProtectedRoute from './components/ProtectedRoute';
+
 // Admin Pages
 import Dashboard from './pages/admin/Dashboard';
 import Login from './pages/admin/Login';
 
 function App() {
   return (
-    <BrowserRouter>
-      <Routes>
+    <AuthProvider>
+      <BrowserRouter>
+        <Routes>
         {/* Public Routes with Nav and Footer */}
         <Route element={<PublicLayout />}>
           <Route path="/" element={<Home />} />
@@ -36,7 +40,11 @@ function App() {
         <Route path="/admin/login" element={<Login />} />
 
         {/* Admin Routes */}
-        <Route path="/admin" element={<AdminLayout />}>
+        <Route path="/admin" element={
+          <ProtectedRoute>
+            <AdminLayout />
+          </ProtectedRoute>
+        }>
           <Route index element={<Dashboard />} />
           <Route path="portfolio" element={<div className="p-8">Manage Portfolio Mock</div>} />
           <Route path="gallery" element={<div className="p-8">Manage Gallery Mock</div>} />
@@ -44,6 +52,7 @@ function App() {
         </Route>
       </Routes>
     </BrowserRouter>
+    </AuthProvider>
   );
 }
 
