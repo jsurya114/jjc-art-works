@@ -186,7 +186,7 @@ export default function ManageGallery() {
       </div>
 
       {/* Tabs */}
-      <div className="flex space-x-1 bg-slate-100 p-1 rounded-lg w-max">
+      <div className="flex flex-wrap gap-2 bg-slate-100 p-2 rounded-lg w-full">
         {['main', 'restorations', 'more', 'categories'].map(tab => (
           <button
             key={tab}
@@ -202,10 +202,10 @@ export default function ManageGallery() {
 
       {activeTab === 'categories' ? (
         /* ── MANAGE CATEGORIES TAB ── */
-        <div className="bg-white p-6 rounded-xl border border-slate-200 shadow-sm max-w-2xl">
+        <div className="bg-white p-4 md:p-6 rounded-xl border border-slate-200 shadow-sm max-w-2xl">
           <h2 className="text-lg font-semibold text-slate-800 mb-6">Manage Categories</h2>
           
-          <form onSubmit={handleAddCategory} className="flex gap-4 mb-8">
+          <form onSubmit={handleAddCategory} className="flex flex-col sm:flex-row gap-4 mb-8">
             <input 
               type="text" 
               value={newCategoryName}
@@ -245,7 +245,7 @@ export default function ManageGallery() {
         /* ── IMAGE UPLOAD TABS ── */
         <>
           {/* Upload Form */}
-          <div className="bg-white p-6 rounded-xl border border-slate-200 shadow-sm">
+          <div className="bg-white p-4 md:p-6 rounded-xl border border-slate-200 shadow-sm">
             <h2 className="text-lg font-semibold text-slate-800 mb-4">Add New Image</h2>
             <form onSubmit={handleUpload} className="space-y-4 max-w-2xl">
               
@@ -260,7 +260,7 @@ export default function ManageGallery() {
               </div>
 
               {activeTab === 'main' && (
-                <div className="grid grid-cols-2 gap-4">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   <div>
                     <label className="block text-xs font-bold text-slate-500 uppercase mb-1">Project Title</label>
                     <input 
@@ -306,7 +306,7 @@ export default function ManageGallery() {
           </div>
 
           {/* Gallery Grid */}
-          <div className="bg-white p-6 rounded-xl border border-slate-200 shadow-sm">
+          <div className="bg-white p-4 md:p-6 rounded-xl border border-slate-200 shadow-sm">
             <h2 className="text-lg font-semibold text-slate-800 mb-6">Uploaded Images</h2>
             
             {loading ? (
@@ -314,26 +314,34 @@ export default function ManageGallery() {
             ) : items.length === 0 ? (
               <div className="text-center p-8 text-slate-500 bg-slate-50 rounded-lg">No images uploaded to this section yet.</div>
             ) : (
-              <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-4">
+              <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
                 {items.map(item => (
-                  <div key={item.id} className="group relative aspect-square rounded-lg overflow-hidden border border-slate-200 bg-slate-100">
-                    <img src={item.imageUrl} alt="gallery" className="w-full h-full object-cover" />
+                  <div key={item.id} className="flex flex-col border border-slate-200 bg-white rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-shadow">
                     
-                    {/* Overlay details for Main Gallery */}
-                    {activeTab === 'main' && (
-                      <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/80 to-transparent p-3 pt-6">
-                        <p className="text-white text-xs font-semibold truncate">{item.title}</p>
-                        <p className="text-white/70 text-[10px] uppercase truncate">{item.category}</p>
-                      </div>
-                    )}
+                    <div className="relative aspect-square bg-slate-100">
+                      <img src={item.imageUrl} alt="gallery" className="w-full h-full object-cover" />
+                    </div>
                     
-                    {/* Delete Button */}
-                    <button 
-                      onClick={() => handleDelete(item)}
-                      className="absolute top-2 right-2 bg-rose-500 text-white p-1.5 rounded-md opacity-0 group-hover:opacity-100 transition-opacity hover:bg-rose-600 shadow-md"
-                    >
-                      <Trash2 className="w-4 h-4" />
-                    </button>
+                    <div className="p-3 flex flex-col justify-between flex-1">
+                      {activeTab === 'main' ? (
+                        <div className="mb-3">
+                          <p className="text-slate-800 text-sm font-semibold truncate">{item.title}</p>
+                          <p className="text-slate-500 text-[11px] uppercase tracking-wider truncate">{item.category}</p>
+                        </div>
+                      ) : (
+                        <div className="mb-3">
+                           <p className="text-slate-400 text-[11px] uppercase tracking-wider">Uploaded Image</p>
+                        </div>
+                      )}
+                      
+                      <button 
+                        onClick={() => handleDelete(item)}
+                        className="flex items-center justify-center gap-2 w-full py-2 bg-rose-50 text-rose-600 hover:bg-rose-500 hover:text-white rounded-md transition-colors text-xs font-bold"
+                      >
+                        <Trash2 className="w-4 h-4" /> Delete
+                      </button>
+                    </div>
+
                   </div>
                 ))}
               </div>

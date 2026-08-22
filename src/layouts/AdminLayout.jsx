@@ -20,7 +20,7 @@ const Sidebar = () => {
   ];
 
   return (
-    <aside className="w-64 bg-slate-900 text-white min-h-screen flex flex-col">
+    <aside className="w-full md:w-64 bg-slate-900 text-white min-h-fit md:min-h-screen flex flex-col">
       <div className="p-6 border-b border-slate-800">
         <h2 className="text-xl font-bold tracking-tight">Admin<span className="text-purple-400">Panel</span></h2>
       </div>
@@ -58,10 +58,10 @@ const Sidebar = () => {
 
 export default function AdminLayout() {
   return (
-    <div className="min-h-screen flex bg-slate-50 font-sans">
+    <div className="min-h-screen flex flex-col md:flex-row bg-slate-50 font-sans">
       <Sidebar />
       <main className="flex-1 overflow-y-auto">
-        <div className="p-8">
+        <div className="p-4 md:p-8">
           <Outlet />
         </div>
       </main>
