@@ -6,17 +6,23 @@ import { Loader2 } from 'lucide-react';
 
 export default function Gallery() {
   const [activeFilter, setActiveFilter] = useState('All Work');
-  const filters = ['All Work', 'Chapel Pews', 'Altar Furniture', 'Custom Woodwork', 'Church Seating', 'Pulpits'];
 
   // State
   const [restorations, setRestorations] = useState([]);
   const [mainGallery, setMainGallery] = useState([]);
   const [morePortfolio, setMorePortfolio] = useState([]);
+  const [categories, setCategories] = useState(['All Work']);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     const fetchGalleryData = async () => {
       try {
+        // Fetch Categories
+        const catQ = query(collection(db, 'gallery_categories'), orderBy('createdAt', 'asc'));
+        const catSnap = await getDocs(catQ);
+        const catNames = catSnap.docs.map(d => d.data().name);
+        setCategories(['All Work', ...catNames]);
+
         // Fetch Restorations (limit 3)
         const restQ = query(collection(db, 'gallery_restorations'), orderBy('createdAt', 'desc'), limit(3));
         const restSnap = await getDocs(restQ);
@@ -92,7 +98,7 @@ export default function Gallery() {
       <section className="py-12 px-6 max-w-[1280px] mx-auto">
         {/* Filters */}
         <div className="flex flex-wrap items-center justify-center gap-3 mb-16 border-b border-[#e8ddd8] pb-10">
-          {filters.map(filter => (
+          {categories.map(filter => (
             <button
               key={filter}
               onClick={() => setActiveFilter(filter)}
