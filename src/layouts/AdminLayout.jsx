@@ -1,8 +1,9 @@
+import React, { useState } from 'react';
 import { Link, Outlet, useLocation, useNavigate } from 'react-router-dom';
-import { LayoutDashboard, Briefcase, Image, Settings, LogOut, ArrowLeft } from 'lucide-react';
+import { LayoutDashboard, Briefcase, Image, Settings, LogOut, ArrowLeft, Menu, X } from 'lucide-react';
 import { useAuth } from '../context/AuthContext';
 
-const Sidebar = () => {
+const Sidebar = ({ isMobileMenuOpen, setIsMobileMenuOpen }) => {
   const location = useLocation();
   const navigate = useNavigate();
   const { logout } = useAuth();
@@ -20,11 +21,19 @@ const Sidebar = () => {
   ];
 
   return (
-    <aside className="w-full md:w-64 bg-slate-900 text-white min-h-fit md:min-h-screen flex flex-col">
-      <div className="p-6 border-b border-slate-800">
+    <aside className="w-full md:w-64 bg-slate-900 text-white min-h-fit md:min-h-screen flex flex-col transition-all">
+      <div className="p-4 md:p-6 border-b border-slate-800 flex justify-between items-center">
         <h2 className="text-xl font-bold tracking-tight">Admin<span className="text-purple-400">Panel</span></h2>
+        <button 
+          className="md:hidden text-slate-400 hover:text-white p-2"
+          onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+        >
+          {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
+        </button>
       </div>
-      <nav className="flex-1 py-6 px-4 space-y-2">
+      
+      <div className={`${isMobileMenuOpen ? 'flex' : 'hidden'} md:flex flex-col flex-1`}>
+        <nav className="flex-1 py-6 px-4 space-y-2">
         {navItems.map((item) => {
           const Icon = item.icon;
           const isActive = location.pathname === item.path;
@@ -32,6 +41,7 @@ const Sidebar = () => {
             <Link
               key={item.name}
               to={item.path}
+              onClick={() => setIsMobileMenuOpen(false)}
               className={`flex items-center space-x-3 px-4 py-3 rounded-lg transition-colors ${
                 isActive ? 'bg-purple-600 text-white' : 'text-slate-400 hover:bg-slate-800 hover:text-white'
               }`}
@@ -51,15 +61,18 @@ const Sidebar = () => {
           <LogOut size={20} />
           <span>Logout</span>
         </button>
+        </div>
       </div>
     </aside>
   );
 };
 
 export default function AdminLayout() {
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+
   return (
     <div className="min-h-screen flex flex-col md:flex-row bg-slate-50 font-sans">
-      <Sidebar />
+      <Sidebar isMobileMenuOpen={isMobileMenuOpen} setIsMobileMenuOpen={setIsMobileMenuOpen} />
       <main className="flex-1 overflow-y-auto">
         <div className="p-4 md:p-8">
           <Outlet />
