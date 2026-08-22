@@ -7,7 +7,7 @@ export default function Services() {
       <section className="relative h-[600px] flex items-center justify-center text-center">
         {/* Background Image with Overlay */}
         <div className="absolute inset-0 z-0">
-          <img src="/services_hero.jpg" alt="Chapel Interior" className="w-full h-full object-cover" />
+          <img src="/service10.jpeg" alt="Chapel Interior" className="w-full h-full object-cover" />
           <div className="absolute inset-0 bg-[#26170c]/60"></div>
         </div>
         
@@ -38,14 +38,14 @@ export default function Services() {
           </div>
           {/* Top Right Image */}
           <div className="rounded-xl overflow-hidden h-[400px]">
-            <img src="/craftsman_wood.jpg" alt="Craftsman working" className="w-full h-full object-cover" />
+            <img src="/service1.jpeg" alt="Craftsman working" className="w-full h-full object-cover" />
           </div>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-6">
           {/* Middle Left Image */}
           <div className="md:col-span-2 rounded-xl overflow-hidden h-[380px] relative group">
-            <img src="/services_wood_carving.jpg" alt="Wood carving" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
+            <img src="/service11.jpeg" alt="Center of Liturgy" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
             <div className="absolute inset-0 bg-gradient-to-t from-[#26170c]/90 via-[#26170c]/20 to-transparent"></div>
             <div className="absolute bottom-10 left-10">
               <p className="text-[#e8ddd8] text-[10px] font-bold tracking-[2px] uppercase mb-2" style={{ fontFamily: "'Be Vietnam Pro', sans-serif" }}>01 / ALTARS & AMBOS</p>
@@ -79,7 +79,7 @@ export default function Services() {
 
           {/* Bottom Right Image */}
           <div className="md:col-span-2 rounded-xl overflow-hidden h-[380px] relative group">
-            <img src="/services_drafting.jpg" alt="Architectural drafting" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
+            <img src="/service12.jpeg" alt="Architectural drafting" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
             <div className="absolute inset-0 bg-white/50 backdrop-blur-[2px]"></div>
             <div className="absolute inset-0 flex flex-col items-center justify-center text-center p-8">
               <p className="text-[#1a110a] text-[10px] font-bold tracking-[2px] uppercase mb-3" style={{ fontFamily: "'Be Vietnam Pro', sans-serif" }}>04 / DESIGN CONSULTATION</p>
@@ -141,7 +141,7 @@ export default function Services() {
             </Link>
           </div>
           <div className="w-full md:w-1/2 rounded-2xl overflow-hidden shadow-lg h-[450px]">
-            <img src="/portfolio_pews.jpg" alt="Church pews" className="w-full h-full object-cover" />
+            <img src="/service2.jpeg" alt="Church pews" className="w-full h-full object-cover" />
           </div>
         </div>
 
@@ -164,7 +164,7 @@ export default function Services() {
             </Link>
           </div>
           <div className="w-full md:w-1/2 rounded-2xl overflow-hidden shadow-lg h-[450px]">
-            <img src="/portfolio_altar.jpg" alt="Altar furniture" className="w-full h-full object-cover" />
+            <img src="/service9.jpeg" alt="Altar furniture" className="w-full h-full object-cover" />
           </div>
         </div>
 
@@ -187,7 +187,7 @@ export default function Services() {
             </Link>
           </div>
           <div className="w-full md:w-1/2 rounded-2xl overflow-hidden shadow-lg h-[450px]">
-            <img src="/craftsman_wood.jpg" alt="Bespoke furniture craftsmanship" className="w-full h-full object-cover" />
+            <img src="/service3.jpeg" alt="Bespoke furniture craftsmanship" className="w-full h-full object-cover" />
           </div>
         </div>
 
@@ -210,7 +210,7 @@ export default function Services() {
             </Link>
           </div>
           <div className="w-full md:w-1/2 rounded-2xl overflow-hidden shadow-lg h-[450px]">
-            <img src="/services_designer.jpg" alt="Interior design consultation" className="w-full h-full object-cover" />
+            <img src="/service6.jpeg" alt="Interior design consultation" className="w-full h-full object-cover" />
           </div>
         </div>
 
@@ -233,7 +233,7 @@ export default function Services() {
             </Link>
           </div>
           <div className="w-full md:w-1/2 rounded-2xl overflow-hidden shadow-lg h-[450px]">
-            <img src="/services_chairs.jpg" alt="Chapel chairs" className="w-full h-full object-cover" />
+            <img src="/service7.jpeg" alt="Chapel chairs" className="w-full h-full object-cover" />
           </div>
         </div>
 
@@ -268,7 +268,7 @@ export default function Services() {
             </Link>
           </div>
           <div className="w-full md:w-1/2 rounded-2xl overflow-hidden shadow-lg h-[450px]">
-            <img src="/services_pulpit.jpg" alt="Ornate pulpit" className="w-full h-full object-cover" />
+            <img src="/service5.jpeg" alt="Ornate pulpit" className="w-full h-full object-cover" />
           </div>
         </div>
 
