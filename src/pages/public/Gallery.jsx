@@ -14,6 +14,13 @@ export default function Gallery() {
   const [categories, setCategories] = useState(['All Work']);
   const [loading, setLoading] = useState(true);
 
+  // Hardcoded Fallbacks
+  const fallbackRestorations = [
+    { id: 'f1', title: 'Antique Pews Restoration', category: 'Restorations', imageUrl: '/restoration_pews.jpg' },
+    { id: 'f2', title: 'Cathedral Altar Restoration', category: 'Restorations', imageUrl: '/restoration_altar.jpg' },
+    { id: 'f3', title: 'Wooden Pulpit Restoration', category: 'Restorations', imageUrl: '/restoration_pulpit.jpg' }
+  ];
+
   useEffect(() => {
     const fetchGalleryData = async () => {
       try {
@@ -47,9 +54,13 @@ export default function Gallery() {
     fetchGalleryData();
   }, []);
 
+  const displayCategories = categories.length > 1 ? categories : ['All Work', 'Restorations'];
+  const displayRestorations = restorations.length > 0 ? restorations : fallbackRestorations;
+  const displayMainGallery = mainGallery.length > 0 ? mainGallery : fallbackRestorations;
+
   const filteredMain = activeFilter === 'All Work' 
-    ? mainGallery 
-    : mainGallery.filter(item => item.category === activeFilter);
+    ? displayMainGallery 
+    : displayMainGallery.filter(item => item.category === activeFilter);
   
   // Take exactly up to 6 items for the Bento Grid
   const bentoItems = filteredMain.slice(0, 6);
@@ -81,11 +92,11 @@ export default function Gallery() {
 
         {loading ? (
           <div className="flex justify-center p-12 text-[#cba85a]"><Loader2 className="w-12 h-12 animate-spin" /></div>
-        ) : restorations.length === 0 ? (
+        ) : displayRestorations.length === 0 ? (
           <p className="text-[#a48e83]" style={{ fontFamily: "'Be Vietnam Pro', sans-serif" }}>No recent restorations uploaded yet.</p>
         ) : (
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {restorations.map((item, i) => (
+            {displayRestorations.map((item, i) => (
               <div key={item.id} className="rounded-xl overflow-hidden h-[500px] bg-[#e8ddd8]">
                 <img src={item.imageUrl} alt="Restoration" className={`w-full h-full object-cover ${i === 2 ? 'grayscale-[0.3]' : ''}`} />
               </div>
@@ -98,7 +109,7 @@ export default function Gallery() {
       <section className="py-12 px-6 max-w-[1280px] mx-auto">
         {/* Filters */}
         <div className="flex flex-wrap items-center justify-center gap-3 mb-16 border-b border-[#e8ddd8] pb-10">
-          {categories.map(filter => (
+          {displayCategories.map(filter => (
             <button
               key={filter}
               onClick={() => setActiveFilter(filter)}
