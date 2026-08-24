@@ -132,47 +132,18 @@ export default function Gallery() {
             No gallery items found for this category.
           </div>
         ) : (
-          /* Bento Grid */
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 relative">
-            
-            {/* Large Left Column (Index 0) */}
-            {bentoItems[0] && (
-              <div className="lg:col-span-1 rounded-2xl overflow-hidden relative group h-[600px] lg:h-[830px] bg-[#e8ddd8]">
-                <img src={bentoItems[0].imageUrl} alt={bentoItems[0].title} className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
-                <div className="absolute inset-0 bg-gradient-to-t from-[#1a110a]/80 via-transparent to-transparent"></div>
-                <div className="absolute bottom-8 left-8">
-                  <h3 className="text-white text-[32px] font-medium mb-1" style={{ fontFamily: "'Playfair Display', Georgia, serif" }}>{bentoItems[0].title}</h3>
+          /* Uniform Grid */
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {filteredMain.map((item) => (
+              <div key={item.id} className="rounded-2xl overflow-hidden relative group h-[400px] bg-[#e8ddd8]">
+                <img src={item.imageUrl} alt={item.title} className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#1a110a]/80 via-black/20 to-transparent"></div>
+                <div className="absolute bottom-6 left-6 right-6">
+                  <h3 className="text-white text-[24px] font-medium mb-1" style={{ fontFamily: "'Playfair Display', Georgia, serif" }}>{item.title}</h3>
                   <p className="text-white/80 text-[11px] font-bold tracking-[2px] uppercase" style={{ fontFamily: "'Be Vietnam Pro', sans-serif" }}>VIEW PROJECT</p>
                 </div>
               </div>
-            )}
-
-            {/* Right Two Columns */}
-            <div className="lg:col-span-2 grid grid-cols-1 md:grid-cols-2 gap-6 h-full">
-              {/* Top Wide (Index 1) */}
-              {bentoItems[1] && (
-                <div className="md:col-span-2 rounded-2xl overflow-hidden relative group h-[260px] bg-[#e8ddd8]">
-                  <img src={bentoItems[1].imageUrl} alt={bentoItems[1].title} className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
-                  <div className="absolute inset-0 bg-gradient-to-t from-[#1a110a]/80 via-transparent to-transparent"></div>
-                  <div className="absolute bottom-8 left-8">
-                    <h3 className="text-white text-[28px] font-medium mb-1" style={{ fontFamily: "'Playfair Display', Georgia, serif" }}>{bentoItems[1].title}</h3>
-                    <p className="text-white/80 text-[11px] font-bold tracking-[2px] uppercase" style={{ fontFamily: "'Be Vietnam Pro', sans-serif" }}>VIEW PROJECT</p>
-                  </div>
-                </div>
-              )}
-
-              {/* Smaller squares (Indexes 2 to 5) */}
-              {[2, 3, 4, 5].map((index) => bentoItems[index] && (
-                <div key={bentoItems[index].id} className="rounded-2xl overflow-hidden relative group h-[260px] bg-[#e8ddd8]">
-                  <img src={bentoItems[index].imageUrl} alt={bentoItems[index].title} className={`absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 ${index === 3 ? 'filter brightness-[0.7]' : ''}`} />
-                  <div className="absolute inset-0 bg-gradient-to-t from-[#1a110a]/80 via-transparent to-transparent"></div>
-                  <div className="absolute bottom-8 left-8">
-                    <h3 className="text-white text-[24px] font-medium mb-1" style={{ fontFamily: "'Playfair Display', Georgia, serif" }}>{bentoItems[index].title}</h3>
-                    <p className="text-white/80 text-[11px] font-bold tracking-[2px] uppercase" style={{ fontFamily: "'Be Vietnam Pro', sans-serif" }}>VIEW PROJECT</p>
-                  </div>
-                </div>
-              ))}
-            </div>
+            ))}
           </div>
         )}
       </section>
