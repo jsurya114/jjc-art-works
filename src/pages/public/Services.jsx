@@ -160,7 +160,7 @@ export default function Services() {
             </Link>
           </div>
           <div className="w-full md:w-1/2 rounded-2xl overflow-hidden shadow-lg h-[450px]">
-            <img src="/service2.jpeg" alt="Church pews" className="w-full h-full object-cover" />
+            <img src="/chapel.png" alt="Church pews" className="w-full h-full object-cover" />
           </div>
         </div>
 
