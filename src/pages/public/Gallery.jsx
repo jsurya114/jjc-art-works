@@ -247,9 +247,9 @@ export default function Gallery() {
           <div className="grid grid-cols-2 md:grid-cols-5 gap-4 mb-12">
             {[
               "/portfolio_altar.jpg",
-              "/services_chairs.jpg",
+              "/ig_church_pew.jpg",
               "/portfolio_interior.jpg",
-              "/services_drafting.jpg",
+              "/ig_wood_carving.jpg",
               "/craftsman_wood.jpg"
             ].map((img, i) => (
               <div key={i} className="aspect-square rounded-xl overflow-hidden hover:opacity-80 transition-opacity cursor-pointer border border-[#d2c4bc]/40 shadow-sm">
