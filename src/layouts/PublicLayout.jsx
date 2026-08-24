@@ -9,6 +9,7 @@ const Navbar = () => {
     { label: 'Home', to: '/' },
     { label: 'About', to: '/about' },
     { label: 'Services', to: '/services' },
+    { label: 'Portfolio', to: '/portfolio' },
     { label: 'Gallery', to: '/gallery' },
     { label: 'Testimonials', to: '/testimonials' },
     { label: 'Contact us', to: '/contact' },
@@ -118,6 +119,8 @@ const Footer = () => {
               { label: 'Home', to: '/' },
               { label: 'Services', to: '/services' },
               { label: 'Portfolio', to: '/portfolio' },
+              { label: 'Gallery', to: '/gallery' },
+              { label: 'Testimonials', to: '/testimonials' },
               { label: 'About Us', to: '/about' },
               { label: 'Contact', to: '/contact' }
             ].map(l => (

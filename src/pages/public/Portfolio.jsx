@@ -23,7 +23,7 @@ export default function Portfolio() {
       category: "Seating",
       location: "Kochi, Kerala",
       year: "2022",
-      image: "/services_chairs.jpg",
+      image: "/services_chairs_1787384262537.jpg",
       span: "col-span-1",
       height: "h-[400px] md:h-[288px]"
     },
@@ -53,7 +53,7 @@ export default function Portfolio() {
       category: "Restoration",
       location: "Kannur, Kerala",
       year: "2020",
-      image: "/services_wood_carving.jpg",
+      image: "/services_wood_carving_1787384193672.jpg",
       span: "col-span-1 md:col-span-2",
       height: "h-[400px] md:h-[400px]"
     }
