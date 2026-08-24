@@ -1,4 +1,5 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import ScrollToTop from './components/ScrollToTop';
 
 // Layouts
 import PublicLayout from './layouts/PublicLayout';
@@ -26,6 +27,7 @@ function App() {
   return (
     <AuthProvider>
       <BrowserRouter>
+        <ScrollToTop />
         <Routes>
         {/* Public Routes with Nav and Footer */}
         <Route element={<PublicLayout />}>

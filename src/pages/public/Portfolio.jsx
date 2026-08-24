@@ -131,7 +131,7 @@ export default function Portfolio() {
                   {project.location}
                 </p>
                 
-                <Link to="/contact" className="inline-flex items-center gap-2 text-[#cba85a] text-[11px] font-bold tracking-[2px] uppercase group/btn opacity-0 group-hover:opacity-100 transition-all duration-500 delay-300">
+                <Link to="/contact#contact-form" className="inline-flex items-center gap-2 text-[#cba85a] text-[11px] font-bold tracking-[2px] uppercase group/btn opacity-0 group-hover:opacity-100 transition-all duration-500 delay-300">
                   Discuss a Similar Project
                   <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="transform group-hover/btn:translate-x-2 transition-transform duration-300"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
                 </Link>
@@ -154,7 +154,7 @@ export default function Portfolio() {
             <p className="text-[#a48e83] text-[16px] max-w-xl mx-auto mb-10 leading-relaxed" style={{ fontFamily: "'Be Vietnam Pro', sans-serif" }}>
               Our design team is ready to help you visualise how custom woodwork can transform your chapel.
             </p>
-            <Link to="/contact" className="inline-block bg-[#cba85a] text-[#1a110a] text-[13px] font-bold px-10 py-4 rounded-full tracking-widest uppercase hover:bg-white transition-colors duration-300">
+            <Link to="/contact#contact-form" className="inline-block bg-[#cba85a] text-[#1a110a] text-[13px] font-bold px-10 py-4 rounded-full tracking-widest uppercase hover:bg-white transition-colors duration-300">
               Request a Consultation
             </Link>
           </div>

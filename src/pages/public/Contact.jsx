@@ -89,7 +89,7 @@ export default function Contact() {
       </section>
 
       {/* ── FORM & CONTACT CARDS ── */}
-      <section className="bg-[#f5f1ed] py-24 px-6">
+      <section id="contact-form" className="bg-[#f5f1ed] py-24 px-6">
         <div className="max-w-[1000px] mx-auto">
           
           {/* Form Card */}

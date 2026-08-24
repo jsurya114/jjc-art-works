@@ -86,7 +86,7 @@ export default function Home() {
             <Link to="/portfolio" className="inline-block bg-[#26170c] text-[#fff8f5] text-[13px] font-semibold px-8 py-4 rounded-full tracking-wide hover:bg-[#3d2b1f] transition-colors" style={{ fontFamily: "'Be Vietnam Pro', sans-serif" }}>
               View Our Work
             </Link>
-            <Link to="/contact" className="inline-block border border-[#26170c] text-[#26170c] text-[13px] font-semibold px-8 py-4 rounded-full tracking-wide hover:bg-[#26170c]/5 transition-colors" style={{ fontFamily: "'Be Vietnam Pro', sans-serif" }}>
+            <Link to="/contact#contact-form" className="inline-block border border-[#26170c] text-[#26170c] text-[13px] font-semibold px-8 py-4 rounded-full tracking-wide hover:bg-[#26170c]/5 transition-colors" style={{ fontFamily: "'Be Vietnam Pro', sans-serif" }}>
               Start Enquiry
             </Link>
           </div>

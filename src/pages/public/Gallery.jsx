@@ -277,7 +277,7 @@ export default function Gallery() {
             From concept to installation, we're with you every step of the way.
           </p>
           <div className="flex flex-wrap items-center justify-center gap-4">
-            <Link to="/contact" className="bg-[#cba85a] text-white text-[13px] font-bold px-8 py-3.5 rounded-full hover:bg-[#b59540] transition-colors" style={{ fontFamily: "'Be Vietnam Pro', sans-serif" }}>
+            <Link to="/contact#contact-form" className="bg-[#cba85a] text-white text-[13px] font-bold px-8 py-3.5 rounded-full hover:bg-[#b59540] transition-colors" style={{ fontFamily: "'Be Vietnam Pro', sans-serif" }}>
               Start Your Project
             </Link>
             <a href="https://wa.me/919188723168" target="_blank" rel="noopener noreferrer" className="border border-[#cba85a] text-[#cba85a] text-[13px] font-bold px-8 py-3.5 rounded-full hover:bg-[#cba85a]/10 transition-colors flex items-center gap-2" style={{ fontFamily: "'Be Vietnam Pro', sans-serif" }}>

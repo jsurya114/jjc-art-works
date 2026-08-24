@@ -155,7 +155,7 @@ export default function Services() {
               <li className="flex items-start gap-3"><span className="text-[#c9a84c] text-[18px] leading-none">✦</span> Optional cushioning and kneeler attachments</li>
               <li className="flex items-start gap-3"><span className="text-[#c9a84c] text-[18px] leading-none">✦</span> Traditional carved detailing available</li>
             </ul>
-            <Link to="/contact" className="inline-flex bg-[#cba85a] text-white text-[13px] font-medium px-8 py-3.5 rounded-full hover:bg-[#b59540] transition-colors items-center gap-2" style={{ fontFamily: "'Be Vietnam Pro', sans-serif" }}>
+            <Link to="/contact#contact-form" className="inline-flex bg-[#cba85a] text-white text-[13px] font-medium px-8 py-3.5 rounded-full hover:bg-[#b59540] transition-colors items-center gap-2" style={{ fontFamily: "'Be Vietnam Pro', sans-serif" }}>
               Request Pew Quote <span>→</span>
             </Link>
           </div>
@@ -178,7 +178,7 @@ export default function Services() {
               <li className="flex items-start gap-3"><span className="text-[#c9a84c] text-[18px] leading-none">✦</span> Intricate brass and stone inlay options</li>
               <li className="flex items-start gap-3"><span className="text-[#c9a84c] text-[18px] leading-none">✦</span> Traditional and contemporary styles</li>
             </ul>
-            <Link to="/contact" className="inline-flex bg-[#cba85a] text-white text-[13px] font-medium px-8 py-3.5 rounded-full hover:bg-[#b59540] transition-colors items-center gap-2" style={{ fontFamily: "'Be Vietnam Pro', sans-serif" }}>
+            <Link to="/contact#contact-form" className="inline-flex bg-[#cba85a] text-white text-[13px] font-medium px-8 py-3.5 rounded-full hover:bg-[#b59540] transition-colors items-center gap-2" style={{ fontFamily: "'Be Vietnam Pro', sans-serif" }}>
               Request Altar Quote <span>→</span>
             </Link>
           </div>
@@ -201,7 +201,7 @@ export default function Services() {
               <li className="flex items-start gap-3"><span className="text-[#c9a84c] text-[18px] leading-none">✦</span> Decorative carved wood panels</li>
               <li className="flex items-start gap-3"><span className="text-[#c9a84c] text-[18px] leading-none">✦</span> Sacristy and vestry furniture</li>
             </ul>
-            <Link to="/contact" className="inline-flex bg-[#cba85a] text-white text-[13px] font-medium px-8 py-3.5 rounded-full hover:bg-[#b59540] transition-colors items-center gap-2" style={{ fontFamily: "'Be Vietnam Pro', sans-serif" }}>
+            <Link to="/contact#contact-form" className="inline-flex bg-[#cba85a] text-white text-[13px] font-medium px-8 py-3.5 rounded-full hover:bg-[#b59540] transition-colors items-center gap-2" style={{ fontFamily: "'Be Vietnam Pro', sans-serif" }}>
               Discuss Your Project <span>→</span>
             </Link>
           </div>
@@ -224,7 +224,7 @@ export default function Services() {
               <li className="flex items-start gap-3"><span className="text-[#c9a84c] text-[18px] leading-none">✦</span> 3D visualisation of completed space</li>
               <li className="flex items-start gap-3"><span className="text-[#c9a84c] text-[18px] leading-none">✦</span> Project management from start to finish</li>
             </ul>
-            <Link to="/contact" className="inline-flex bg-[#cba85a] text-white text-[13px] font-medium px-8 py-3.5 rounded-full hover:bg-[#b59540] transition-colors items-center gap-2" style={{ fontFamily: "'Be Vietnam Pro', sans-serif" }}>
+            <Link to="/contact#contact-form" className="inline-flex bg-[#cba85a] text-white text-[13px] font-medium px-8 py-3.5 rounded-full hover:bg-[#b59540] transition-colors items-center gap-2" style={{ fontFamily: "'Be Vietnam Pro', sans-serif" }}>
               Book a Consultation <span>→</span>
             </Link>
           </div>
@@ -247,7 +247,7 @@ export default function Services() {
               <li className="flex items-start gap-3"><span className="text-[#c9a84c] text-[18px] leading-none">✦</span> Premium upholstered choir seating</li>
               <li className="flex items-start gap-3"><span className="text-[#c9a84c] text-[18px] leading-none">✦</span> Custom cushion and fabric options</li>
             </ul>
-            <Link to="/contact" className="inline-flex bg-[#cba85a] text-white text-[13px] font-medium px-8 py-3.5 rounded-full hover:bg-[#b59540] transition-colors items-center gap-2" style={{ fontFamily: "'Be Vietnam Pro', sans-serif" }}>
+            <Link to="/contact#contact-form" className="inline-flex bg-[#cba85a] text-white text-[13px] font-medium px-8 py-3.5 rounded-full hover:bg-[#b59540] transition-colors items-center gap-2" style={{ fontFamily: "'Be Vietnam Pro', sans-serif" }}>
               Request Seating Quote <span>→</span>
             </Link>
           </div>
@@ -282,7 +282,7 @@ export default function Services() {
                 Microphone and AV cable management
               </li>
             </ul>
-            <Link to="/contact" className="inline-flex bg-[#cba85a] text-white text-[13px] font-medium px-8 py-3.5 rounded-full hover:bg-[#b59540] transition-colors items-center gap-2" style={{ fontFamily: "'Be Vietnam Pro', sans-serif" }}>
+            <Link to="/contact#contact-form" className="inline-flex bg-[#cba85a] text-white text-[13px] font-medium px-8 py-3.5 rounded-full hover:bg-[#b59540] transition-colors items-center gap-2" style={{ fontFamily: "'Be Vietnam Pro', sans-serif" }}>
               Design Your Pulpit <span>→</span>
             </Link>
           </div>
@@ -329,7 +329,7 @@ export default function Services() {
           </div>
 
           <div className="mt-16">
-            <Link to="/contact" className="inline-block bg-[#cba85a] text-white text-[13px] font-medium px-10 py-4 rounded-full hover:bg-[#b59540] transition-colors shadow-md" style={{ fontFamily: "'Be Vietnam Pro', sans-serif" }}>
+            <Link to="/contact#contact-form" className="inline-block bg-[#cba85a] text-white text-[13px] font-medium px-10 py-4 rounded-full hover:bg-[#b59540] transition-colors shadow-md" style={{ fontFamily: "'Be Vietnam Pro', sans-serif" }}>
               Start Your Project Today
             </Link>
           </div>
@@ -385,7 +385,7 @@ export default function Services() {
             Every great chapel space starts with a single conversation.
           </p>
           <div className="flex flex-wrap items-center justify-center gap-4">
-            <Link to="/contact" className="bg-[#1a110a] text-white text-[14px] font-medium px-10 py-4 rounded-full hover:bg-black transition-colors" style={{ fontFamily: "'Be Vietnam Pro', sans-serif" }}>
+            <Link to="/contact#contact-form" className="bg-[#1a110a] text-white text-[14px] font-medium px-10 py-4 rounded-full hover:bg-black transition-colors" style={{ fontFamily: "'Be Vietnam Pro', sans-serif" }}>
               Enquire
             </Link>
             <a href="https://wa.me/919188723168" target="_blank" rel="noopener noreferrer" className="border border-[#1a110a] text-[#1a110a] text-[14px] font-medium px-10 py-4 rounded-full hover:bg-[#1a110a]/10 transition-colors flex items-center gap-2" style={{ fontFamily: "'Be Vietnam Pro', sans-serif" }}>
