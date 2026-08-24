@@ -1,7 +1,36 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 
 export default function About() {
+  const [formData, setFormData] = useState({
+    name: '',
+    phone: '',
+    chapelName: '',
+    location: '',
+    service: '',
+    message: ''
+  });
+
+  const handleChange = (e) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    
+    // Construct WhatsApp Message
+    const text = `*New Enquiry from Website*
+*Name:* ${formData.name}
+*Phone:* ${formData.phone}
+*Chapel/Project Name:* ${formData.chapelName}
+*Location:* ${formData.location}
+*Service Required:* ${formData.service || 'Not specified'}
+*Message:* ${formData.message}`;
+
+    const encodedText = encodeURIComponent(text);
+    const whatsappUrl = `https://wa.me/919188723168?text=${encodedText}`;
+    window.open(whatsappUrl, '_blank');
+  };
   return (
     <div className="bg-[#fffcfaf0] text-[#1a110a] font-sans overflow-x-hidden">
       {/* ── HERO SECTION ── */}
@@ -404,47 +433,47 @@ export default function About() {
               <h3 className="text-[32px] text-[#1a110a] font-medium mb-2" style={{ fontFamily: "'Playfair Display', Georgia, serif" }}>Send Us a Message</h3>
               <p className="text-[#4f453f] text-[14px] mb-8" style={{ fontFamily: "'Be Vietnam Pro', sans-serif" }}>Please fill out the form below to initiate your enquiry.</p>
               
-              <form className="space-y-6">
+              <form onSubmit={handleSubmit} className="space-y-6">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <div>
                     <label className="block text-[#1a110a] text-[11px] font-bold tracking-widest uppercase mb-2">Name</label>
-                    <input type="text" placeholder="Your full name" className="w-full border-b border-[#d2c4bc] py-3 bg-transparent focus:outline-none focus:border-[#c9a84c] text-[15px] transition-colors placeholder:text-[#a48e83]" />
+                    <input type="text" name="name" value={formData.name} onChange={handleChange} required placeholder="Your full name" className="w-full border-b border-[#d2c4bc] py-3 bg-transparent focus:outline-none focus:border-[#c9a84c] text-[15px] transition-colors placeholder:text-[#a48e83]" />
                   </div>
                   <div>
                     <label className="block text-[#1a110a] text-[11px] font-bold tracking-widest uppercase mb-2">Phone</label>
-                    <input type="tel" placeholder="Your contact number" className="w-full border-b border-[#d2c4bc] py-3 bg-transparent focus:outline-none focus:border-[#c9a84c] text-[15px] transition-colors placeholder:text-[#a48e83]" />
+                    <input type="tel" name="phone" value={formData.phone} onChange={handleChange} required placeholder="Your contact number" className="w-full border-b border-[#d2c4bc] py-3 bg-transparent focus:outline-none focus:border-[#c9a84c] text-[15px] transition-colors placeholder:text-[#a48e83]" />
                   </div>
                 </div>
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <div>
                     <label className="block text-[#1a110a] text-[11px] font-bold tracking-widest uppercase mb-2">Chapel Name</label>
-                    <input type="text" placeholder="Name of your chapel" className="w-full border-b border-[#d2c4bc] py-3 bg-transparent focus:outline-none focus:border-[#c9a84c] text-[15px] transition-colors placeholder:text-[#a48e83]" />
+                    <input type="text" name="chapelName" value={formData.chapelName} onChange={handleChange} placeholder="Name of your chapel" className="w-full border-b border-[#d2c4bc] py-3 bg-transparent focus:outline-none focus:border-[#c9a84c] text-[15px] transition-colors placeholder:text-[#a48e83]" />
                   </div>
                   <div>
                     <label className="block text-[#1a110a] text-[11px] font-bold tracking-widest uppercase mb-2">Location</label>
-                    <input type="text" placeholder="City or Region" className="w-full border-b border-[#d2c4bc] py-3 bg-transparent focus:outline-none focus:border-[#c9a84c] text-[15px] transition-colors placeholder:text-[#a48e83]" />
+                    <input type="text" name="location" value={formData.location} onChange={handleChange} placeholder="City or Region" className="w-full border-b border-[#d2c4bc] py-3 bg-transparent focus:outline-none focus:border-[#c9a84c] text-[15px] transition-colors placeholder:text-[#a48e83]" />
                   </div>
                 </div>
 
                 <div>
                   <label className="block text-[#1a110a] text-[11px] font-bold tracking-widest uppercase mb-2">Service Required</label>
-                  <select className="w-full border-b border-[#d2c4bc] py-3 bg-transparent focus:outline-none focus:border-[#c9a84c] text-[15px] transition-colors text-[#1a110a] appearance-none cursor-pointer pb-4">
-                    <option value="" disabled selected>Select a primary service</option>
-                    <option value="pews">Chapel Pews</option>
-                    <option value="altar">Altar Furniture</option>
-                    <option value="bespoke">Bespoke Furniture</option>
-                    <option value="consultation">Design Consultation</option>
+                  <select name="service" value={formData.service} onChange={handleChange} className="w-full border-b border-[#d2c4bc] py-3 bg-transparent focus:outline-none focus:border-[#c9a84c] text-[15px] transition-colors text-[#1a110a] appearance-none cursor-pointer pb-4">
+                    <option value="" disabled>Select a primary service</option>
+                    <option value="Chapel Pews">Chapel Pews</option>
+                    <option value="Altar Furniture">Altar Furniture</option>
+                    <option value="Bespoke Furniture">Bespoke Furniture</option>
+                    <option value="Design Consultation">Design Consultation</option>
                   </select>
                 </div>
 
                 <div>
                   <label className="block text-[#1a110a] text-[11px] font-bold tracking-widest uppercase mb-2">Message</label>
-                  <textarea placeholder="Describe your project vision or specific needs..." rows="3" className="w-full border-b border-[#d2c4bc] py-3 bg-transparent focus:outline-none focus:border-[#c9a84c] text-[15px] transition-colors placeholder:text-[#a48e83] resize-none"></textarea>
+                  <textarea name="message" value={formData.message} onChange={handleChange} required placeholder="Describe your project vision or specific needs..." rows="3" className="w-full border-b border-[#d2c4bc] py-3 bg-transparent focus:outline-none focus:border-[#c9a84c] text-[15px] transition-colors placeholder:text-[#a48e83] resize-none"></textarea>
                 </div>
 
                 <div className="pt-4">
-                  <button type="button" className="w-full bg-[#cba85a] text-white text-[14px] font-bold tracking-wider py-4 rounded-full hover:bg-[#b59540] transition-colors flex items-center justify-center gap-2 uppercase">
+                  <button type="submit" className="w-full bg-[#cba85a] text-white text-[14px] font-bold tracking-wider py-4 rounded-full hover:bg-[#b59540] transition-colors flex items-center justify-center gap-2 uppercase">
                     Send Enquiry →
                   </button>
                   <p className="text-center text-[#a48e83] text-[11px] mt-4" style={{ fontFamily: "'Be Vietnam Pro', sans-serif" }}>

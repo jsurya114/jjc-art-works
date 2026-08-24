@@ -1,6 +1,32 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 export default function Contact() {
+  const [formData, setFormData] = useState({
+    name: '',
+    phone: '',
+    chapelName: '',
+    service: '',
+    message: ''
+  });
+
+  const handleChange = (e) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    
+    const text = `*New Enquiry from Website*
+*Name:* ${formData.name}
+*Phone:* ${formData.phone || 'Not provided'}
+*Chapel/Project Name:* ${formData.chapelName}
+*Service Required:* ${formData.service || 'Not specified'}
+*Message:* ${formData.message}`;
+
+    const encodedText = encodeURIComponent(text);
+    const whatsappUrl = `https://wa.me/919188723168?text=${encodedText}`;
+    window.open(whatsappUrl, '_blank');
+  };
   const faqs = [
     {
       q: "How long does a typical project take?",
@@ -70,40 +96,40 @@ export default function Contact() {
           <div className="bg-white rounded-xl shadow-[0_8px_30px_rgba(0,0,0,0.04)] p-8 md:p-16 mb-6 border border-[#e8ddd8]/50">
             <h3 className="text-[32px] text-[#1a110a] mb-12" style={{ fontFamily: "'Playfair Display', Georgia, serif" }}>Send a Message</h3>
             
-            <form className="space-y-10">
+            <form onSubmit={handleSubmit} className="space-y-10">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
                 <div>
                   <label className="block text-[#1a110a] text-[10px] font-bold tracking-widest uppercase mb-3">FULL NAME</label>
-                  <input type="text" placeholder="e.g. Thomas Cromwell" className="w-full border-b border-[#d2c4bc] py-2 bg-transparent focus:outline-none focus:border-[#cba85a] text-[15px] transition-colors placeholder:text-[#a48e83]" />
+                  <input type="text" name="name" value={formData.name} onChange={handleChange} required placeholder="e.g. Thomas Cromwell" className="w-full border-b border-[#d2c4bc] py-2 bg-transparent focus:outline-none focus:border-[#cba85a] text-[15px] transition-colors placeholder:text-[#a48e83]" />
                 </div>
                 <div>
                   <label className="block text-[#1a110a] text-[10px] font-bold tracking-widest uppercase mb-3">PHONE NUMBER</label>
-                  <input type="tel" placeholder="(Optional)" className="w-full border-b border-[#d2c4bc] py-2 bg-transparent focus:outline-none focus:border-[#cba85a] text-[15px] transition-colors placeholder:text-[#a48e83]" />
+                  <input type="tel" name="phone" value={formData.phone} onChange={handleChange} placeholder="(Optional)" className="w-full border-b border-[#d2c4bc] py-2 bg-transparent focus:outline-none focus:border-[#cba85a] text-[15px] transition-colors placeholder:text-[#a48e83]" />
                 </div>
               </div>
 
               <div>
                 <label className="block text-[#1a110a] text-[10px] font-bold tracking-widest uppercase mb-3">CHAPEL OR PROJECT NAME</label>
-                <input type="text" placeholder="Name of location" className="w-full border-b border-[#d2c4bc] py-2 bg-transparent focus:outline-none focus:border-[#cba85a] text-[15px] transition-colors placeholder:text-[#a48e83]" />
+                <input type="text" name="chapelName" value={formData.chapelName} onChange={handleChange} placeholder="Name of location" className="w-full border-b border-[#d2c4bc] py-2 bg-transparent focus:outline-none focus:border-[#cba85a] text-[15px] transition-colors placeholder:text-[#a48e83]" />
               </div>
 
               <div>
                 <label className="block text-[#1a110a] text-[10px] font-bold tracking-widest uppercase mb-3">SERVICE REQUIRED</label>
-                <select className="w-full border-b border-[#d2c4bc] py-2 bg-transparent focus:outline-none focus:border-[#cba85a] text-[15px] transition-colors text-[#1a110a] appearance-none cursor-pointer">
-                  <option value="" disabled selected>Select an area of focus</option>
-                  <option value="pews">Chapel Pews</option>
-                  <option value="altar">Altar Furniture</option>
-                  <option value="custom">Custom Woodwork</option>
-                  <option value="other">Other</option>
+                <select name="service" value={formData.service} onChange={handleChange} className="w-full border-b border-[#d2c4bc] py-2 bg-transparent focus:outline-none focus:border-[#cba85a] text-[15px] transition-colors text-[#1a110a] appearance-none cursor-pointer">
+                  <option value="" disabled>Select an area of focus</option>
+                  <option value="Chapel Pews">Chapel Pews</option>
+                  <option value="Altar Furniture">Altar Furniture</option>
+                  <option value="Custom Woodwork">Custom Woodwork</option>
+                  <option value="Other">Other</option>
                 </select>
               </div>
 
               <div>
                 <label className="block text-[#1a110a] text-[10px] font-bold tracking-widest uppercase mb-3">YOUR ENQUIRY</label>
-                <textarea placeholder="Please provide details about your vision..." rows="3" className="w-full border-b border-[#d2c4bc] py-2 bg-transparent focus:outline-none focus:border-[#cba85a] text-[15px] transition-colors placeholder:text-[#a48e83] resize-none"></textarea>
+                <textarea name="message" value={formData.message} onChange={handleChange} required placeholder="Please provide details about your vision..." rows="3" className="w-full border-b border-[#d2c4bc] py-2 bg-transparent focus:outline-none focus:border-[#cba85a] text-[15px] transition-colors placeholder:text-[#a48e83] resize-none"></textarea>
               </div>
 
-              <button type="button" className="w-full bg-[#cba85a] text-white text-[12px] font-bold tracking-widest py-5 rounded-full hover:bg-[#b59540] transition-colors flex items-center justify-center gap-2 uppercase mt-4">
+              <button type="submit" className="w-full bg-[#cba85a] text-white text-[12px] font-bold tracking-widest py-5 rounded-full hover:bg-[#b59540] transition-colors flex items-center justify-center gap-2 uppercase mt-4">
                 SUBMIT COMMISSION ENQUIRY →
               </button>
             </form>
