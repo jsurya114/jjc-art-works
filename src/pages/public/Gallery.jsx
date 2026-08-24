@@ -69,8 +69,15 @@ export default function Gallery() {
     <div className="font-sans text-[#1a110a] bg-[#fffcfaf0] overflow-x-hidden">
       
       {/* ── HERO SECTION ── */}
-      <section className="bg-[#868076] py-32 px-6 text-center text-white">
-        <div className="max-w-[800px] mx-auto pt-10 pb-4">
+      <section className="relative py-32 px-6 text-center text-white">
+        {/* Background Image */}
+        <div className="absolute inset-0 z-0">
+          <img src="/chapel_hero.jpg" alt="Chapel Interior Background" className="w-full h-full object-cover" />
+          <div className="absolute inset-0 bg-[#1a110a]/75 backdrop-blur-[2px]"></div>
+        </div>
+
+        {/* Content */}
+        <div className="relative z-10 max-w-[800px] mx-auto pt-10 pb-4">
           <p className="text-[#cba85a] text-[11px] font-bold tracking-[3px] uppercase mb-6" style={{ fontFamily: "'Be Vietnam Pro', sans-serif" }}>
             OUR GALLERY
           </p>
