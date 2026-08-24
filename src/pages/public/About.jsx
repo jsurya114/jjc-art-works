@@ -83,7 +83,7 @@ export default function About() {
 
           <div className="w-full md:w-1/2">
             <div className="rounded-2xl overflow-hidden h-[600px] shadow-lg">
-              <img src="/services_wood_carving.jpg" alt="Master craftsman" className="w-full h-full object-cover" />
+              <img src="/about_wood_carving.jpg" alt="Master craftsman" className="w-full h-full object-cover" />
             </div>
           </div>
         </div>
@@ -265,13 +265,13 @@ export default function About() {
                 badge: "20+ Years Experience"
               },
               {
-                img: "/services_designer.jpg",
+                img: "/about_designer.jpg",
                 name: "Joseph Cherian",
                 role: "Lead Designer",
                 desc: "Joseph brings architectural precision to every project — translating client visions into detailed technical drawings."
               },
               {
-                img: "/services_wood_carving.jpg",
+                img: "/about_wood_carving.jpg",
                 name: "Cyriac Thomas",
                 role: "Senior Craftsman",
                 desc: "Cyriac specialises in hand-carved detailing and intricate wood inlay work that defines JJC's signature style."
@@ -318,18 +318,18 @@ export default function About() {
             </div>
             {/* Top right image */}
             <div className="col-span-1 rounded-xl overflow-hidden h-[400px]">
-              <img src="/services_wood_carving.jpg" alt="Wood carving close up" className="w-full h-full object-cover filter brightness-[0.8]" />
+              <img src="/about_wood_carving.jpg" alt="Wood carving close up" className="w-full h-full object-cover filter brightness-[0.8]" />
             </div>
             
             {/* Bottom 3 images */}
             <div className="col-span-1 rounded-xl overflow-hidden h-[280px]">
-              <img src="/wood_teak.jpg" alt="Wood storage" className="w-full h-full object-cover filter brightness-[0.8]" />
+              <img src="/about_timber.jpg" alt="Wood storage" className="w-full h-full object-cover filter brightness-[0.8]" />
             </div>
             <div className="col-span-1 rounded-xl overflow-hidden h-[280px]">
               <img src="/portfolio_pews.jpg" alt="Finishing" className="w-full h-full object-cover filter brightness-[0.8]" />
             </div>
             <div className="col-span-1 rounded-xl overflow-hidden h-[280px]">
-              <img src="/services_drafting.jpg" alt="Tools" className="w-full h-full object-cover filter brightness-[0.8]" />
+              <img src="/about_tools.jpg" alt="Tools" className="w-full h-full object-cover filter brightness-[0.8]" />
             </div>
           </div>
         </div>
