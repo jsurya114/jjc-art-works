@@ -1,68 +1,78 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
+import { db } from '../../lib/firebase';
+import { collection, query, where, getDocs, addDoc, serverTimestamp } from 'firebase/firestore';
+import { Loader2 } from 'lucide-react';
 
 export default function Testimonials() {
-  const testimonials = [
-    {
-      initial: 'S',
-      church: "St. Mary's Forane Church",
-      location: 'Thrissur',
-      service: 'Chapel Pews',
-      text: '"The pews JJC crafted for our church are absolutely magnificent. They perfectly blend with the heritage architecture of our century-old parish."',
-      author: 'Fr. Sebastian Mathew',
-      title: 'Parish Priest',
-      year: '2023'
-    },
-    {
-      initial: 'G',
-      church: 'Grace Fellowship Church',
-      location: 'Kochi',
-      service: 'Full Interior',
-      text: '"From the first consultation to the final installation JJC was professional, respectful, and delivered exceptional quality woodwork."',
-      author: 'Pastor David Emmanuel',
-      title: 'Senior Pastor',
-      year: '2022'
-    },
-    {
-      initial: 'S',
-      church: "St. Joseph's Cathedral",
-      location: 'Kozhikode',
-      service: 'Altar Furniture',
-      text: '"The altar JJC built for us is the centrepiece of our cathedral. The intricate carving detail is a testament to their devotion to the craft."',
-      author: 'Fr. Joseph Kurien',
-      title: 'Cathedral Rector',
-      year: '2023'
-    },
-    {
-      initial: 'H',
-      church: 'Holy Redeemer Chapel',
-      location: 'Palakkad',
-      service: 'Pulpit Design',
-      text: '"Our new pulpit is a masterpiece. The hand-carved panels tell a story, and the finish is exquisite."',
-      author: 'Sr. Theresa George',
-      title: 'Chapel Administrator',
-      year: '2021'
-    },
-    {
-      initial: 'S',
-      church: "St. Peter's Church",
-      location: 'Kannur',
-      service: 'Church Seating',
-      text: '"We replaced all our old chairs with JJC custom seating. The congregation immediately noticed the superior comfort and beautiful aesthetics."',
-      author: 'Deacon Philip Varghese',
-      title: 'Church Administrator',
-      year: '2022'
-    },
-    {
-      initial: 'C',
-      church: 'Christ Church',
-      location: 'Trivandrum',
-      service: 'Custom Woodwork',
-      text: '"JJC built our confessional and sacristy cabinets. The attention to detail and reverence for the sacred space was deeply appreciated."',
-      author: 'Fr. Anthony Fernandez',
-      title: 'Parish Priest',
-      year: '2023'
+  const [testimonials, setTestimonials] = useState([]);
+  const [loading, setLoading] = useState(true);
+
+  // Form State
+  const [rating, setRating] = useState(5);
+  const [name, setName] = useState('');
+  const [churchName, setChurchName] = useState('');
+  const [review, setReview] = useState('');
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitMessage, setSubmitMessage] = useState('');
+
+  useEffect(() => {
+    const fetchTestimonials = async () => {
+      try {
+        const q = query(
+          collection(db, 'testimonials'),
+          where('status', '==', 'approved')
+        );
+        const querySnapshot = await getDocs(q);
+        const data = querySnapshot.docs.map(doc => ({ id: doc.id, ...doc.data() }));
+        
+        data.sort((a, b) => {
+          if (!a.createdAt || !b.createdAt) return 0;
+          return b.createdAt.toMillis() - a.createdAt.toMillis();
+        });
+        
+        setTestimonials(data);
+      } catch (err) {
+        console.error("Error fetching testimonials:", err);
+      } finally {
+        setLoading(false);
+      }
+    };
+    fetchTestimonials();
+  }, []);
+
+  const handleSubmitReview = async (e) => {
+    e.preventDefault();
+    if (!name || !review) {
+      setSubmitMessage('Please fill in your name and review.');
+      return;
     }
-  ];
+
+    setIsSubmitting(true);
+    setSubmitMessage('');
+    try {
+      await addDoc(collection(db, 'testimonials'), {
+        author: name,
+        church: churchName || 'Church Client',
+        location: '', 
+        service: 'General Service',
+        text: review,
+        rating: rating,
+        status: 'pending',
+        createdAt: serverTimestamp(),
+        initial: name.charAt(0).toUpperCase()
+      });
+      setSubmitMessage('Thank you! Your review has been submitted and is pending approval.');
+      setName('');
+      setChurchName('');
+      setReview('');
+      setRating(5);
+    } catch (err) {
+      console.error("Error submitting review:", err);
+      setSubmitMessage('An error occurred. Please try again.');
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
 
   const features = [
     {
@@ -189,8 +199,13 @@ export default function Testimonials() {
             <h2 className="text-[40px] md:text-[56px] text-[#1a110a]" style={{ fontFamily: "'Playfair Display', Georgia, serif" }}>Trusted by Chapels Across South India</h2>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {testimonials.map((test, i) => (
+          {loading ? (
+            <div className="flex justify-center p-12 text-[#cba85a]"><Loader2 className="w-12 h-12 animate-spin" /></div>
+          ) : testimonials.length === 0 ? (
+             <div className="text-center p-12 text-[#a48e83]" style={{ fontFamily: "'Be Vietnam Pro', sans-serif" }}>No testimonials to display yet.</div>
+          ) : (
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {testimonials.map((test, i) => (
               <div key={i} className="bg-white p-8 md:p-10 rounded-xl shadow-[0_4px_20px_rgba(0,0,0,0.03)] border border-[#e8ddd8]/50 flex flex-col h-full">
                 
                 <div className="flex justify-between items-start mb-6">
@@ -227,13 +242,14 @@ export default function Testimonials() {
                     <p className="text-[#a48e83] text-[11px]" style={{ fontFamily: "'Be Vietnam Pro', sans-serif" }}>{test.title}</p>
                   </div>
                   <div className="bg-[#f3ecea] text-[#705a4c] text-[11px] font-medium px-3 py-1 rounded-full">
-                    {test.year}
+                    {test.year || new Date().getFullYear()}
                   </div>
                 </div>
 
               </div>
             ))}
           </div>
+          )}
         </div>
       </section>
 
@@ -288,33 +304,39 @@ export default function Testimonials() {
               <h3 className="text-[28px] text-white font-medium mb-1" style={{ fontFamily: "'Playfair Display', Georgia, serif" }}>Quick Review Form</h3>
               <p className="text-[#a48e83] text-[13px] mb-8" style={{ fontFamily: "'Be Vietnam Pro', sans-serif" }}>Takes less than 2 minutes.</p>
               
-              <form className="space-y-6">
+              <form className="space-y-6" onSubmit={handleSubmitReview}>
                 <div>
                   <label className="block text-[#a48e83] text-[10px] font-bold tracking-widest uppercase mb-3">YOUR RATING</label>
                   <div className="flex gap-2 text-[#cba85a] cursor-pointer">
-                    {[...Array(5)].map((_, i) => (
-                      <svg key={i} width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+                    {[1, 2, 3, 4, 5].map((star) => (
+                      <svg key={star} onClick={() => setRating(star)} width="24" height="24" viewBox="0 0 24 24" fill={rating >= star ? "currentColor" : "none"} stroke="currentColor" strokeWidth="1.5"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
                     ))}
                   </div>
                 </div>
 
                 <div>
                   <label className="block text-[#a48e83] text-[10px] font-bold tracking-widest uppercase mb-2">NAME</label>
-                  <input type="text" placeholder="John Doe" className="w-full bg-[#46382a] border border-[#594435] rounded-md py-4 px-4 text-[15px] text-white placeholder:text-[#8a7668] focus:outline-none focus:border-[#cba85a] transition-colors" />
+                  <input type="text" value={name} onChange={(e) => setName(e.target.value)} required placeholder="John Doe" className="w-full bg-[#46382a] border border-[#594435] rounded-md py-4 px-4 text-[15px] text-white placeholder:text-[#8a7668] focus:outline-none focus:border-[#cba85a] transition-colors" />
                 </div>
 
                 <div>
                   <label className="block text-[#a48e83] text-[10px] font-bold tracking-widest uppercase mb-2">CHURCH NAME</label>
-                  <input type="text" placeholder="St. Mary's Cathedral" className="w-full bg-[#46382a] border border-[#594435] rounded-md py-4 px-4 text-[15px] text-white placeholder:text-[#8a7668] focus:outline-none focus:border-[#cba85a] transition-colors" />
+                  <input type="text" value={churchName} onChange={(e) => setChurchName(e.target.value)} placeholder="St. Mary's Cathedral" className="w-full bg-[#46382a] border border-[#594435] rounded-md py-4 px-4 text-[15px] text-white placeholder:text-[#8a7668] focus:outline-none focus:border-[#cba85a] transition-colors" />
                 </div>
 
                 <div>
                   <label className="block text-[#a48e83] text-[10px] font-bold tracking-widest uppercase mb-2">REVIEW</label>
-                  <textarea placeholder="Tell us about your experience..." rows="4" className="w-full bg-[#46382a] border border-[#594435] rounded-md py-4 px-4 text-[15px] text-white placeholder:text-[#8a7668] focus:outline-none focus:border-[#cba85a] transition-colors resize-none"></textarea>
+                  <textarea value={review} onChange={(e) => setReview(e.target.value)} required placeholder="Tell us about your experience..." rows="4" className="w-full bg-[#46382a] border border-[#594435] rounded-md py-4 px-4 text-[15px] text-white placeholder:text-[#8a7668] focus:outline-none focus:border-[#cba85a] transition-colors resize-none"></textarea>
                 </div>
 
-                <button type="button" className="w-full bg-[#cba85a] text-[#1a110a] text-[13px] font-bold tracking-widest py-4 mt-2 rounded-full hover:bg-[#b59540] transition-colors uppercase">
-                  SUBMIT REVIEW →
+                {submitMessage && (
+                  <div className={`p-3 rounded-md text-sm ${submitMessage.includes('error') || submitMessage.includes('Please') ? 'bg-rose-500/20 text-rose-300' : 'bg-green-500/20 text-green-300'}`}>
+                    {submitMessage}
+                  </div>
+                )}
+
+                <button type="submit" disabled={isSubmitting} className="w-full bg-[#cba85a] text-[#1a110a] text-[13px] font-bold tracking-widest py-4 mt-2 rounded-full hover:bg-[#b59540] transition-colors uppercase disabled:opacity-50">
+                  {isSubmitting ? 'SUBMITTING...' : 'SUBMIT REVIEW →'}
                 </button>
               </form>
             </div>

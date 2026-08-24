@@ -22,6 +22,7 @@ import Dashboard from './pages/admin/Dashboard';
 import Login from './pages/admin/Login';
 import ManageGallery from './pages/admin/ManageGallery';
 import ManageServices from './pages/admin/ManageServices';
+import ManageTestimonials from './pages/admin/ManageTestimonials';
 
 function App() {
   return (
@@ -53,6 +54,7 @@ function App() {
           <Route path="portfolio" element={<div className="p-8">Manage Portfolio Mock</div>} />
           <Route path="gallery" element={<ManageGallery />} />
           <Route path="services" element={<ManageServices />} />
+          <Route path="testimonials" element={<ManageTestimonials />} />
           <Route path="settings" element={<div className="p-8">Admin Settings Mock</div>} />
         </Route>
       </Routes>

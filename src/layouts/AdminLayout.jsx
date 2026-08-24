@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Link, Outlet, useLocation, useNavigate } from 'react-router-dom';
-import { LayoutDashboard, Briefcase, Image, Settings, LogOut, ArrowLeft, Menu, X, Hammer } from 'lucide-react';
+import { LayoutDashboard, Briefcase, Image, Settings, LogOut, ArrowLeft, Menu, X, Hammer, MessageSquare } from 'lucide-react';
 import { useAuth } from '../context/AuthContext';
 
 const Sidebar = ({ isMobileMenuOpen, setIsMobileMenuOpen }) => {
@@ -18,6 +18,7 @@ const Sidebar = ({ isMobileMenuOpen, setIsMobileMenuOpen }) => {
     { name: 'Manage Portfolio', path: '/admin/portfolio', icon: Briefcase },
     { name: 'Manage Gallery', path: '/admin/gallery', icon: Image },
     { name: 'Manage Services', path: '/admin/services', icon: Hammer },
+    { name: 'Manage Testimonials', path: '/admin/testimonials', icon: MessageSquare },
     { name: 'Settings', path: '/admin/settings', icon: Settings },
   ];
 
