@@ -23,6 +23,7 @@ import Login from './pages/admin/Login';
 import ManageGallery from './pages/admin/ManageGallery';
 import ManageServices from './pages/admin/ManageServices';
 import ManageTestimonials from './pages/admin/ManageTestimonials';
+import ManagePortfolio from './pages/admin/ManagePortfolio';
 
 function App() {
   return (
@@ -51,7 +52,7 @@ function App() {
           </ProtectedRoute>
         }>
           <Route index element={<Dashboard />} />
-          <Route path="portfolio" element={<div className="p-8">Manage Portfolio Mock</div>} />
+          <Route path="portfolio" element={<ManagePortfolio />} />
           <Route path="gallery" element={<ManageGallery />} />
           <Route path="services" element={<ManageServices />} />
           <Route path="testimonials" element={<ManageTestimonials />} />
