@@ -103,7 +103,7 @@ export default function Testimonials() {
       {/* ── HEADER ── */}
       <section className="pt-32 pb-24 px-6 text-center">
         <div className="max-w-[800px] mx-auto">
-          <h1 className="text-[56px] md:text-[72px] text-[#1a110a] mb-6 leading-tight" style={{ fontFamily: "'Playfair Display', Georgia, serif" }}>
+          <h1 className="text-[36px] sm:text-[56px] md:text-[72px] text-[#1a110a] mb-6 leading-tight" style={{ fontFamily: "'Playfair Display', Georgia, serif" }}>
             Testimonials
           </h1>
           <p className="text-[#4f453f] text-[16px] max-w-2xl mx-auto leading-relaxed" style={{ fontFamily: "'Be Vietnam Pro', sans-serif" }}>
@@ -117,7 +117,7 @@ export default function Testimonials() {
         <div className="max-w-[1280px] mx-auto flex flex-col md:flex-row items-center justify-between relative">
           
           <div className="flex-1 flex flex-col items-center justify-center py-6 md:py-0 text-[#1a110a] relative w-full">
-            <div className="text-[72px] font-normal leading-none mb-4 tracking-tight" style={{ fontFamily: "'Playfair Display', Georgia, serif" }}>4.9</div>
+            <div className="text-[48px] sm:text-[72px] font-normal leading-none mb-4 tracking-tight" style={{ fontFamily: "'Playfair Display', Georgia, serif" }}>4.9</div>
             <div className="flex gap-1.5 mb-3 text-[#1a110a]">
               {[...Array(5)].map((_, i) => (
                 <svg key={i} width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
@@ -196,7 +196,7 @@ export default function Testimonials() {
           
           <div className="text-center mb-16">
             <p className="text-[#cba85a] text-[11px] font-bold tracking-[3px] uppercase mb-4" style={{ fontFamily: "'Be Vietnam Pro', sans-serif" }}>WHAT OUR CLIENTS SAY</p>
-            <h2 className="text-[40px] md:text-[56px] text-[#1a110a]" style={{ fontFamily: "'Playfair Display', Georgia, serif" }}>Trusted by Chapels Across South India</h2>
+            <h2 className="text-[28px] sm:text-[40px] md:text-[56px] text-[#1a110a]" style={{ fontFamily: "'Playfair Display', Georgia, serif" }}>Trusted by Chapels Across South India</h2>
           </div>
 
           {loading ? (
@@ -256,7 +256,7 @@ export default function Testimonials() {
       {/* ── WHY CHAPELS TRUST JJC ── */}
       <section className="bg-[#fdfbf7] pb-24 px-6 border-b border-[#e8ddd8]">
         <div className="max-w-[1280px] mx-auto">
-          <h2 className="text-[40px] md:text-[56px] text-[#1a110a] text-center mb-16" style={{ fontFamily: "'Playfair Display', Georgia, serif" }}>Why Chapels Trust JJC</h2>
+          <h2 className="text-[28px] sm:text-[40px] md:text-[56px] text-[#1a110a] text-center mb-16" style={{ fontFamily: "'Playfair Display', Georgia, serif" }}>Why Chapels Trust JJC</h2>
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {features.map((feature, i) => (
@@ -281,7 +281,7 @@ export default function Testimonials() {
           {/* Left Text */}
           <div className="w-full lg:w-1/2 lg:pr-12 pt-8">
             <p className="text-[#cba85a] text-[11px] font-bold tracking-[3px] uppercase mb-4" style={{ fontFamily: "'Be Vietnam Pro', sans-serif" }}>SHARE YOUR EXPERIENCE</p>
-            <h2 className="text-[44px] md:text-[56px] leading-[1.1] mb-6" style={{ fontFamily: "'Playfair Display', Georgia, serif" }}>Worked With Us Before?</h2>
+            <h2 className="text-[30px] sm:text-[44px] md:text-[56px] leading-[1.1] mb-6" style={{ fontFamily: "'Playfair Display', Georgia, serif" }}>Worked With Us Before?</h2>
             <p className="text-[#a48e83] text-[15px] leading-relaxed mb-12 max-w-md" style={{ fontFamily: "'Be Vietnam Pro', sans-serif" }}>
               Your review helps other chapels and churches find the craftsmanship they deserve. Share your JJC experience and help us serve more sacred spaces.
             </p>

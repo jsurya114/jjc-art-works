@@ -94,7 +94,7 @@ export default function Portfolio() {
         <p className="text-[#cba85a] text-[11px] font-bold tracking-[3px] uppercase mb-6" style={{ fontFamily: "'Be Vietnam Pro', sans-serif" }}>
           OUR PORTFOLIO
         </p>
-        <h1 className="text-[48px] md:text-[72px] text-[#1a110a] mb-6 leading-tight" style={{ fontFamily: "'Playfair Display', Georgia, serif" }}>
+        <h1 className="text-[36px] sm:text-[48px] md:text-[72px] text-[#1a110a] mb-6 leading-tight" style={{ fontFamily: "'Playfair Display', Georgia, serif" }}>
           Masterpieces of Faith
         </h1>
         <p className="text-[#4f453f] text-[16px] max-w-2xl mx-auto leading-relaxed" style={{ fontFamily: "'Be Vietnam Pro', sans-serif" }}>

@@ -81,7 +81,7 @@ export default function Gallery() {
           <p className="text-[#cba85a] text-[11px] font-bold tracking-[3px] uppercase mb-6" style={{ fontFamily: "'Be Vietnam Pro', sans-serif" }}>
             OUR GALLERY
           </p>
-          <h1 className="text-[44px] md:text-[64px] leading-[1.1] mb-6" style={{ fontFamily: "'Playfair Display', Georgia, serif" }}>
+          <h1 className="text-[30px] sm:text-[44px] md:text-[64px] leading-[1.1] mb-6" style={{ fontFamily: "'Playfair Display', Georgia, serif" }}>
             Years of Sacred Work,<br />Captured in Detail
           </h1>
           <p className="text-white/80 text-[15px] font-medium tracking-wide" style={{ fontFamily: "'Be Vietnam Pro', sans-serif" }}>
@@ -92,7 +92,7 @@ export default function Gallery() {
 
       {/* ── RECENT RESTORATIONS ── */}
       <section className="py-24 px-6 max-w-[1280px] mx-auto text-center">
-        <h2 className="text-[36px] md:text-[42px] text-[#1a110a] mb-6" style={{ fontFamily: "'Playfair Display', Georgia, serif" }}>
+        <h2 className="text-[28px] sm:text-[36px] md:text-[42px] text-[#1a110a] mb-6" style={{ fontFamily: "'Playfair Display', Georgia, serif" }}>
           Recent Restorations
         </h2>
         <div className="w-12 h-px bg-[#705a4c] mx-auto mb-16"></div>
@@ -159,7 +159,7 @@ export default function Gallery() {
       <section className="bg-[#2d1f15] py-32 px-6 text-center text-white mt-16">
         <div className="max-w-[1000px] mx-auto">
           <p className="text-[#cba85a] text-[11px] font-bold tracking-[3px] uppercase mb-4" style={{ fontFamily: "'Be Vietnam Pro', sans-serif" }}>BEHIND THE CRAFT</p>
-          <h2 className="text-[44px] md:text-[56px] mb-4" style={{ fontFamily: "'Playfair Display', Georgia, serif" }}>Watch Our Craftsmen at Work</h2>
+          <h2 className="text-[28px] sm:text-[44px] md:text-[56px] mb-4" style={{ fontFamily: "'Playfair Display', Georgia, serif" }}>Watch Our Craftsmen at Work</h2>
           <p className="text-[#a48e83] text-[15px] mb-16" style={{ fontFamily: "'Be Vietnam Pro', sans-serif" }}>A glimpse into the everyday where every piece begins.</p>
           
           <div className="relative rounded-2xl overflow-hidden bg-black shadow-2xl aspect-video mb-8 group cursor-pointer border border-white/10">
@@ -205,19 +205,19 @@ export default function Gallery() {
       <section className="bg-[#cba85a] py-16 px-6 text-center text-[#1a110a]">
         <div className="max-w-[1280px] mx-auto flex flex-col md:flex-row items-center justify-center divide-y md:divide-y-0 md:divide-x divide-[#1a110a]/20">
           <div className="flex-1 w-full py-8 md:py-0 flex flex-col items-center">
-            <div className="text-[56px] font-medium mb-1" style={{ fontFamily: "'Playfair Display', Georgia, serif" }}>50</div>
+            <div className="text-[36px] sm:text-[56px] font-medium mb-1" style={{ fontFamily: "'Playfair Display', Georgia, serif" }}>50</div>
             <p className="text-[10px] font-bold tracking-[2px] uppercase" style={{ fontFamily: "'Be Vietnam Pro', sans-serif" }}>CHAPEL PROJECTS</p>
           </div>
           <div className="flex-1 w-full py-8 md:py-0 flex flex-col items-center">
-            <div className="text-[56px] font-medium mb-1" style={{ fontFamily: "'Playfair Display', Georgia, serif" }}>10</div>
+            <div className="text-[36px] sm:text-[56px] font-medium mb-1" style={{ fontFamily: "'Playfair Display', Georgia, serif" }}>10</div>
             <p className="text-[10px] font-bold tracking-[2px] uppercase" style={{ fontFamily: "'Be Vietnam Pro', sans-serif" }}>YEARS OF CRAFT</p>
           </div>
           <div className="flex-1 w-full py-8 md:py-0 flex flex-col items-center">
-            <div className="text-[56px] font-medium mb-1" style={{ fontFamily: "'Playfair Display', Georgia, serif" }}>100%</div>
+            <div className="text-[36px] sm:text-[56px] font-medium mb-1" style={{ fontFamily: "'Playfair Display', Georgia, serif" }}>100%</div>
             <p className="text-[10px] font-bold tracking-[2px] uppercase" style={{ fontFamily: "'Be Vietnam Pro', sans-serif" }}>CUSTOM MADE</p>
           </div>
           <div className="flex-1 w-full py-8 md:py-0 flex flex-col items-center">
-            <div className="text-[56px] font-medium mb-1" style={{ fontFamily: "'Playfair Display', Georgia, serif" }}>15</div>
+            <div className="text-[36px] sm:text-[56px] font-medium mb-1" style={{ fontFamily: "'Playfair Display', Georgia, serif" }}>15</div>
             <p className="text-[10px] font-bold tracking-[2px] uppercase" style={{ fontFamily: "'Be Vietnam Pro', sans-serif" }}>MASTER CRAFTSMEN</p>
           </div>
         </div>
@@ -230,7 +230,7 @@ export default function Gallery() {
             <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z"/></svg>
             @JJC_CHAPELINTERIORS
           </p>
-          <h2 className="text-[36px] md:text-[42px] mb-4 text-[#1a110a]" style={{ fontFamily: "'Playfair Display', Georgia, serif" }}>Follow Our Journey</h2>
+          <h2 className="text-[28px] sm:text-[36px] md:text-[42px] mb-4 text-[#1a110a]" style={{ fontFamily: "'Playfair Display', Georgia, serif" }}>Follow Our Journey</h2>
           <p className="text-[#4f453f] text-[14px] mb-12" style={{ fontFamily: "'Be Vietnam Pro', sans-serif" }}>See our process, find inspiration, and follow our latest projects on Instagram.</p>
           
           <div className="grid grid-cols-2 md:grid-cols-5 gap-4 mb-12">
@@ -259,7 +259,7 @@ export default function Gallery() {
           <p className="text-[#cba85a] text-[10px] font-bold tracking-[3px] uppercase mb-4" style={{ fontFamily: "'Be Vietnam Pro', sans-serif" }}>
             READY TO START YOUR NEXT PROJECT?
           </p>
-          <h2 className="text-[36px] md:text-[48px] mb-8 leading-tight" style={{ fontFamily: "'Playfair Display', Georgia, serif" }}>
+          <h2 className="text-[28px] sm:text-[36px] md:text-[48px] mb-8 leading-tight" style={{ fontFamily: "'Playfair Display', Georgia, serif" }}>
             Let's Create Your Chapel's Story
           </h2>
           <p className="text-[#a48e83] text-[15px] mb-12" style={{ fontFamily: "'Be Vietnam Pro', sans-serif" }}>

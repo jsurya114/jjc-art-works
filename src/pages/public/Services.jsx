@@ -23,7 +23,7 @@ export default function Services() {
   return (
     <div className="bg-[#fffcfaf0] text-[#1a110a] font-sans overflow-x-hidden">
       {/* ── HERO SECTION ── */}
-      <section className="relative h-[600px] flex items-center justify-center text-center">
+      <section className="relative h-[500px] sm:h-[600px] flex items-center justify-center text-center">
         {/* Background Image with Overlay */}
         <div className="absolute inset-0 z-0">
           <img src="/service10.jpeg" alt="Chapel Interior" className="w-full h-full object-cover" />
@@ -34,7 +34,7 @@ export default function Services() {
           <p className="text-[#c9a84c] text-[11px] font-semibold tracking-[3px] uppercase mb-5" style={{ fontFamily: "'Be Vietnam Pro', sans-serif" }}>
             WHAT WE OFFER
           </p>
-          <h1 className="text-[56px] md:text-[80px] text-[#fff8f5] mb-6 leading-tight" style={{ fontFamily: "'Playfair Display', Georgia, serif" }}>
+          <h1 className="text-[36px] sm:text-[56px] md:text-[80px] text-[#fff8f5] mb-6 leading-tight" style={{ fontFamily: "'Playfair Display', Georgia, serif" }}>
             Crafted for Sacred<br />Spaces
           </h1>
           <p className="text-[#e8ddd8] text-[15px] max-w-2xl mx-auto tracking-wide" style={{ fontFamily: "'Be Vietnam Pro', sans-serif" }}>
@@ -47,8 +47,8 @@ export default function Services() {
       <section className="py-24 px-6 max-w-[1280px] mx-auto">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
           {/* Top Left */}
-          <div className="flex flex-col justify-center pr-10">
-            <h2 className="text-[40px] md:text-[48px] leading-[1.1] mb-6 text-[#1a110a]" style={{ fontFamily: "'Playfair Display', Georgia, serif" }}>
+          <div className="flex flex-col justify-center pr-0 sm:pr-10">
+            <h2 className="text-[28px] sm:text-[40px] md:text-[48px] leading-[1.1] mb-6 text-[#1a110a]" style={{ fontFamily: "'Playfair Display', Georgia, serif" }}>
               Beautiful Work for Sacred Spaces
             </h2>
             <p className="text-[#4f453f] text-[16px] leading-relaxed border-l border-[#d2c4bc] pl-6 ml-1" style={{ fontFamily: "'Be Vietnam Pro', sans-serif" }}>
@@ -145,7 +145,7 @@ export default function Services() {
         <div id="chapel-pews" className="flex flex-col md:flex-row items-center gap-16 md:gap-24 scroll-mt-32">
           <div className="w-full md:w-1/2">
             <p className="text-[#c9a84c] text-[11px] font-semibold tracking-[2px] uppercase mb-4" style={{ fontFamily: "'Be Vietnam Pro', sans-serif" }}>01 CHAPEL PEWS</p>
-            <h2 className="text-[44px] md:text-[56px] leading-[1.1] mb-6 text-[#1a110a]" style={{ fontFamily: "'Playfair Display', Georgia, serif" }}>Custom Chapel<br />Seating</h2>
+            <h2 className="text-[30px] sm:text-[44px] md:text-[56px] leading-[1.1] mb-6 text-[#1a110a]" style={{ fontFamily: "'Playfair Display', Georgia, serif" }}>Custom Chapel<br />Seating</h2>
             <p className="text-[#4f453f] text-[15px] leading-relaxed mb-8" style={{ fontFamily: "'Be Vietnam Pro', sans-serif" }}>
               Bespoke pews and seating designed for comfort, durability, and the character of each chapel.
             </p>
@@ -168,7 +168,7 @@ export default function Services() {
         <div id="altar-furniture" className="flex flex-col md:flex-row-reverse items-center gap-16 md:gap-24 scroll-mt-32">
           <div className="w-full md:w-1/2">
             <p className="text-[#c9a84c] text-[11px] font-semibold tracking-[2px] uppercase mb-4" style={{ fontFamily: "'Be Vietnam Pro', sans-serif" }}>02 ALTAR FURNITURE</p>
-            <h2 className="text-[44px] md:text-[56px] leading-[1.1] mb-6 text-[#1a110a]" style={{ fontFamily: "'Playfair Display', Georgia, serif" }}>Altars and Pulpits</h2>
+            <h2 className="text-[30px] sm:text-[44px] md:text-[56px] leading-[1.1] mb-6 text-[#1a110a]" style={{ fontFamily: "'Playfair Display', Georgia, serif" }}>Altars and Pulpits</h2>
             <p className="text-[#4f453f] text-[15px] leading-relaxed mb-8" style={{ fontFamily: "'Be Vietnam Pro', sans-serif" }}>
               Handcrafted altar furniture, pulpits and lecterns designed to complement the sacred space.
             </p>
@@ -191,7 +191,7 @@ export default function Services() {
         <div id="custom-woodwork" className="flex flex-col md:flex-row items-center gap-16 md:gap-24 scroll-mt-32">
           <div className="w-full md:w-1/2">
             <p className="text-[#c9a84c] text-[11px] font-semibold tracking-[2px] uppercase mb-4" style={{ fontFamily: "'Be Vietnam Pro', sans-serif" }}>03 CUSTOM WOODWORK</p>
-            <h2 className="text-[44px] md:text-[56px] leading-[1.1] mb-6 text-[#1a110a]" style={{ fontFamily: "'Playfair Display', Georgia, serif" }}>Bespoke Chapel<br />Furniture</h2>
+            <h2 className="text-[30px] sm:text-[44px] md:text-[56px] leading-[1.1] mb-6 text-[#1a110a]" style={{ fontFamily: "'Playfair Display', Georgia, serif" }}>Bespoke Chapel<br />Furniture</h2>
             <p className="text-[#4f453f] text-[15px] leading-relaxed mb-8" style={{ fontFamily: "'Be Vietnam Pro', sans-serif" }}>
               Custom furniture created around your requirements, dimensions, materials and design.
             </p>
@@ -214,7 +214,7 @@ export default function Services() {
         <div id="interior-consultation" className="flex flex-col md:flex-row-reverse items-center gap-16 md:gap-24 scroll-mt-32">
           <div className="w-full md:w-1/2">
             <p className="text-[#c9a84c] text-[11px] font-semibold tracking-[2px] uppercase mb-4" style={{ fontFamily: "'Be Vietnam Pro', sans-serif" }}>04 INTERIOR CONSULTATION</p>
-            <h2 className="text-[44px] md:text-[56px] leading-[1.1] mb-6 text-[#1a110a]" style={{ fontFamily: "'Playfair Display', Georgia, serif" }}>Full Chapel Interior<br />Design Guidance</h2>
+            <h2 className="text-[30px] sm:text-[44px] md:text-[56px] leading-[1.1] mb-6 text-[#1a110a]" style={{ fontFamily: "'Playfair Display', Georgia, serif" }}>Full Chapel Interior<br />Design Guidance</h2>
             <p className="text-[#4f453f] text-[15px] leading-relaxed mb-8" style={{ fontFamily: "'Be Vietnam Pro', sans-serif" }}>
               Not sure where to start? Our interior consultation service guides you through every decision — from floor plan layout to material selection, colour schemes, and furniture placement — ensuring your chapel achieves perfect architectural harmony and spiritual resonance.
             </p>
@@ -237,7 +237,7 @@ export default function Services() {
         <div id="church-seating" className="flex flex-col md:flex-row items-center gap-16 md:gap-24 scroll-mt-32">
           <div className="w-full md:w-1/2">
             <p className="text-[#c9a84c] text-[11px] font-semibold tracking-[2px] uppercase mb-4" style={{ fontFamily: "'Be Vietnam Pro', sans-serif" }}>05 CHURCH SEATING</p>
-            <h2 className="text-[44px] md:text-[56px] leading-[1.1] mb-6 text-[#1a110a]" style={{ fontFamily: "'Playfair Display', Georgia, serif" }}>Comfortable Seating for<br />Every Congregation</h2>
+            <h2 className="text-[30px] sm:text-[44px] md:text-[56px] leading-[1.1] mb-6 text-[#1a110a]" style={{ fontFamily: "'Playfair Display', Georgia, serif" }}>Comfortable Seating for<br />Every Congregation</h2>
             <p className="text-[#4f453f] text-[15px] leading-relaxed mb-8" style={{ fontFamily: "'Be Vietnam Pro', sans-serif" }}>
               Beyond chapel pews JJC crafts a complete range of church seating — chairs for smaller chapels, stacking choir seats, presider chairs, and premium upholstered sanctuary seating. All designed for comfort during long services without compromising on sacred beauty.
             </p>
@@ -260,7 +260,7 @@ export default function Services() {
         <div id="pulpit-design" className="flex flex-col md:flex-row-reverse items-center gap-16 md:gap-24 scroll-mt-32">
           <div className="w-full md:w-1/2">
             <p className="text-[#c9a84c] text-[11px] font-semibold tracking-[2px] uppercase mb-4" style={{ fontFamily: "'Be Vietnam Pro', sans-serif" }}>06 PULPIT DESIGN</p>
-            <h2 className="text-[44px] md:text-[56px] leading-[1.1] mb-6 text-[#1a110a]" style={{ fontFamily: "'Playfair Display', Georgia, serif" }}>Statement Pulpits That<br />Command Presence</h2>
+            <h2 className="text-[30px] sm:text-[44px] md:text-[56px] leading-[1.1] mb-6 text-[#1a110a]" style={{ fontFamily: "'Playfair Display', Georgia, serif" }}>Statement Pulpits That<br />Command Presence</h2>
             <p className="text-[#4f453f] text-[15px] leading-relaxed mb-8" style={{ fontFamily: "'Be Vietnam Pro', sans-serif" }}>
               A pulpit is more than a piece of furniture — it is where the word is proclaimed. JJC designs and crafts pulpits that command presence and respect, featuring hand-carved panels, brass accents, built-in reading lights, and microphone integration for modern worship.
             </p>
@@ -342,7 +342,7 @@ export default function Services() {
           <p className="text-[#c9a84c] text-[10px] font-semibold tracking-[3px] uppercase mb-4" style={{ fontFamily: "'Be Vietnam Pro', sans-serif" }}>
             OUR MATERIALS
           </p>
-          <h2 className="text-[44px] md:text-[56px] text-[#1a110a] mb-6 leading-tight" style={{ fontFamily: "'Playfair Display', Georgia, serif" }}>
+          <h2 className="text-[30px] sm:text-[44px] md:text-[56px] text-[#1a110a] mb-6 leading-tight" style={{ fontFamily: "'Playfair Display', Georgia, serif" }}>
             Only the Finest Wood
           </h2>
           <p className="text-[#4f453f] text-[16px] max-w-2xl mx-auto mb-16" style={{ fontFamily: "'Be Vietnam Pro', sans-serif" }}>
@@ -378,7 +378,7 @@ export default function Services() {
           <p className="text-[#1a110a] text-[10px] font-bold tracking-[3px] uppercase mb-6" style={{ fontFamily: "'Be Vietnam Pro', sans-serif" }}>
             READY TO BEGIN
           </p>
-          <h2 className="text-[44px] md:text-[64px] mb-6 leading-tight" style={{ fontFamily: "'Playfair Display', Georgia, serif" }}>
+          <h2 className="text-[30px] sm:text-[44px] md:text-[64px] mb-6 leading-tight" style={{ fontFamily: "'Playfair Display', Georgia, serif" }}>
             Let's Build Something Beautiful<br />Together
           </h2>
           <p className="text-[#1a110a]/80 text-[16px] mb-12" style={{ fontFamily: "'Be Vietnam Pro', sans-serif" }}>

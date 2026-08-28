@@ -74,8 +74,8 @@ export default function Home() {
       {/* ── HERO ── */}
       <section className="max-w-[1280px] mx-auto flex flex-col lg:flex-row min-h-[calc(100vh-72px)]">
         {/* Left */}
-        <div className="w-full lg:w-[55%] bg-[#fff8f5] flex flex-col justify-center px-10 md:px-16 lg:px-20 py-16 lg:py-24">
-          <h1 className="text-[56px] md:text-[68px] lg:text-[76px] leading-[1.05] mb-8 text-[#26170c]" style={{ fontFamily: "'Playfair Display', Georgia, serif", letterSpacing: '-0.02em' }}>
+        <div className="w-full lg:w-[55%] bg-[#fff8f5] flex flex-col justify-center px-6 sm:px-10 md:px-16 lg:px-20 py-16 lg:py-24">
+          <h1 className="text-[40px] sm:text-[56px] md:text-[68px] lg:text-[76px] leading-[1.05] mb-8 text-[#26170c]" style={{ fontFamily: "'Playfair Display', Georgia, serif", letterSpacing: '-0.02em' }}>
             Crafting Sacred<br />Spaces,<br />
             <em>One Piece at a<br />Time.</em>
           </h1>
@@ -116,7 +116,7 @@ export default function Home() {
             <p className="text-[11px] font-semibold tracking-[3px] uppercase text-[#705a4c] mb-4" style={{ fontFamily: "'Be Vietnam Pro', sans-serif" }}>
               WHAT WE DO
             </p>
-            <h2 className="text-[64px] md:text-[80px] text-[#26170c] mb-6" style={{ fontFamily: "'Playfair Display', Georgia, serif", letterSpacing: '-0.02em', lineHeight: 1 }}>
+            <h2 className="text-[40px] sm:text-[64px] md:text-[80px] text-[#26170c] mb-6" style={{ fontFamily: "'Playfair Display', Georgia, serif", letterSpacing: '-0.02em', lineHeight: 1 }}>
               Our Craft
             </h2>
             <p className="text-[#4f453f] text-[17px] max-w-[600px] mx-auto leading-relaxed" style={{ fontFamily: "'Be Vietnam Pro', sans-serif" }}>
@@ -157,7 +157,7 @@ export default function Home() {
       <section className="bg-[#fff8f5] py-24 px-6">
         <div className="max-w-[1280px] mx-auto">
           <div className="mb-12">
-            <h2 className="text-[64px] md:text-[80px] text-[#26170c] mb-3" style={{ fontFamily: "'Playfair Display', Georgia, serif", letterSpacing: '-0.03em', lineHeight: 1 }}>
+            <h2 className="text-[40px] sm:text-[64px] md:text-[80px] text-[#26170c] mb-3" style={{ fontFamily: "'Playfair Display', Georgia, serif", letterSpacing: '-0.03em', lineHeight: 1 }}>
               Our Work
             </h2>
             <div className="w-16 h-[2px] bg-[#26170c]"></div>
@@ -217,7 +217,7 @@ export default function Home() {
           </div>
 
           {/* Content */}
-          <div className="w-full lg:w-[55%] flex flex-col justify-center px-10 md:px-16 lg:px-20 py-16">
+          <div className="w-full lg:w-[55%] flex flex-col justify-center px-6 sm:px-10 md:px-16 lg:px-20 py-16">
             <p className="text-[11px] font-semibold tracking-[3px] uppercase text-[#c9a84c] mb-4" style={{ fontFamily: "'Be Vietnam Pro', sans-serif" }}>
               WHO WE ARE
             </p>
@@ -229,16 +229,16 @@ export default function Home() {
             </p>
 
             {/* Stats */}
-            <div className="flex items-start gap-0 mb-10">
-              <div className="pr-8 border-r border-[#d2c4bc]">
+            <div className="flex flex-wrap items-start gap-6 sm:gap-0 mb-10">
+              <div className="pr-0 sm:pr-8 sm:border-r border-[#d2c4bc]">
                 <div className="text-[36px] font-medium text-[#c9a84c]" style={{ fontFamily: "'Playfair Display', Georgia, serif" }}>25+</div>
                 <div className="text-[#4f453f] text-[14px] mt-1 leading-tight" style={{ fontFamily: "'Be Vietnam Pro', sans-serif" }}>Years of<br />craft</div>
               </div>
-              <div className="px-8 border-r border-[#d2c4bc]">
+              <div className="px-0 sm:px-8 sm:border-r border-[#d2c4bc]">
                 <div className="text-[36px] font-medium text-[#c9a84c]" style={{ fontFamily: "'Playfair Display', Georgia, serif" }}>60+</div>
                 <div className="text-[#4f453f] text-[14px] mt-1 leading-tight" style={{ fontFamily: "'Be Vietnam Pro', sans-serif" }}>Projects<br />completed</div>
               </div>
-              <div className="pl-8">
+              <div className="pl-0 sm:pl-8">
                 <div className="text-[36px] font-medium text-[#c9a84c]" style={{ fontFamily: "'Playfair Display', Georgia, serif" }}>100%</div>
                 <div className="text-[#4f453f] text-[14px] mt-1 leading-tight" style={{ fontFamily: "'Be Vietnam Pro', sans-serif" }}>Custom<br />made</div>
               </div>

@@ -61,7 +61,7 @@ export default function Contact() {
       <section className="py-24 px-6 max-w-[1280px] mx-auto">
         <div className="text-center mb-16">
           <p className="text-[#cba85a] text-[10px] font-bold tracking-[3px] uppercase mb-4" style={{ fontFamily: "'Be Vietnam Pro', sans-serif" }}>COMMON QUESTIONS</p>
-          <h1 className="text-[48px] md:text-[64px] text-[#1a110a] mb-6 leading-tight" style={{ fontFamily: "'Playfair Display', Georgia, serif" }}>Before You Reach Out</h1>
+          <h1 className="text-[32px] sm:text-[48px] md:text-[64px] text-[#1a110a] mb-6 leading-tight" style={{ fontFamily: "'Playfair Display', Georgia, serif" }}>Before You Reach Out</h1>
           <p className="text-[#4f453f] text-[15px]" style={{ fontFamily: "'Be Vietnam Pro', sans-serif" }}>Answers to the questions we hear most often.</p>
         </div>
 
@@ -81,7 +81,7 @@ export default function Contact() {
           <img src="/portfolio_interior.jpg" alt="Chapel Exterior" className="w-full h-full object-cover filter brightness-[0.35]" />
         </div>
         <div className="relative z-10 max-w-3xl mx-auto">
-          <h2 className="text-[44px] md:text-[64px] mb-6 leading-tight" style={{ fontFamily: "'Playfair Display', Georgia, serif" }}>Let's Start a<br/>Conversation</h2>
+          <h2 className="text-[30px] sm:text-[44px] md:text-[64px] mb-6 leading-tight" style={{ fontFamily: "'Playfair Display', Georgia, serif" }}>Let's Start a<br/>Conversation</h2>
           <p className="text-[#d2c4bc] text-[15px] max-w-xl mx-auto" style={{ fontFamily: "'Be Vietnam Pro', sans-serif" }}>
             We respond to every architectural enquiry and consultation request within 24 hours.
           </p>

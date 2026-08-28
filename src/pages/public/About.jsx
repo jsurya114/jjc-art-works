@@ -34,7 +34,7 @@ export default function About() {
   return (
     <div className="bg-[#fffcfaf0] text-[#1a110a] font-sans overflow-x-hidden">
       {/* ── HERO SECTION ── */}
-      <section className="relative h-[600px] flex items-center justify-center text-center">
+      <section className="relative h-[500px] sm:h-[600px] flex items-center justify-center text-center">
         <div className="absolute inset-0 z-0">
           <img src="/craftsman_wood.jpg" alt="Craftsman working in workshop" className="w-full h-full object-cover filter brightness-[0.4]" />
           <div className="absolute inset-0 bg-[#26170c]/50"></div>
@@ -44,7 +44,7 @@ export default function About() {
           <p className="text-[#c9a84c] text-[11px] font-semibold tracking-[3px] uppercase mb-5" style={{ fontFamily: "'Be Vietnam Pro', sans-serif" }}>
             OUR STORY
           </p>
-          <h1 className="text-[56px] md:text-[80px] text-[#fff8f5] mb-6 leading-tight" style={{ fontFamily: "'Playfair Display', Georgia, serif" }}>
+          <h1 className="text-[36px] sm:text-[56px] md:text-[80px] text-[#fff8f5] mb-6 leading-tight" style={{ fontFamily: "'Playfair Display', Georgia, serif" }}>
             Built with Faith.<br />Crafted with Hands.
           </h1>
           <p className="text-[#e8ddd8] text-[15px] max-w-2xl mx-auto tracking-wide leading-relaxed" style={{ fontFamily: "'Be Vietnam Pro', sans-serif" }}>
@@ -60,7 +60,7 @@ export default function About() {
             <p className="text-[#1a110a] text-[11px] font-bold tracking-[3px] uppercase mb-6" style={{ fontFamily: "'Be Vietnam Pro', sans-serif" }}>
               WHO WE ARE
             </p>
-            <h2 className="text-[44px] md:text-[56px] leading-[1.1] mb-8 text-[#1a110a]" style={{ fontFamily: "'Playfair Display', Georgia, serif" }}>
+            <h2 className="text-[32px] sm:text-[44px] md:text-[56px] leading-[1.1] mb-8 text-[#1a110a]" style={{ fontFamily: "'Playfair Display', Georgia, serif" }}>
               A Family Legacy<br />of Sacred<br />Craftsmanship
             </h2>
             <p className="text-[#4f453f] text-[15px] leading-relaxed mb-6" style={{ fontFamily: "'Be Vietnam Pro', sans-serif" }}>
@@ -82,7 +82,7 @@ export default function About() {
           </div>
 
           <div className="w-full md:w-1/2">
-            <div className="rounded-2xl overflow-hidden h-[600px] shadow-lg">
+            <div className="rounded-2xl overflow-hidden h-[350px] sm:h-[500px] md:h-[600px] shadow-lg">
               <img src="/about_wood_carving.jpg" alt="Master craftsman" className="w-full h-full object-cover" />
             </div>
           </div>
@@ -95,7 +95,7 @@ export default function About() {
           <p className="text-[#c9a84c] text-[11px] font-semibold tracking-[3px] uppercase mb-4" style={{ fontFamily: "'Be Vietnam Pro', sans-serif" }}>
             WHAT WE STAND FOR
           </p>
-          <h2 className="text-[44px] md:text-[56px] mb-6" style={{ fontFamily: "'Playfair Display', Georgia, serif" }}>
+          <h2 className="text-[32px] sm:text-[44px] md:text-[56px] mb-6" style={{ fontFamily: "'Playfair Display', Georgia, serif" }}>
             Our Values
           </h2>
           <p className="text-[#dec1af] text-[15px] mb-16" style={{ fontFamily: "'Be Vietnam Pro', sans-serif" }}>
@@ -143,7 +143,7 @@ export default function About() {
           <p className="text-[#c9a84c] text-[11px] font-semibold tracking-[3px] uppercase mb-4" style={{ fontFamily: "'Be Vietnam Pro', sans-serif" }}>
             OUR JOURNEY
           </p>
-          <h2 className="text-[44px] md:text-[56px] text-[#1a110a] mb-6" style={{ fontFamily: "'Playfair Display', Georgia, serif" }}>
+          <h2 className="text-[32px] sm:text-[44px] md:text-[56px] text-[#1a110a] mb-6" style={{ fontFamily: "'Playfair Display', Georgia, serif" }}>
             A Decade of Sacred Craft
           </h2>
           <p className="text-[#4f453f] text-[15px] mb-20" style={{ fontFamily: "'Be Vietnam Pro', sans-serif" }}>
@@ -304,7 +304,7 @@ export default function About() {
           <p className="text-[#c9a84c] text-[11px] font-semibold tracking-[3px] uppercase mb-4" style={{ fontFamily: "'Be Vietnam Pro', sans-serif" }}>
             INSIDE OUR WORKSHOP
           </p>
-          <h2 className="text-[44px] md:text-[56px] text-white mb-6" style={{ fontFamily: "'Playfair Display', Georgia, serif" }}>
+          <h2 className="text-[32px] sm:text-[44px] md:text-[56px] text-white mb-6" style={{ fontFamily: "'Playfair Display', Georgia, serif" }}>
             Where the Magic Happens
           </h2>
           <p className="text-[#a48e83] text-[15px] mb-16" style={{ fontFamily: "'Be Vietnam Pro', sans-serif" }}>
@@ -341,7 +341,7 @@ export default function About() {
           <p className="text-[#c9a84c] text-[11px] font-semibold tracking-[3px] uppercase mb-4" style={{ fontFamily: "'Be Vietnam Pro', sans-serif" }}>
             BY THE NUMBERS
           </p>
-          <h2 className="text-[44px] md:text-[56px] text-[#1a110a] mb-16" style={{ fontFamily: "'Playfair Display', Georgia, serif" }}>
+          <h2 className="text-[32px] sm:text-[44px] md:text-[56px] text-[#1a110a] mb-16" style={{ fontFamily: "'Playfair Display', Georgia, serif" }}>
             A Decade of Results
           </h2>
 
@@ -389,7 +389,7 @@ export default function About() {
         <div className="max-w-[1280px] mx-auto flex flex-col md:flex-row gap-16 lg:gap-24">
           <div className="w-full md:w-[45%]">
             <p className="text-[#c9a84c] text-[11px] font-bold tracking-[2px] uppercase mb-6" style={{ fontFamily: "'Be Vietnam Pro', sans-serif" }}>GET IN TOUCH</p>
-            <h2 className="text-[44px] md:text-[56px] leading-[1.1] text-[#1a110a] mb-6" style={{ fontFamily: "'Playfair Display', Georgia, serif" }}>Have a Project in<br/>Mind?</h2>
+            <h2 className="text-[32px] sm:text-[44px] md:text-[56px] leading-[1.1] text-[#1a110a] mb-6" style={{ fontFamily: "'Playfair Display', Georgia, serif" }}>Have a Project in<br/>Mind?</h2>
             <p className="text-[#4f453f] text-[15px] leading-relaxed mb-12 max-w-sm" style={{ fontFamily: "'Be Vietnam Pro', sans-serif" }}>
               Tell us a little about your chapel and what you need. We will get back to you within 24 hours with ideas and a free quote.
             </p>
