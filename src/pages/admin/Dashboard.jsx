@@ -70,7 +70,7 @@ export default function Dashboard() {
       <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-10">
         <div>
           <h1 className="text-3xl font-bold text-slate-900 tracking-tight mb-1" style={{ fontFamily: "'Playfair Display', Georgia, serif" }}>Dashboard Overview</h1>
-          <p className="text-slate-500 text-sm" style={{ fontFamily: "'Be Vietnam Pro', sans-serif" }}>Welcome back to the JJC Admin Panel.</p>
+          <p className="text-slate-500 text-sm" style={{ fontFamily: "'Be Vietnam Pro', sans-serif" }}>Welcome back Jills.</p>
         </div>
 
       </div>

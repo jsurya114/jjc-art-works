@@ -24,7 +24,7 @@ const Sidebar = ({ isMobileMenuOpen, setIsMobileMenuOpen }) => {
   return (
     <aside className="w-full md:w-64 bg-slate-900 text-white min-h-fit md:min-h-screen flex flex-col transition-all">
       <div className="p-4 md:p-6 border-b border-slate-800 flex justify-between items-center">
-        <h2 className="text-xl font-bold tracking-tight">Admin<span className="text-purple-400">Panel</span></h2>
+        <h2 className="text-xl font-bold tracking-tight">Jills<span className="text-purple-400">Joby</span></h2>
         <button 
           className="md:hidden text-slate-400 hover:text-white p-2"
           onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
