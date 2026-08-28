@@ -45,7 +45,7 @@ const Navbar = () => {
         <div className="flex items-center gap-4">
           {/* Enquire Button */}
           <Link
-            to="/contact"
+            to="/contact#contact-form"
             className="hidden sm:inline-block bg-[#c9a84c] text-white text-[12px] font-bold px-6 py-3 rounded-full tracking-widest uppercase hover:bg-[#b59540] transition-all duration-200 shadow-sm"
             style={{ fontFamily: "'Be Vietnam Pro', sans-serif" }}
           >
@@ -81,7 +81,7 @@ const Navbar = () => {
               );
             })}
             <Link
-              to="/contact"
+              to="/contact#contact-form"
               onClick={() => setMobileMenuOpen(false)}
               className="bg-[#c9a84c] text-white text-[12px] font-bold px-6 py-3 rounded-full tracking-widest uppercase text-center mt-2"
               style={{ fontFamily: "'Be Vietnam Pro', sans-serif" }}
