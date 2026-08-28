@@ -123,20 +123,22 @@ export default function ManageTestimonials() {
                         {test.status.charAt(0).toUpperCase() + test.status.slice(1)}
                       </span>
                     </td>
-                    <td className="px-6 py-4 text-right space-x-2">
-                      {test.status !== 'approved' && (
-                        <button onClick={() => handleUpdateStatus(test.id, 'approved')} className="p-2 text-green-600 hover:bg-green-50 rounded-lg transition-colors" title="Approve">
-                          <CheckCircle size={18} />
+                    <td className="px-6 py-4">
+                      <div className="flex flex-col sm:flex-row items-end sm:items-center justify-end gap-2">
+                        {test.status !== 'approved' && (
+                          <button onClick={() => handleUpdateStatus(test.id, 'approved')} className="inline-flex items-center justify-center gap-2 px-3 py-2 w-full sm:w-auto text-xs font-medium text-green-700 bg-green-50 hover:bg-green-100 rounded-md transition-colors border border-green-200">
+                            <CheckCircle size={16} /> Approve
+                          </button>
+                        )}
+                        {test.status !== 'rejected' && (
+                          <button onClick={() => handleUpdateStatus(test.id, 'rejected')} className="inline-flex items-center justify-center gap-2 px-3 py-2 w-full sm:w-auto text-xs font-medium text-amber-700 bg-amber-50 hover:bg-amber-100 rounded-md transition-colors border border-amber-200">
+                            <XCircle size={16} /> Reject
+                          </button>
+                        )}
+                        <button onClick={() => handleDelete(test.id)} className="inline-flex items-center justify-center gap-2 px-3 py-2 w-full sm:w-auto text-xs font-medium text-rose-700 bg-rose-50 hover:bg-rose-100 rounded-md transition-colors border border-rose-200">
+                          <Trash2 size={16} /> Delete
                         </button>
-                      )}
-                      {test.status !== 'rejected' && (
-                        <button onClick={() => handleUpdateStatus(test.id, 'rejected')} className="p-2 text-amber-600 hover:bg-amber-50 rounded-lg transition-colors" title="Reject">
-                          <XCircle size={18} />
-                        </button>
-                      )}
-                      <button onClick={() => handleDelete(test.id)} className="p-2 text-rose-500 hover:bg-rose-50 rounded-lg transition-colors" title="Delete">
-                        <Trash2 size={18} />
-                      </button>
+                      </div>
                     </td>
                   </tr>
                 ))}
