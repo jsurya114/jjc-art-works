@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import toast from 'react-hot-toast';
 import { db } from '../../lib/firebase';
 import { collection, addDoc, getDocs, deleteDoc, doc, serverTimestamp, query, orderBy } from 'firebase/firestore';
 import { ImagePlus, Trash2, Loader2, Plus } from 'lucide-react';
@@ -81,7 +82,7 @@ export default function ManageGallery() {
       fetchCategories();
     } catch (err) {
       console.error("Error adding category:", err);
-      alert("Error adding category.");
+      toast.error("Error adding category.");
     }
   };
 
@@ -93,7 +94,7 @@ export default function ManageGallery() {
       fetchCategories();
     } catch (err) {
       console.error("Error deleting category:", err);
-      alert("Error deleting category.");
+      toast.error("Error deleting category.");
     }
   };
 
@@ -104,7 +105,7 @@ export default function ManageGallery() {
 
     // Validation for Main Gallery
     if (activeTab === 'main' && (!title || !category)) {
-      alert("Please provide a title and select a category for the Main Gallery.");
+      toast.error("Please provide a title and select a category for the Main Gallery.");
       return;
     }
 
@@ -156,7 +157,7 @@ export default function ManageGallery() {
       console.error("Upload failed", err);
       setUploading(false);
       setProgress(0);
-      alert("Upload failed: " + err.message);
+      toast.error("Upload failed: " + err.message);
     }
   };
 
@@ -174,7 +175,7 @@ export default function ManageGallery() {
       fetchItems();
     } catch (err) {
       console.error("Error deleting item:", err);
-      alert("Error deleting item.");
+      toast.error("Error deleting item.");
     }
   };
 
@@ -213,11 +214,11 @@ export default function ManageGallery() {
         });
       }
 
-      alert("Restorations seeded successfully!");
+      toast.success("Restorations seeded successfully!");
       if (activeTab !== 'categories') fetchItems();
     } catch (err) {
       console.error("Error seeding restorations:", err);
-      alert("Error seeding data.");
+      toast.error("Error seeding data.");
     } finally {
       setUploading(false);
     }

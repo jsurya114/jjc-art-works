@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import toast from 'react-hot-toast';
 import { db } from '../../lib/firebase';
 import { collection, addDoc, getDocs, deleteDoc, updateDoc, doc, serverTimestamp, query, orderBy } from 'firebase/firestore';
 import { Loader2, Trash2, Plus, Pencil, X, Upload } from 'lucide-react';
@@ -70,11 +71,11 @@ export default function ManagePortfolio() {
     e.preventDefault();
 
     if (!editingItem && !file) {
-      alert('Please select an image.');
+      toast.error('Please select an image.');
       return;
     }
     if (!title.trim()) {
-      alert('Please enter a project title.');
+      toast.error('Please enter a project title.');
       return;
     }
 
@@ -132,7 +133,7 @@ export default function ManagePortfolio() {
       fetchItems();
     } catch (err) {
       console.error('Error saving portfolio item:', err);
-      alert('Failed to save: ' + err.message);
+      toast.error('Failed to save: ' + err.message);
     } finally {
       setUploading(false);
     }
@@ -157,7 +158,7 @@ export default function ManagePortfolio() {
       fetchItems();
     } catch (err) {
       console.error('Error deleting portfolio item:', err);
-      alert('Failed to delete.');
+      toast.error('Failed to delete.');
     }
   };
 
@@ -176,7 +177,7 @@ export default function ManagePortfolio() {
       fetchItems();
     } catch (err) {
       console.error('Error seeding:', err);
-      alert('Failed to seed data.');
+      toast.error('Failed to seed data.');
     }
   };
 

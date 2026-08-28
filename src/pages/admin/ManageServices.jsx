@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import toast from 'react-hot-toast';
 import { db } from '../../lib/firebase';
 import { collection, addDoc, getDocs, deleteDoc, doc, serverTimestamp, query, orderBy } from 'firebase/firestore';
 import { ImagePlus, Trash2, Loader2 } from 'lucide-react';
@@ -85,7 +86,7 @@ export default function ManageServices() {
       console.error("Upload failed", err);
       setUploading(false);
       setProgress(0);
-      alert("Upload failed: " + err.message);
+      toast.error("Upload failed: " + err.message);
     }
   };
 
@@ -99,7 +100,7 @@ export default function ManageServices() {
       fetchMaterials();
     } catch (err) {
       console.error("Error deleting item:", err);
-      alert("Error deleting item.");
+      toast.error("Error deleting item.");
     }
   };
 

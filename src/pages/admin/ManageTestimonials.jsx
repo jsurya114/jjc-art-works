@@ -1,3 +1,4 @@
+import toast from 'react-hot-toast';
 import React, { useState, useEffect } from 'react';
 import { db } from '../../lib/firebase';
 import { collection, query, orderBy, getDocs, updateDoc, doc, deleteDoc, addDoc, serverTimestamp } from 'firebase/firestore';
@@ -31,7 +32,7 @@ export default function ManageTestimonials() {
       fetchTestimonials(); // Refresh
     } catch (err) {
       console.error("Error updating status:", err);
-      alert("Failed to update status.");
+      toast.error("Failed to update status.");
     }
   };
 
@@ -42,7 +43,7 @@ export default function ManageTestimonials() {
         fetchTestimonials();
       } catch (err) {
         console.error("Error deleting testimonial:", err);
-        alert("Failed to delete.");
+        toast.error("Failed to delete.");
       }
     }
   };

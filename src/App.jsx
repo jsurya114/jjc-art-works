@@ -1,4 +1,5 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { Toaster } from 'react-hot-toast';
 import ScrollToTop from './components/ScrollToTop';
 
 // Layouts
@@ -29,6 +30,7 @@ function App() {
   return (
     <AuthProvider>
       <BrowserRouter>
+        <Toaster position="top-right" />
         <ScrollToTop />
         <Routes>
         {/* Public Routes with Nav and Footer */}
