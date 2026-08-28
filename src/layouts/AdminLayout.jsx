@@ -19,7 +19,6 @@ const Sidebar = ({ isMobileMenuOpen, setIsMobileMenuOpen }) => {
     { name: 'Manage Gallery', path: '/admin/gallery', icon: Image },
     { name: 'Manage Services', path: '/admin/services', icon: Hammer },
     { name: 'Manage Testimonials', path: '/admin/testimonials', icon: MessageSquare },
-    { name: 'Settings', path: '/admin/settings', icon: Settings },
   ];
 
   return (
@@ -55,10 +54,7 @@ const Sidebar = ({ isMobileMenuOpen, setIsMobileMenuOpen }) => {
         })}
       </nav>
       <div className="p-4 border-t border-slate-800 space-y-2">
-        <Link to="/" className="flex items-center space-x-3 px-4 py-3 text-slate-400 hover:text-white transition-colors">
-          <ArrowLeft size={20} />
-          <span>Back to Site</span>
-        </Link>
+
         <button onClick={handleLogout} className="w-full flex items-center space-x-3 px-4 py-3 text-rose-400 hover:bg-rose-500/10 rounded-lg transition-colors">
           <LogOut size={20} />
           <span>Logout</span>
