@@ -142,7 +142,7 @@ export default function Services() {
       <section className="py-24 px-6 max-w-[1200px] mx-auto space-y-32">
         
         {/* Service 1: Pews */}
-        <div className="flex flex-col md:flex-row items-center gap-16 md:gap-24">
+        <div id="chapel-pews" className="flex flex-col md:flex-row items-center gap-16 md:gap-24 scroll-mt-32">
           <div className="w-full md:w-1/2">
             <p className="text-[#c9a84c] text-[11px] font-semibold tracking-[2px] uppercase mb-4" style={{ fontFamily: "'Be Vietnam Pro', sans-serif" }}>01 CHAPEL PEWS</p>
             <h2 className="text-[44px] md:text-[56px] leading-[1.1] mb-6 text-[#1a110a]" style={{ fontFamily: "'Playfair Display', Georgia, serif" }}>Custom Chapel<br />Seating</h2>
@@ -165,7 +165,7 @@ export default function Services() {
         </div>
 
         {/* Service 2: Altars */}
-        <div className="flex flex-col md:flex-row-reverse items-center gap-16 md:gap-24">
+        <div id="altar-furniture" className="flex flex-col md:flex-row-reverse items-center gap-16 md:gap-24 scroll-mt-32">
           <div className="w-full md:w-1/2">
             <p className="text-[#c9a84c] text-[11px] font-semibold tracking-[2px] uppercase mb-4" style={{ fontFamily: "'Be Vietnam Pro', sans-serif" }}>02 ALTAR FURNITURE</p>
             <h2 className="text-[44px] md:text-[56px] leading-[1.1] mb-6 text-[#1a110a]" style={{ fontFamily: "'Playfair Display', Georgia, serif" }}>Altars and Pulpits</h2>
@@ -188,7 +188,7 @@ export default function Services() {
         </div>
 
         {/* Service 3: Bespoke */}
-        <div className="flex flex-col md:flex-row items-center gap-16 md:gap-24">
+        <div id="custom-woodwork" className="flex flex-col md:flex-row items-center gap-16 md:gap-24 scroll-mt-32">
           <div className="w-full md:w-1/2">
             <p className="text-[#c9a84c] text-[11px] font-semibold tracking-[2px] uppercase mb-4" style={{ fontFamily: "'Be Vietnam Pro', sans-serif" }}>03 CUSTOM WOODWORK</p>
             <h2 className="text-[44px] md:text-[56px] leading-[1.1] mb-6 text-[#1a110a]" style={{ fontFamily: "'Playfair Display', Georgia, serif" }}>Bespoke Chapel<br />Furniture</h2>
@@ -211,7 +211,7 @@ export default function Services() {
         </div>
 
         {/* Service 04: Interior Consultation */}
-        <div className="flex flex-col md:flex-row-reverse items-center gap-16 md:gap-24">
+        <div id="interior-consultation" className="flex flex-col md:flex-row-reverse items-center gap-16 md:gap-24 scroll-mt-32">
           <div className="w-full md:w-1/2">
             <p className="text-[#c9a84c] text-[11px] font-semibold tracking-[2px] uppercase mb-4" style={{ fontFamily: "'Be Vietnam Pro', sans-serif" }}>04 INTERIOR CONSULTATION</p>
             <h2 className="text-[44px] md:text-[56px] leading-[1.1] mb-6 text-[#1a110a]" style={{ fontFamily: "'Playfair Display', Georgia, serif" }}>Full Chapel Interior<br />Design Guidance</h2>
@@ -234,7 +234,7 @@ export default function Services() {
         </div>
 
         {/* Service 05: Church Seating */}
-        <div className="flex flex-col md:flex-row items-center gap-16 md:gap-24">
+        <div id="church-seating" className="flex flex-col md:flex-row items-center gap-16 md:gap-24 scroll-mt-32">
           <div className="w-full md:w-1/2">
             <p className="text-[#c9a84c] text-[11px] font-semibold tracking-[2px] uppercase mb-4" style={{ fontFamily: "'Be Vietnam Pro', sans-serif" }}>05 CHURCH SEATING</p>
             <h2 className="text-[44px] md:text-[56px] leading-[1.1] mb-6 text-[#1a110a]" style={{ fontFamily: "'Playfair Display', Georgia, serif" }}>Comfortable Seating for<br />Every Congregation</h2>
@@ -256,8 +256,8 @@ export default function Services() {
           </div>
         </div>
 
-        {/* Service 06: Pulpits */}
-        <div className="flex flex-col md:flex-row-reverse items-center gap-16 md:gap-24">
+        {/* Service 06: Pulpit Design */}
+        <div id="pulpit-design" className="flex flex-col md:flex-row-reverse items-center gap-16 md:gap-24 scroll-mt-32">
           <div className="w-full md:w-1/2">
             <p className="text-[#c9a84c] text-[11px] font-semibold tracking-[2px] uppercase mb-4" style={{ fontFamily: "'Be Vietnam Pro', sans-serif" }}>06 PULPIT DESIGN</p>
             <h2 className="text-[44px] md:text-[56px] leading-[1.1] mb-6 text-[#1a110a]" style={{ fontFamily: "'Playfair Display', Georgia, serif" }}>Statement Pulpits That<br />Command Presence</h2>

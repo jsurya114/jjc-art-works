@@ -137,8 +137,15 @@ const Footer = () => {
         <div>
           <h4 className="text-white text-[12px] font-semibold tracking-[2px] uppercase mb-6 opacity-70" style={{ fontFamily: "'Be Vietnam Pro', sans-serif" }}>Our Services</h4>
           <ul className="space-y-3">
-            {['Chapel Pews', 'Altar Furniture', 'Custom Woodwork', 'Interior Consultation', 'Church Seating', 'Pulpit Design'].map(l => (
-              <li key={l}><Link to="/services" className="text-white/80 hover:text-[#c9a84c] transition-colors text-[15px]" style={{ fontFamily: "'Be Vietnam Pro', sans-serif" }}>{l}</Link></li>
+            {[
+              { name: 'Chapel Pews', hash: '#chapel-pews' }, 
+              { name: 'Altar Furniture', hash: '#altar-furniture' }, 
+              { name: 'Custom Woodwork', hash: '#custom-woodwork' }, 
+              { name: 'Interior Consultation', hash: '#interior-consultation' }, 
+              { name: 'Church Seating', hash: '#church-seating' }, 
+              { name: 'Pulpit Design', hash: '#pulpit-design' }
+            ].map(l => (
+              <li key={l.name}><Link to={`/services${l.hash}`} className="text-white/80 hover:text-[#c9a84c] transition-colors text-[15px]" style={{ fontFamily: "'Be Vietnam Pro', sans-serif" }}>{l.name}</Link></li>
             ))}
           </ul>
         </div>
