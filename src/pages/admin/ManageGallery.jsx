@@ -86,16 +86,27 @@ export default function ManageGallery() {
     }
   };
 
-  // Handle Category Delete
-  const handleDeleteCategory = async (catId) => {
-    if (!window.confirm("Are you sure? Images using this category will still exist but might not be filterable on the public page.")) return;
+  const performDeleteCategory = async (catId) => {
     try {
       await deleteDoc(doc(db, 'gallery_categories', catId));
       fetchCategories();
+      toast.success("Category deleted.");
     } catch (err) {
       console.error("Error deleting category:", err);
       toast.error("Error deleting category.");
     }
+  };
+
+  const handleDeleteCategory = (catId) => {
+    toast((t) => (
+      <div className="flex flex-col gap-3">
+        <p className="text-sm font-medium text-slate-800">Are you sure? Images using this category will still exist but might not be filterable.</p>
+        <div className="flex justify-end gap-2">
+          <button onClick={() => toast.dismiss(t.id)} className="px-3 py-1.5 text-xs font-medium text-slate-600 bg-slate-100 hover:bg-slate-200 rounded-md">Cancel</button>
+          <button onClick={() => { performDeleteCategory(catId); toast.dismiss(t.id); }} className="px-3 py-1.5 text-xs font-medium text-white bg-rose-600 hover:bg-rose-700 rounded-md">Delete</button>
+        </div>
+      </div>
+    ), { duration: Infinity, id: `del-cat-${catId}` });
   };
 
   // Handle Image Upload
@@ -162,25 +173,30 @@ export default function ManageGallery() {
   };
 
   // Handle Image Delete
-  const handleDelete = async (item) => {
-    if (!window.confirm("Are you sure you want to delete this image?")) return;
-
+  const performDelete = async (item) => {
     try {
-      // Delete from Firestore
       await deleteDoc(doc(db, collectionName, item.id));
-      
-      // Note: We leave the image orphaned in Cloudinary because client-side deletion 
-      // requires a secure backend signature. Since it's a generous free tier, this is fine.
-      
       fetchItems();
+      toast.success("Image deleted.");
     } catch (err) {
       console.error("Error deleting item:", err);
       toast.error("Error deleting item.");
     }
   };
 
-  const handleSeedRestorations = async () => {
-    if (!window.confirm("This will add the 'Restorations' category and 3 recent restoration images to your gallery. Proceed?")) return;
+  const handleDelete = (item) => {
+    toast((t) => (
+      <div className="flex flex-col gap-3">
+        <p className="text-sm font-medium text-slate-800">Are you sure you want to delete this image?</p>
+        <div className="flex justify-end gap-2">
+          <button onClick={() => toast.dismiss(t.id)} className="px-3 py-1.5 text-xs font-medium text-slate-600 bg-slate-100 hover:bg-slate-200 rounded-md">Cancel</button>
+          <button onClick={() => { performDelete(item); toast.dismiss(t.id); }} className="px-3 py-1.5 text-xs font-medium text-white bg-rose-600 hover:bg-rose-700 rounded-md">Delete</button>
+        </div>
+      </div>
+    ), { duration: Infinity, id: `del-img-${item.id}` });
+  };
+
+  const performSeedRestorations = async () => {
     
     setUploading(true);
     try {
@@ -222,6 +238,18 @@ export default function ManageGallery() {
     } finally {
       setUploading(false);
     }
+  };
+
+  const handleSeedRestorations = () => {
+    toast((t) => (
+      <div className="flex flex-col gap-3">
+        <p className="text-sm font-medium text-slate-800">This will add the 'Restorations' category and 3 recent restoration images to your gallery. Proceed?</p>
+        <div className="flex justify-end gap-2">
+          <button onClick={() => toast.dismiss(t.id)} className="px-3 py-1.5 text-xs font-medium text-slate-600 bg-slate-100 hover:bg-slate-200 rounded-md">Cancel</button>
+          <button onClick={() => { performSeedRestorations(); toast.dismiss(t.id); }} className="px-3 py-1.5 text-xs font-medium text-white bg-indigo-600 hover:bg-indigo-700 rounded-md">Proceed</button>
+        </div>
+      </div>
+    ), { duration: Infinity, id: 'seed' });
   };
 
   return (

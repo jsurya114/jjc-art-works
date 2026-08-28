@@ -91,17 +91,27 @@ export default function ManageServices() {
   };
 
   // Handle Image Delete
-  const handleDelete = async (item) => {
-    if (!window.confirm("Are you sure you want to delete this material?")) return;
-
+  const performDelete = async (item) => {
     try {
-      // Delete from Firestore
       await deleteDoc(doc(db, 'services_materials', item.id));
       fetchMaterials();
+      toast.success("Material deleted.");
     } catch (err) {
       console.error("Error deleting item:", err);
       toast.error("Error deleting item.");
     }
+  };
+
+  const handleDelete = (item) => {
+    toast((t) => (
+      <div className="flex flex-col gap-3">
+        <p className="text-sm font-medium text-slate-800">Are you sure you want to delete this material?</p>
+        <div className="flex justify-end gap-2">
+          <button onClick={() => toast.dismiss(t.id)} className="px-3 py-1.5 text-xs font-medium text-slate-600 bg-slate-100 hover:bg-slate-200 rounded-md">Cancel</button>
+          <button onClick={() => { performDelete(item); toast.dismiss(t.id); }} className="px-3 py-1.5 text-xs font-medium text-white bg-rose-600 hover:bg-rose-700 rounded-md">Delete</button>
+        </div>
+      </div>
+    ), { duration: Infinity, id: `delete-${item.id}` });
   };
 
   return (

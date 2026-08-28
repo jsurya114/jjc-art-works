@@ -36,16 +36,27 @@ export default function ManageTestimonials() {
     }
   };
 
-  const handleDelete = async (id) => {
-    if (window.confirm("Are you sure you want to delete this testimonial?")) {
-      try {
-        await deleteDoc(doc(db, 'testimonials', id));
-        fetchTestimonials();
-      } catch (err) {
-        console.error("Error deleting testimonial:", err);
-        toast.error("Failed to delete.");
-      }
+  const performDelete = async (id) => {
+    try {
+      await deleteDoc(doc(db, 'testimonials', id));
+      fetchTestimonials();
+      toast.success("Testimonial deleted.");
+    } catch (err) {
+      console.error("Error deleting testimonial:", err);
+      toast.error("Failed to delete.");
     }
+  };
+
+  const handleDelete = (id) => {
+    toast((t) => (
+      <div className="flex flex-col gap-3">
+        <p className="text-sm font-medium text-slate-800">Are you sure you want to delete this testimonial?</p>
+        <div className="flex justify-end gap-2">
+          <button onClick={() => toast.dismiss(t.id)} className="px-3 py-1.5 text-xs font-medium text-slate-600 bg-slate-100 hover:bg-slate-200 rounded-md">Cancel</button>
+          <button onClick={() => { performDelete(id); toast.dismiss(t.id); }} className="px-3 py-1.5 text-xs font-medium text-white bg-rose-600 hover:bg-rose-700 rounded-md">Delete</button>
+        </div>
+      </div>
+    ), { duration: Infinity, id: `delete-${id}` });
   };
 
   const handleSeedData = async () => {
