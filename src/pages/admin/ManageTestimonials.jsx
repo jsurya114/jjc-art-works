@@ -1,7 +1,7 @@
 import toast from 'react-hot-toast';
 import React, { useState, useEffect } from 'react';
 import { db } from '../../lib/firebase';
-import { collection, query, orderBy, getDocs, updateDoc, doc, deleteDoc, addDoc, serverTimestamp } from 'firebase/firestore';
+import { collection, query, orderBy, getDocs, updateDoc, doc, deleteDoc } from 'firebase/firestore';
 import { Loader2, Trash2, CheckCircle, XCircle } from 'lucide-react';
 
 export default function ManageTestimonials() {
@@ -59,25 +59,6 @@ export default function ManageTestimonials() {
     ), { duration: Infinity, id: `delete-${id}` });
   };
 
-  const handleSeedData = async () => {
-    const dummyData = [
-      { initial: 'S', church: "St. Mary's Forane Church", location: 'Thrissur', service: 'Chapel Pews', text: '"The pews JJC crafted for our church are absolutely magnificent."', author: 'Fr. Sebastian Mathew', title: 'Parish Priest', year: '2023', rating: 5, status: 'approved' },
-      { initial: 'G', church: 'Grace Fellowship Church', location: 'Kochi', service: 'Full Interior', text: '"From the first consultation to the final installation JJC was professional."', author: 'Pastor David Emmanuel', title: 'Senior Pastor', year: '2022', rating: 5, status: 'approved' },
-      { initial: 'S', church: "St. Joseph's Cathedral", location: 'Kozhikode', service: 'Altar Furniture', text: '"The altar JJC built for us is the centrepiece of our cathedral. The intricate carving detail is a testament to their devotion to the craft."', author: 'Fr. Joseph Kurien', title: 'Cathedral Rector', year: '2023', rating: 5, status: 'approved' },
-      { initial: 'H', church: 'Holy Redeemer Chapel', location: 'Palakkad', service: 'Pulpit Design', text: '"Our new pulpit is a masterpiece. The hand-carved panels tell a story, and the finish is exquisite."', author: 'Sr. Theresa George', title: 'Chapel Administrator', year: '2021', rating: 5, status: 'approved' },
-      { initial: 'S', church: "St. Peter's Church", location: 'Kannur', service: 'Church Seating', text: '"We replaced all our old chairs with JJC custom seating. The congregation immediately noticed the superior comfort and beautiful aesthetics."', author: 'Deacon Philip Varghese', title: 'Church Administrator', year: '2022', rating: 5, status: 'approved' },
-      { initial: 'C', church: 'Christ Church', location: 'Trivandrum', service: 'Custom Woodwork', text: '"JJC built our confessional and sacristy cabinets. The attention to detail and reverence for the sacred space was deeply appreciated."', author: 'Fr. Anthony Fernandez', title: 'Parish Priest', year: '2023', rating: 5, status: 'approved' }
-    ];
-    try {
-      for (const t of dummyData) {
-        await addDoc(collection(db, 'testimonials'), { ...t, createdAt: serverTimestamp() });
-      }
-      fetchTestimonials();
-    } catch (err) {
-      console.error("Error seeding", err);
-    }
-  };
-
   return (
     <div className="bg-white rounded-xl shadow-sm border border-slate-200">
       <div className="p-6 border-b border-slate-200 flex justify-between items-center">
@@ -85,11 +66,6 @@ export default function ManageTestimonials() {
           <h2 className="text-xl font-bold text-slate-800">Manage Testimonials</h2>
           <p className="text-sm text-slate-500 mt-1">Approve, reject, or delete user reviews.</p>
         </div>
-        {testimonials.length === 0 && !loading && (
-          <button onClick={handleSeedData} className="px-4 py-2 bg-slate-100 text-slate-600 rounded-lg hover:bg-slate-200 text-sm font-medium transition-colors">
-            Seed Original Data
-          </button>
-        )}
       </div>
 
       <div className="p-0">
