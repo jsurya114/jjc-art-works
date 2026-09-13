@@ -196,62 +196,6 @@ export default function ManageGallery() {
     ), { duration: Infinity, id: `del-img-${item.id}` });
   };
 
-  const performSeedRestorations = async () => {
-    
-    setUploading(true);
-    try {
-      // 1. Add Category if it doesn't exist
-      const catExists = categories.some(c => c.name === 'Restorations');
-      if (!catExists) {
-        await addDoc(collection(db, 'gallery_categories'), {
-          name: 'Restorations',
-          createdAt: serverTimestamp()
-        });
-        fetchCategories();
-      }
-
-      const mainItems = [
-        { title: 'Antique Pews Restoration', category: 'Restorations', imageUrl: '/restoration_pews.jpg', cloudinaryId: 'local_pews', createdAt: serverTimestamp() },
-        { title: 'Cathedral Altar Restoration', category: 'Restorations', imageUrl: '/restoration_altar.jpg', cloudinaryId: 'local_altar', createdAt: serverTimestamp() },
-        { title: 'Wooden Pulpit Restoration', category: 'Restorations', imageUrl: '/restoration_pulpit.jpg', cloudinaryId: 'local_pulpit', createdAt: serverTimestamp() }
-      ];
-
-      // 2. Add to gallery_main
-      for (const item of mainItems) {
-        await addDoc(collection(db, 'gallery_main'), item);
-      }
-
-      // 3. Add to gallery_restorations
-      for (const item of mainItems) {
-        await addDoc(collection(db, 'gallery_restorations'), {
-          imageUrl: item.imageUrl,
-          cloudinaryId: item.cloudinaryId,
-          createdAt: serverTimestamp()
-        });
-      }
-
-      toast.success("Restorations seeded successfully!");
-      if (activeTab !== 'categories') fetchItems();
-    } catch (err) {
-      console.error("Error seeding restorations:", err);
-      toast.error("Error seeding data.");
-    } finally {
-      setUploading(false);
-    }
-  };
-
-  const handleSeedRestorations = () => {
-    toast((t) => (
-      <div className="flex flex-col gap-3">
-        <p className="text-sm font-medium text-slate-800">This will add the 'Restorations' category and 3 recent restoration images to your gallery. Proceed?</p>
-        <div className="flex justify-end gap-2">
-          <button onClick={() => toast.dismiss(t.id)} className="px-3 py-1.5 text-xs font-medium text-slate-600 bg-slate-100 hover:bg-slate-200 rounded-md">Cancel</button>
-          <button onClick={() => { performSeedRestorations(); toast.dismiss(t.id); }} className="px-3 py-1.5 text-xs font-medium text-white bg-indigo-600 hover:bg-indigo-700 rounded-md">Proceed</button>
-        </div>
-      </div>
-    ), { duration: Infinity, id: 'seed' });
-  };
-
   return (
     <div className="max-w-6xl mx-auto space-y-8">
       <div className="flex items-center justify-between">
@@ -259,12 +203,6 @@ export default function ManageGallery() {
           <h1 className="text-2xl font-bold text-slate-900 mb-2">Manage Gallery</h1>
           <p className="text-slate-500">Upload and manage images across your public gallery.</p>
         </div>
-        <button 
-          onClick={handleSeedRestorations}
-          className="px-4 py-2 bg-slate-100 text-slate-600 rounded-lg hover:bg-slate-200 text-sm font-medium transition-colors"
-        >
-          Seed Restorations Data
-        </button>
       </div>
 
       {/* Tabs */}

@@ -10,60 +10,6 @@ export default function Portfolio() {
 
   const categories = ['All', 'Full Interiors', 'Altars', 'Seating', 'Restoration'];
 
-  // Fallback data in case Firestore is empty
-  const fallbackProjects = [
-    {
-      id: 'fb1',
-      title: "St. Jude's Basilica",
-      category: "Full Interiors",
-      location: "Thrissur, Kerala",
-      year: "2023",
-      imageUrl: "/portfolio_pews.jpg",
-      span: "col-span-1 md:col-span-2 row-span-2",
-      height: "h-[400px] md:h-[600px]"
-    },
-    {
-      id: 'fb2',
-      title: "Grace Fellowship Church",
-      category: "Seating",
-      location: "Kochi, Kerala",
-      year: "2022",
-      imageUrl: "/services_chairs_1787384262537.jpg",
-      span: "col-span-1",
-      height: "h-[400px]"
-    },
-    {
-      id: 'fb3',
-      title: "Holy Redeemer Chapel",
-      category: "Altars",
-      location: "Palakkad, Kerala",
-      year: "2021",
-      imageUrl: "/portfolio_altar.jpg",
-      span: "col-span-1",
-      height: "h-[400px]"
-    },
-    {
-      id: 'fb4',
-      title: "Sacred Heart Cathedral",
-      category: "Full Interiors",
-      location: "Kottayam, Kerala",
-      year: "2023",
-      imageUrl: "/portfolio_interior.jpg",
-      span: "col-span-1",
-      height: "h-[400px]"
-    },
-    {
-      id: 'fb5',
-      title: "St. Peter's Parish",
-      category: "Restoration",
-      location: "Kannur, Kerala",
-      year: "2020",
-      imageUrl: "/services_wood_carving_1787384193672.jpg",
-      span: "col-span-1 md:col-span-2",
-      height: "h-[400px]"
-    }
-  ];
-
   useEffect(() => {
     const fetchProjects = async () => {
       setLoading(true);
@@ -71,10 +17,10 @@ export default function Portfolio() {
         const q = query(collection(db, 'portfolio_items'), orderBy('createdAt', 'desc'));
         const querySnapshot = await getDocs(q);
         const data = querySnapshot.docs.map(d => ({ id: d.id, ...d.data() }));
-        setProjects(data.length > 0 ? data : fallbackProjects);
+        setProjects(data);
       } catch (err) {
         console.error("Error fetching portfolio:", err);
-        setProjects(fallbackProjects);
+        setProjects([]);
       } finally {
         setLoading(false);
       }

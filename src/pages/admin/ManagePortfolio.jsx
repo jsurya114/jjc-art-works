@@ -174,25 +174,6 @@ export default function ManagePortfolio() {
     ), { duration: Infinity, id: `delete-${item.id}` });
   };
 
-  const handleSeedData = async () => {
-    const seedItems = [
-      { title: "St. Jude's Basilica", category: 'Full Interiors', location: 'Thrissur, Kerala', year: '2023', imageUrl: '/portfolio_pews.jpg', cloudinaryId: 'seed_pews', layout: 'featured', span: 'col-span-1 md:col-span-2 row-span-2', height: 'h-[400px] md:h-[600px]' },
-      { title: 'Grace Fellowship Church', category: 'Seating', location: 'Kochi, Kerala', year: '2022', imageUrl: '/services_chairs_1787384262537.jpg', cloudinaryId: 'seed_chairs', layout: 'regular', span: 'col-span-1', height: 'h-[400px]' },
-      { title: 'Holy Redeemer Chapel', category: 'Altars', location: 'Palakkad, Kerala', year: '2021', imageUrl: '/portfolio_altar.jpg', cloudinaryId: 'seed_altar', layout: 'regular', span: 'col-span-1', height: 'h-[400px]' },
-      { title: 'Sacred Heart Cathedral', category: 'Full Interiors', location: 'Kottayam, Kerala', year: '2023', imageUrl: '/portfolio_interior.jpg', cloudinaryId: 'seed_interior', layout: 'regular', span: 'col-span-1', height: 'h-[400px]' },
-      { title: "St. Peter's Parish", category: 'Restoration', location: 'Kannur, Kerala', year: '2020', imageUrl: '/services_wood_carving_1787384193672.jpg', cloudinaryId: 'seed_woodcarving', layout: 'wide', span: 'col-span-1 md:col-span-2', height: 'h-[400px]' },
-    ];
-    try {
-      for (const item of seedItems) {
-        await addDoc(collection(db, 'portfolio_items'), { ...item, createdAt: serverTimestamp() });
-      }
-      fetchItems();
-    } catch (err) {
-      console.error('Error seeding:', err);
-      toast.error('Failed to seed data.');
-    }
-  };
-
   return (
     <div className="bg-white rounded-xl shadow-sm border border-slate-200">
       {/* Header */}
@@ -202,11 +183,6 @@ export default function ManagePortfolio() {
           <p className="text-sm text-slate-500 mt-1">Add, edit, or remove portfolio projects.</p>
         </div>
         <div className="flex gap-2">
-          {items.length === 0 && !loading && (
-            <button onClick={handleSeedData} className="px-4 py-2 bg-slate-100 text-slate-600 rounded-lg hover:bg-slate-200 text-sm font-medium transition-colors">
-              Seed Original Data
-            </button>
-          )}
           <button
             onClick={() => { resetForm(); setShowForm(true); }}
             className="px-4 py-2 bg-[#26170c] text-white rounded-lg hover:bg-[#3d2b1f] text-sm font-medium transition-colors flex items-center gap-2"
@@ -326,7 +302,7 @@ export default function ManagePortfolio() {
           </div>
         ) : items.length === 0 ? (
           <div className="text-center py-24 text-slate-500">
-            No portfolio items yet. Click "Add Project" or "Seed Original Data" to get started.
+            No portfolio items yet. Click "Add Project" to get started.
           </div>
         ) : (
           <div className="overflow-x-auto">

@@ -14,13 +14,6 @@ export default function Gallery() {
   const [categories, setCategories] = useState(['All Work']);
   const [loading, setLoading] = useState(true);
 
-  // Hardcoded Fallbacks
-  const fallbackRestorations = [
-    { id: 'f1', title: 'Antique Pews Restoration', category: 'Restorations', imageUrl: '/restoration_pews.jpg' },
-    { id: 'f2', title: 'Cathedral Altar Restoration', category: 'Restorations', imageUrl: '/restoration_altar.jpg' },
-    { id: 'f3', title: 'Wooden Pulpit Restoration', category: 'Restorations', imageUrl: '/restoration_pulpit.jpg' }
-  ];
-
   useEffect(() => {
     const fetchGalleryData = async () => {
       try {
@@ -55,8 +48,8 @@ export default function Gallery() {
   }, []);
 
   const displayCategories = categories.length > 1 ? categories : ['All Work', 'Restorations'];
-  const displayRestorations = restorations.length > 0 ? restorations : fallbackRestorations;
-  const displayMainGallery = mainGallery.length > 0 ? mainGallery : fallbackRestorations;
+  const displayRestorations = restorations;
+  const displayMainGallery = mainGallery;
 
   const filteredMain = activeFilter === 'All Work' 
     ? displayMainGallery 
